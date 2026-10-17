@@ -115,6 +115,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the complete entry format, image poli
 
 ## Credits and licensing
 
-Built with [Astro](https://astro.build/) and [Lucide](https://lucide.dev/). Discovery sources include [mac-apps](https://github.com/jeffreyjackson/mac-apps), [open-source-mac-os-apps](https://github.com/serhii-londar/open-source-mac-os-apps), and [awesome-mac](https://github.com/jaywcjlove/awesome-mac); the full comparison is in [our research](docs/RESEARCH.md).
+Built with [Astro](https://astro.build/) and [Lucide](https://lucide.dev/). Bundled font and icon licenses are preserved in [third-party notices](public/third-party-notices.txt). Discovery sources include [mac-apps](https://github.com/jeffreyjackson/mac-apps), [open-source-mac-os-apps](https://github.com/serhii-londar/open-source-mac-os-apps), and [awesome-mac](https://github.com/jaywcjlove/awesome-mac); the full comparison is in [our research](docs/RESEARCH.md).
 
 OpenStore's original code and text are MIT licensed. Third-party application code, logos, screenshots, fonts, and other assets retain their own licenses and trademark rights. App code licenses are listed for discovery and do not automatically license every visual asset.
