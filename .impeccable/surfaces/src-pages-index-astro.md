@@ -7,18 +7,18 @@ related_targets: ["src/styles/global.css","src/pages/apps/[slug].astro"]
 
 # Catalog and application details
 
-Mode: Operate. Mac users discover software by search, category, and tag, inspect evidence, then open official sources. English, static Astro and GitHub Pages. Code-led build; library direction explicitly confirmed by the user.
+Mode: Operate. Replacement visual world explicitly requested after the user rejected the first pastel library design. User chose: dark, sharp, large imagery, premium showcase. Preserve all working catalog behavior and content. Code-led.
 
 ## Direction contract
 
-THESIS: A community design library for useful Mac software. A persistent category rail and real application imagery make discovery immediate, without an oversized marketing landing page.
+THESIS: An independent software showcase with a sharp dark canvas, confident typography and large authentic application screenshots. Replace the sidebar and pastel cards with a broad horizontal composition.
 
-OWN-WORLD: Mineral white ground, deep forest text and navigation, citron selection, lilac and apricot feature fields. Manrope headings and DM Sans body. Quiet dividers, generous catalog gutters, real app icons kept at their natural shapes.
+OWN-WORLD: Graphite #111214, lifted surfaces #191b1e, warm-white #f2f2ef, muted silver #a7aaae, restrained golden-olive #d9e6a3 for active controls. One-pixel seams, 12px image panels, large Manrope headings, readable DM Sans body. App screenshots supply color without glow or invented artwork.
 
-STORY: See the collection's purpose, inspect three considered picks, search the full catalog, then verify screenshots, source and license in a dedicated app page. Every download leads upstream.
+STORY: Understand the collection at a glance, inspect two screenshot-led spotlights, jump into search and category tabs, open an app's detail and verify source/license before download.
 
-FIRST VIEWPORT: A 220px left rail with wordmark and category counts; a compact top utility bar; a 56px two-line heading beside an overlapping dock of actual icons. Three unequal visual features lead into the catalog search and results. Signature move: the app icon shelf reacts to focus and opens the corresponding app; catalog filtering updates count and URL together.
+FIRST VIEWPORT: Centered 1440px shell with 64px desktop gutters, 100px horizontal navigation. A responsive 62–90px headline on the left balances a short introduction and prominent browse action on the right. Beneath it, two wide unequal screenshot-led product stages: IINA and Rectangle. No persistent side rail, pastel panels, or floating decorative dock. Signature interaction: focused screenshot stage reveals its arrow and lifts the genuine app screenshot by 5px, reduced motion stays still.
 
-FORM: Community design library, grounded candidate 7. Alternatives considered: Mac shelf, design annual, independent record sleeves, colored index tabs, transit information, stationery catalog. Seed reference: seed: none (reference not emitted). Challenger roster retained individual visual identity; signage retained selection clarity. Other challengers declined for lower product clarity and audience fit; their rigor informs stable columns, clear navigation and image crediting rather than decorative motifs.
+FORM: Dark-first premium software showcase, explicitly pinned by the user; reroll seed reference unavailable. The pinned direction overrides the roll. The dark-console challenger contributes seam precision, and the streaming-wall challenger contributes authentic imagery scale, while navigation remains a familiar web catalog.
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance

@@ -4,6 +4,8 @@
 
 [Explore the catalog](https://koative.github.io/openstore/) · [Contribute an app](CONTRIBUTING.md) · [Research & inclusion policy](docs/RESEARCH.md)
 
+![OpenStore dark catalog preview](docs/preview.png)
+
 OpenStore brings app discovery, license evidence, screenshots, and official project links together. Every entry is a small, reviewable folder. The website and the catalog below come from the same Markdown source.
 
 ## One app, one folder
@@ -32,9 +34,10 @@ npm run validate
 npm run check
 npm test
 npm run build
+npm run check:links
 ```
 
-The site runs at `http://localhost:4321/openstore/`. `npm run sync` copies catalog assets for the site and refreshes the generated catalog below. CI checks the data, TypeScript, tests, and production build. Changes pushed to `main` deploy to GitHub Pages.
+Open the `/openstore/` address printed by the dev server (normally `http://localhost:4321/openstore/`). `npm run sync` copies catalog assets for the site and refreshes the generated catalog below. CI checks the data, TypeScript, tests, and production build. Changes pushed to `main` deploy to GitHub Pages.
 
 ## Catalog principles
 

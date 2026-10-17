@@ -2,22 +2,31 @@
 import '../styles/global.css';
 import '@fontsource-variable/manrope';
 import '@fontsource-variable/dm-sans';
-import { ArrowUpRight, Box, Compass, Command, CodeXml, SlidersHorizontal, Play, ShieldCheck, PenLine, GitFork, GitBranch as Github } from '@lucide/astro';
-import { getApps, categories } from '../lib/catalog';
-interface Props { title?: string; description?: string; active?: string; image?: string; }
-const { title = 'OpenStore — Open-source apps for your Mac', description = 'A considered collection of open-source Mac apps. Explore categories, real screenshots, source code, and license details. Find your next everyday essential.', active = 'explore', image } = Astro.props;
+import { ArrowUpRight, Box } from '@lucide/astro';
+import Github from '../components/GithubIcon.astro';
+interface Props {
+  title?: string;
+  description?: string;
+  active?: string;
+  image?: string;
+}
+const {
+  title = 'OpenStore — Open-source apps for your Mac',
+  description = 'A considered collection of open-source Mac apps. Explore categories, real screenshots, source code, and license details. Find your next everyday essential.',
+  active = 'explore',
+  image,
+} = Astro.props;
 const base = import.meta.env.BASE_URL;
-const apps = getApps();
-const categoryIcons = [Command, CodeXml, SlidersHorizontal, Play, ShieldCheck, PenLine];
 const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#f7f9f5" />
+    <meta name="theme-color" content="#111214" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -28,27 +37,71 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <title>{title}</title>
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-    <aside class="sidebar" aria-label="Site navigation">
-      <a class="brand" href={base} aria-label="OpenStore home"><span class="brand-symbol"><Box size={23} stroke-width={1.8}/></span>openstore<span class="brand-dot">.</span></a>
-      <nav aria-label="Browse apps">
-        <a class:list={['nav-item', {selected: active === 'explore'}]} href={`${base}#catalog`} data-category="" aria-current={active === 'explore' ? 'page' : undefined}><Compass size={18}/><span>All apps</span><span class="nav-count">{apps.length}</span></a>
-        <p class="nav-label">Categories</p>
-        {categories.map((category, i) => { const Icon = categoryIcons[i]; return <a class="nav-item" href={`${base}?category=${encodeURIComponent(category)}#catalog`} data-category={category}><Icon size={18}/><span>{category}</span><span class="nav-count">{apps.filter(app => app.category === category).length}</span></a>; })}
-      </nav>
-      <div class="sidebar-bottom">
-        <div class="contribute-note"><GitFork size={22}/><h3>Built in the open.</h3><p>Know a great Mac app?<br>There’s room on the shelf.</p><a href="https://github.com/koative/openstore/blob/main/CONTRIBUTING.md">Contribute an app <ArrowUpRight size={15}/></a></div>
-        <a class="koative" href="https://github.com/koative"><span class="tiny-mark">k.</span>A project by <strong>Koative</strong><ArrowUpRight size={13}/></a>
-      </div>
-    </aside>
+    <a class="skip-link" href="#main">
+      Skip to content
+    </a>
     <div class="page-shell">
       <header class="topbar">
-        <a href={base} class="mobile-brand"><Box size={22}/>openstore.</a>
-        <nav class="top-links" aria-label="Main navigation"><a href={base} aria-current={active === 'explore' ? 'page' : undefined}>Discover</a><a href={`${base}about/`} aria-current={active === 'about' ? 'page' : undefined}>The idea</a></nav>
-        <a class="github-link" href="https://github.com/koative/openstore"><Github size={17}/><span>Star on GitHub</span><ArrowUpRight size={14}/></a>
+        <a class="brand" href={base} aria-label="OpenStore home">
+          <span class="brand-symbol">
+            <Box size={24} stroke-width={1.7} />
+          </span>
+          openstore<span class="brand-dot">.</span>
+        </a>
+        <nav class="top-links" aria-label="Main navigation">
+          <a
+            href={`${base}#catalog`}
+            aria-current={active === 'explore' ? 'page' : undefined}
+          >
+            Explore
+          </a>
+          <a
+            href={`${base}about/`}
+            aria-current={active === 'about' ? 'page' : undefined}
+          >
+            Our story
+          </a>
+          <a
+            class="nav-contribute"
+            href="https://github.com/koative/openstore/blob/main/CONTRIBUTING.md"
+          >
+            Contribute <ArrowUpRight size={13} />
+          </a>
+        </nav>
+        <a
+          class="github-link"
+          href="https://github.com/koative/openstore"
+          aria-label="OpenStore on GitHub"
+        >
+          <Github size={18} />
+          <span>Star on GitHub</span>
+          <ArrowUpRight size={14} />
+        </a>
       </header>
-      <main id="main"><slot /></main>
-      <footer class="footer"><div><a class="footer-name" href={base}>openstore.</a><span>Good software belongs to everyone.</span></div><nav aria-label="Footer"><a href={`${base}about/`}>About</a><a href="https://github.com/koative/openstore/blob/main/CONTRIBUTING.md">Contribute <ArrowUpRight size={13}/></a><a href="https://github.com/koative/openstore">Source <ArrowUpRight size={13}/></a></nav><p>Made with care by <a href="https://github.com/koative">Koative</a>. App trademarks belong to their owners.</p></footer>
+      <main id="main">
+        <slot />
+      </main>
+      <footer class="footer">
+        <div>
+          <a class="footer-name" href={base}>
+            openstore.
+          </a>
+          <span>Good software belongs to everyone.</span>
+        </div>
+        <nav aria-label="Footer">
+          <a href={`${base}about/`}>About</a>
+          <a href="https://github.com/koative/openstore/blob/main/CONTRIBUTING.md">
+            Contribute <ArrowUpRight size={13} />
+          </a>
+          <a href="https://github.com/koative/openstore">
+            Source <ArrowUpRight size={13} />
+          </a>
+        </nav>
+        <p>
+          Made with care by <a href="https://github.com/koative">Koative</a>.
+          App trademarks belong to their owners.
+        </p>
+      </footer>
     </div>
   </body>
 </html>

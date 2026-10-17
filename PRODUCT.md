@@ -28,7 +28,7 @@ App folders are the source of truth. Metadata is validated. README is generated.
 
 ## Brand Commitments
 
-Working name OpenStore, derived from the existing workspace. English UI confirmed. Design execution delegated to Impeccable, directly in working code.
+Working name OpenStore, derived from the existing workspace. English UI confirmed. Design execution delegated to Impeccable, directly in working code. The user rejected the initial pastel library design and explicitly chose a dark, sharp, premium showcase with large imagery.
 
 ## Evidence on Hand
 

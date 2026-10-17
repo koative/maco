@@ -1,6 +1,29 @@
 ---
 import type { CatalogApp } from '../lib/catalog';
-interface Props { app: CatalogApp; size?: number; eager?: boolean; }
-const {app, size = 56, eager = false} = Astro.props;
+interface Props {
+  app: CatalogApp;
+  size?: number;
+  eager?: boolean;
+}
+const { app, size = 56, eager = false } = Astro.props;
 ---
-{app.iconUrl ? <img class="app-icon" src={app.iconUrl} alt="" width={size} height={size} loading={eager ? 'eager' : 'lazy'} decoding="async"/> : <span class="app-icon icon-fallback" style={`width:${size}px;height:${size}px`} aria-hidden="true">{app.name.slice(0,2)}</span>}
+
+{app.iconUrl ? (
+  <img
+    class="app-icon"
+    src={app.iconUrl}
+    alt=""
+    width={size}
+    height={size}
+    loading={eager ? 'eager' : 'lazy'}
+    decoding="async"
+  />
+) : (
+  <span
+    class="app-icon icon-fallback"
+    style={`width:${size}px;height:${size}px`}
+    aria-hidden="true"
+  >
+    {app.name.slice(0, 2)}
+  </span>
+)}

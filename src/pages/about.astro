@@ -3,20 +3,122 @@ import Layout from '../layouts/Layout.astro';
 import { ArrowUpRight, ArrowRight } from '@lucide/astro';
 const base = import.meta.env.BASE_URL;
 const sources = [
-['serhii-londar/open-source-mac-os-apps','https://github.com/serhii-londar/open-source-mac-os-apps'],
-['jaywcjlove/awesome-mac','https://github.com/jaywcjlove/awesome-mac'],
-['jeffreyjackson/mac-apps','https://github.com/jeffreyjackson/mac-apps'],
-['iCHAIT/awesome-macOS','https://github.com/iCHAIT/awesome-macOS'],
-['abordage/awesome-mac','https://github.com/abordage/awesome-mac'],
-['AndrewSB/awesome-macOS','https://github.com/AndrewSB/awesome-macOS'],
-['Awesome-llms-labs/awesome-oss-macos','https://github.com/Awesome-llms-labs/awesome-oss-macos']
+  [
+    'serhii-londar/open-source-mac-os-apps',
+    'https://github.com/serhii-londar/open-source-mac-os-apps',
+  ],
+  ['jaywcjlove/awesome-mac', 'https://github.com/jaywcjlove/awesome-mac'],
+  ['jeffreyjackson/mac-apps', 'https://github.com/jeffreyjackson/mac-apps'],
+  ['iCHAIT/awesome-macOS', 'https://github.com/iCHAIT/awesome-macOS'],
+  ['abordage/awesome-mac', 'https://github.com/abordage/awesome-mac'],
+  ['AndrewSB/awesome-macOS', 'https://github.com/AndrewSB/awesome-macOS'],
+  [
+    'Awesome-llms-labs/awesome-oss-macos',
+    'https://github.com/Awesome-llms-labs/awesome-oss-macos',
+  ],
 ];
 ---
+
 <Layout title="The idea — OpenStore" active="about">
-  <article class="about-page"><h1>Your Mac deserves<br/>a little more open.</h1><p class="about-lead">Great software is being made in the open, every day. OpenStore is a place to find it, understand it, and support the people behind it.</p><a class="button button-dark" href={`${base}#catalog`}>Explore the collection <ArrowRight size={16}/></a>
-    <section><h2>A collection with a point of view.</h2><p>We’re building a useful starting point for open-source software on macOS. Small menu bar helpers sit alongside creative tools, text editors, and everyday essentials. Each listing brings together what matters: what it does, what it looks like, its source code, and its license.</p><p>OpenStore is a community project by <a href="https://github.com/koative">Koative</a>. It’s an independent directory, not an app installer or a software marketplace. Official project pages handle downloads, support, and any paid distribution options.</p></section>
-    <div class="about-principles"><article><h3>Open means open source.</h3><p>Free to download is not the same as open source. We check each project’s source license and exclude licenses with additional use restrictions.</p></article><article><h3>Evidence, not guesswork.</h3><p>Every entry links to the repository and license we checked, with a verification date. That date is a record of our review, not a security certification.</p></article><article><h3>Real apps. Real images.</h3><p>Icons and screenshots come from the original projects. Their sources, credits, and rights travel with each listing. No generated app screenshots.</p></article><article><h3>One folder. One contribution.</h3><p>A small Markdown file and its images power the website and README together. Everything is versioned, reviewable, and easy to improve.</p></article></div>
-    <section><h2>Standing on open shoulders.</h2><p>This collection started with Jeffrey Jackson’s Mac apps list and grew through research across these community directories. They’re discovery sources; each application is verified independently.</p><ul class="source-list">{sources.map(([name,url]) => <li><a href={url}>{name}<ArrowUpRight size={16}/></a></li>)}</ul><p>Read our <a href="https://github.com/koative/openstore/blob/main/docs/RESEARCH.md">research and inclusion policy</a> for the comparisons, exclusions, and licensing details.</p></section>
-    <section><h2>There’s room on the shelf.</h2><p>Have an app we should know about? Found an outdated link or a better screenshot? You don’t need to be the original developer to help.</p><a class="button button-dark" href="https://github.com/koative/openstore/blob/main/CONTRIBUTING.md">Contribute to OpenStore <ArrowUpRight size={16}/></a></section>
+  <article class="about-page">
+    <h1>
+      Your Mac deserves
+      <br />a little more open.
+    </h1>
+    <p class="about-lead">
+      Great software is being made in the open, every day. OpenStore is a place
+      to find it, understand it, and support the people behind it.
+    </p>
+    <a class="button button-dark" href={`${base}#catalog`}>
+      Explore the collection <ArrowRight size={16} />
+    </a>
+    <section>
+      <h2>A collection with a point of view.</h2>
+      <p>
+        We’re building a useful starting point for open-source software on
+        macOS. Small menu bar helpers sit alongside creative tools, text
+        editors, and everyday essentials. Each listing brings together what
+        matters: what it does, what it looks like, its source code, and its
+        license.
+      </p>
+      <p>
+        OpenStore is a community project by{' '}
+        <a href="https://github.com/koative">Koative</a>. It’s an independent
+        directory, not an app installer or a software marketplace. Official
+        project pages handle downloads, support, and any paid distribution
+        options.
+      </p>
+    </section>
+    <div class="about-principles">
+      <article>
+        <h3>Open means open source.</h3>
+        <p>
+          Free to download is not the same as open source. We check each
+          project’s source license and exclude licenses with additional use
+          restrictions.
+        </p>
+      </article>
+      <article>
+        <h3>Evidence, not guesswork.</h3>
+        <p>
+          Every entry links to the repository and license we checked, with a
+          verification date. That date is a record of our review, not a security
+          certification.
+        </p>
+      </article>
+      <article>
+        <h3>Real apps. Real images.</h3>
+        <p>
+          Icons and screenshots come from the original projects. Their sources,
+          credits, and rights travel with each listing. No generated app
+          screenshots.
+        </p>
+      </article>
+      <article>
+        <h3>One folder. One contribution.</h3>
+        <p>
+          A small Markdown file and its images power the website and README
+          together. Everything is versioned, reviewable, and easy to improve.
+        </p>
+      </article>
+    </div>
+    <section>
+      <h2>Standing on open shoulders.</h2>
+      <p>
+        This collection started with Jeffrey Jackson’s Mac apps list and grew
+        through research across these community directories. They’re discovery
+        sources; each application is verified independently.
+      </p>
+      <ul class="source-list">
+        {sources.map(([name, url]) => (
+          <li>
+            <a href={url}>
+              {name}
+              <ArrowUpRight size={16} />
+            </a>
+          </li>
+        ))}
+      </ul>
+      <p>
+        Read our{' '}
+        <a href="https://github.com/koative/openstore/blob/main/docs/RESEARCH.md">
+          research and inclusion policy
+        </a>{' '}
+        for the comparisons, exclusions, and licensing details.
+      </p>
+    </section>
+    <section>
+      <h2>There’s room on the shelf.</h2>
+      <p>
+        Have an app we should know about? Found an outdated link or a better
+        screenshot? You don’t need to be the original developer to help.
+      </p>
+      <a
+        class="button button-dark"
+        href="https://github.com/koative/openstore/blob/main/CONTRIBUTING.md"
+      >
+        Contribute to OpenStore <ArrowUpRight size={16} />
+      </a>
+    </section>
   </article>
 </Layout>
