@@ -1,8 +1,18 @@
 # Release verification
 
+## Catalog expansion to 519 apps — 2026-10-17
+
+The catalog contains **519 apps: 508 open source and 11 source available**, across 11 categories, with 517 official icons and 32 screenshots. SketchyBar and ungoogled-chromium ship no usable icon of their own and show a letter tile. The 227 new records came from reviewing every discovery lead listed by at least two directories; decisions and exclusions are in [RESEARCH.md](RESEARCH.md#second-expansion-2026-10-17).
+
+- `bun run validate` and `bun run check:generated`: all 519 records pass; no repository is listed twice.
+- `bun test`: 14 tests passed. `bun run check`: zero errors, warnings or hints.
+- `bun run build`: 539 static pages. A production build now reads the catalog once instead of once per page, which took the build from about 51 seconds to under 2 seconds at this size.
+- `bun run check:links`: 37,037 internal links, assets, self-links, and sitemap entries resolve.
+- `bun run discover`: 1,724 leads from ten directories; 429 match published apps.
+
 ## App store redesign and repository audit — 2026-10-17
 
-The catalog contains **292 apps: 283 open source and 9 source available**, across 11 categories, and every app now shows its official upstream icon (292 icons) alongside 32 screenshots. For 14 apps the icon is reserved by trademark or published under non-commercial or no-derivatives terms (for example Mozilla, Bitwarden, Blender, Joplin, SimpleX, CotEditor, DuckStation). The project owner approved showing these unmodified, only to identify the linked app in this non-commercial directory. Each record states the actual terms, and an icon is removed if its rights holder asks.
+At the time of the redesign the catalog contained **292 apps: 283 open source and 9 source available**, across 11 categories, and every app showed its official upstream icon (292 icons) alongside 32 screenshots. For 14 apps the icon is reserved by trademark or published under non-commercial or no-derivatives terms (for example Mozilla, Bitwarden, Blender, Joplin, SimpleX, CotEditor, DuckStation). The project owner approved showing these unmodified, only to identify the linked app in this non-commercial directory. Each record states the actual terms, and an icon is removed if its rights holder asks.
 
 The site was rebuilt as an app-store-style catalog: a sidebar shell (bottom tab bar on narrow screens), Discover shelves, Search, 11 category pages, 4 collection pages, and a product page per app. Light and dark appearance follow the system. Text uses system fonts, so the Manrope and DM Sans packages were removed.
 

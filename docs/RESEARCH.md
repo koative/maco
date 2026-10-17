@@ -139,9 +139,38 @@ apps in parallel, with each accepted record retaining upstream license and macOS
 Catalog inclusion verifies evidence, not every feature through installation. Some historical
 utilities retain usable releases but have maintenance caveats stated in their descriptions.
 
-The expansion publishes 292 applications (283 open source and 9 separately labeled source available).
-The repeatable [discovery queue](../research/README.md) contains 1,721 deduplicated repository
-leads from the ten directories; unreviewed leads are deliberately not published as apps.
-Additional restricted licenses include the custom PasteBar and NotchPrompter terms,
+The first expansion published 292 applications (283 open source and 9 separately labeled source
+available). Additional restricted licenses include the custom PasteBar and NotchPrompter terms,
 PolyForm Shield for SaneClip, FSL for Switch, and CC BY-NC-ND for current DuckStation.
 Each record links the exact source terms and states its restrictions.
+
+## Second expansion (2026-10-17)
+
+Every unreviewed lead listed by at least two directories (368 leads) was reviewed against the
+inclusion policy; 227 became apps, bringing the catalog to 519 (508 open source, 11 source
+available, adding PolyForm Shield for SaneClick and SaneHosts). Each new record reads the actual
+license file, links official macOS download evidence, and carries the official icon with
+provenance. Decisions worth keeping:
+
+- **Held out, binaries differ from the open code**: Rockxy and Tracexy (AGPL source, but the
+  official DMGs ship under a proprietary EULA from private code), eqMac (current releases come
+  from a private fork), Visual Studio Code (Microsoft's builds are proprietary; VSCodium is listed),
+  Requestly's API client, and Pulse by fatwang2 (closed app, open plugins).
+- **Held out, license not on the allowlist**: Cork (Commons Clause–style custom terms), Capso
+  (BSL 1.1), Haystack Editor (PolyForm Strict), PDF Archiver (CC BY-NC-SA), MacYTDL (custom
+  non-commercial terms), AnyBar (EPL-1.0), screenpipe (commercial license), Hiddify (extended GPL),
+  and AFFiNE (a desktop component under its Enterprise Edition license).
+- **Held out, no license file or conflicting statements**: BeardedSpice, Juice, gasmask, Keka,
+  Clocker, ShiftIt, Dockit (LICENSE says MIT, README says GPL-3.0), among others.
+- **Held out, service gone or superseded**: Caprine and fb-mac-messenger (messenger.com shut
+  down), Spectacle (use Rectangle), Sequel Pro (use Sequel Ace), Brackets (moved to Phoenix Code),
+  ImageAlpha and SoundCleod (archived, no longer working).
+- **Included with judgement**: mpv ships a macOS app bundle although it calls itself a
+  command-line player; yabai and SketchyBar are background utilities without an app window;
+  Whisky is the community fork that continued after the original was archived; MagicQuit is
+  listed under its GPL-3.0 LICENSE file although its README says MIT. Old but working apps
+  (for example Adium, MacDown, Knuff) state their last release in the description.
+
+The repeatable [discovery queue](../research/README.md) now contains 1,724 deduplicated repository
+leads from the ten directories, 429 of which match published apps; the remaining leads (mostly
+listed by a single directory) are deliberately not published until reviewed.
