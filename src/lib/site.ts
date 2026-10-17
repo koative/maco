@@ -4,7 +4,7 @@ export const site = {
   title: 'Maco — Discover open-source Mac apps',
   description:
     'Discover open-source Mac apps for productivity, design, development, and more. Browse screenshots, source code, and clear license details on Maco.',
-  url: 'https://koative.github.io/maco/',
+  url: 'https://maco.koative.com/',
   repository: 'https://github.com/koative/maco',
 };
 
