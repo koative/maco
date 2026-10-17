@@ -1,0 +1,35 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CategoryGlyph from '../../components/CategoryGlyph.astro';
+import { getApps, categories } from '../../lib/catalog';
+import { categorySlug } from '../../lib/collections';
+const apps = getApps();
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout
+  title="Categories — Maco"
+  description="Browse open-source Mac apps by category: productivity, developer tools, utilities, media, privacy, writing, design, and more."
+  section="categories/"
+>
+  <header class="page-head">
+    <h1>Categories</h1>
+  </header>
+  <ul class="category-grid category-grid-large">
+    {categories.map((category) => {
+      const inCategory = apps.filter((app) => app.category === category);
+      return (
+        <li>
+          <a
+            class="category-tile"
+            href={`${base}categories/${categorySlug(category)}/`}
+          >
+            <CategoryGlyph category={category} size={44} />
+            <span>{category}</span>
+            <span class="count">{inCategory.length} apps</span>
+          </a>
+        </li>
+      );
+    })}
+  </ul>
+</Layout>

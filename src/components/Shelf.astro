@@ -1,0 +1,39 @@
+---
+import { ChevronLeft, ChevronRight } from '@lucide/astro';
+interface Props {
+  id: string;
+  title: string;
+  subtitle?: string;
+  /** "See All" destination. */
+  href?: string;
+  variant?: 'lockups' | 'spotlights' | 'shots';
+}
+const { id, title, subtitle, href, variant = 'lockups' } = Astro.props;
+---
+
+<section class="shelf" aria-labelledby={id} data-shelf>
+  <header class="shelf-head">
+    <div>
+      <h2 id={id}>{title}</h2>
+      {subtitle && <p>{subtitle}</p>}
+    </div>
+    <div class="shelf-actions">
+      {href && (
+        <a class="see-all" href={href}>
+          See All<span class="sr-only"> {title}</span>
+        </a>
+      )}
+      <button class="pager" type="button" data-page="-1" hidden>
+        <ChevronLeft size={18} stroke-width={2.4} />
+        <span class="sr-only">Previous {title}</span>
+      </button>
+      <button class="pager" type="button" data-page="1" hidden>
+        <ChevronRight size={18} stroke-width={2.4} />
+        <span class="sr-only">Next {title}</span>
+      </button>
+    </div>
+  </header>
+  <div class={`shelf-track track-${variant}`} data-track>
+    <slot />
+  </div>
+</section>

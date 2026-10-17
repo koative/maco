@@ -1,11 +1,23 @@
 ---
-import type { CatalogApp } from '../lib/catalog';
+import { categories, type CatalogApp } from '../lib/catalog';
+import { categorySlug } from '../lib/collections';
 interface Props {
   app: CatalogApp;
   size?: number;
   eager?: boolean;
+  /** Names the icon for the shelf-to-page view transition. */
+  morph?: boolean;
 }
-const { app, size = 56, eager = false } = Astro.props;
+const { app, size = 56, eager = false, morph = false } = Astro.props;
+const style = morph ? 'view-transition-name:app-icon' : undefined;
+// Missing artwork borrows one of the category tile colours, picked from the slug so a
+// category page of fallbacks is not one flat colour.
+const tint = categorySlug(
+  categories[
+    [...app.slug].reduce((sum, char) => sum + char.charCodeAt(0), 0) %
+      categories.length
+  ],
+);
 ---
 
 {app.iconUrl ? (
@@ -17,13 +29,14 @@ const { app, size = 56, eager = false } = Astro.props;
     height={size}
     loading={eager ? 'eager' : 'lazy'}
     decoding="async"
+    style={style}
   />
 ) : (
   <span
     class="app-icon icon-fallback"
-    style={`width:${size}px;height:${size}px`}
+    style={`--size:${size}px;--tile:var(--cat-${tint});${style ?? ''}`}
     aria-hidden="true"
   >
-    {app.name.slice(0, 2)}
+    {app.name.slice(0, 1)}
   </span>
 )}

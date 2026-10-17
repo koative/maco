@@ -21,8 +21,6 @@
     "discover": "bun scripts/discover.ts"
   },
   "dependencies": {
-    "@fontsource-variable/dm-sans": "^5.3.0",
-    "@fontsource-variable/manrope": "^5.3.0",
     "@lucide/astro": "^1.16.0",
     "astro": "^7.4.0",
     "marked": "^18.1.1",

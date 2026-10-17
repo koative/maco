@@ -1,0 +1,274 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AppLockup from '../components/AppLockup.astro';
+import { PackageOpen, Search, X } from '@lucide/astro';
+import { getApps, categories } from '../lib/catalog';
+const apps = getApps();
+const tagCounts = new Map<string, number>();
+for (const tag of apps.flatMap((app) => app.tags))
+  tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+const tags = [...tagCounts.keys()].sort((a, b) => a.localeCompare(b));
+---
+
+<Layout
+  title="Search Mac apps — Maco"
+  description="Search every open-source and source-available Mac app on Maco by name, category, tag, or license."
+  section="search/"
+>
+  <header class="page-head">
+    <h1>Search</h1>
+  </header>
+  <form class="search-controls" id="search-controls" role="search" hidden>
+    <div class="search-field">
+      <Search size={18} stroke-width={2.2} aria-hidden="true" />
+      <label class="sr-only" for="search">
+        Search apps, categories, or tags
+      </label>
+      <input
+        id="search"
+        name="q"
+        type="search"
+        placeholder="Apps, categories, or tags"
+        autocomplete="off"
+        enterkeyhint="search"
+      />
+    </div>
+    <div class="filters">
+      <fieldset class="segmented">
+        <legend class="sr-only">License</legend>
+        <label>
+          <input type="radio" name="source" value="" checked /> All
+        </label>
+        <label>
+          <input type="radio" name="source" value="open-source" /> Open Source
+        </label>
+        <label>
+          <input type="radio" name="source" value="source-available" /> Source
+          Available
+        </label>
+      </fieldset>
+      <label class="select">
+        <span class="sr-only">Category</span>
+        <select id="category-filter" name="category">
+          <option value="">All Categories</option>
+          {categories.map((category) => (
+            <option>{category}</option>
+          ))}
+        </select>
+      </label>
+      <label class="select">
+        <span class="sr-only">Tag</span>
+        <select id="tag-filter" name="tag">
+          <option value="">All Tags</option>
+          {tags.map((tag) => (
+            <option value={tag}>
+              {tag.replaceAll('-', ' ')} ({tagCounts.get(tag)})
+            </option>
+          ))}
+        </select>
+      </label>
+      <label class="select">
+        <span class="sr-only">Sort</span>
+        <select id="sort" name="sort">
+          <option value="name">Name</option>
+          <option value="featured">Maco Picks First</option>
+          <option value="newest">Recently Added</option>
+        </select>
+      </label>
+    </div>
+    <div class="result-line">
+      <p id="result-count" role="status" aria-live="polite" aria-atomic="true">
+        {apps.length} apps
+      </p>
+      <button class="text-button" id="clear-filters" type="button" hidden>
+        <X size={14} /> Clear Filters
+      </button>
+    </div>
+  </form>
+  <noscript>
+    <p class="note">
+      All {apps.length} apps are listed below. Turn on JavaScript to search and
+      filter.
+    </p>
+  </noscript>
+  <div class="lockup-grid" id="results">
+    {apps.map((app) => (
+      <AppLockup app={app} searchable />
+    ))}
+  </div>
+  <div class="load-more" id="load-more-container" hidden>
+    <button type="button" class="button button-secondary" id="load-more">
+      Show More
+    </button>
+  </div>
+  <div class="empty-state" id="empty-state" hidden>
+    <PackageOpen size={44} stroke-width={1.5} />
+    <h2>No Results</h2>
+    <p>Try a different name, category, or tag.</p>
+    <button type="button" class="button button-secondary" id="reset-search">
+      Show All Apps
+    </button>
+  </div>
+</Layout>
+<script>
+  const form = document.querySelector<HTMLFormElement>('#search-controls')!;
+  form.hidden = false;
+  const search = document.querySelector<HTMLInputElement>('#search')!;
+  const sidebarSearch =
+    document.querySelector<HTMLInputElement>('#sidebar-search')!;
+  const category =
+    document.querySelector<HTMLSelectElement>('#category-filter')!;
+  const tag = document.querySelector<HTMLSelectElement>('#tag-filter')!;
+  const sort = document.querySelector<HTMLSelectElement>('#sort')!;
+  const sources = [
+    ...form.querySelectorAll<HTMLInputElement>('input[name="source"]'),
+  ];
+  const grid = document.querySelector<HTMLElement>('#results')!;
+  const cards = [...grid.querySelectorAll<HTMLElement>('[data-app]')];
+  const count = document.querySelector<HTMLElement>('#result-count')!;
+  const clear = document.querySelector<HTMLButtonElement>('#clear-filters')!;
+  const empty = document.querySelector<HTMLElement>('#empty-state')!;
+  const moreContainer = document.querySelector<HTMLElement>(
+    '#load-more-container',
+  )!;
+  const more = document.querySelector<HTMLButtonElement>('#load-more')!;
+  const pageSize = 24;
+  let visibleLimit = pageSize;
+
+  function readUrl() {
+    const previousLimit = Number(history.state?.catalogLimit);
+    visibleLimit = Number.isFinite(previousLimit)
+      ? Math.max(pageSize, Math.min(cards.length, previousLimit))
+      : pageSize;
+    const params = new URLSearchParams(location.search);
+    search.value = sidebarSearch.value = params.get('q') || '';
+    // Unknown values leave no option selected; fall back to the first one.
+    for (const [select, fallback] of [
+      [category, ''],
+      [tag, ''],
+      [sort, 'name'],
+    ] as const) {
+      select.value = params.get(select.name) || fallback;
+      if (select.selectedIndex < 0) select.value = fallback;
+    }
+    const source = params.get('source') || '';
+    (sources.find((input) => input.value === source) ?? sources[0]).checked =
+      true;
+  }
+
+  function update(
+    writeUrl: false | 'replace' | 'push' = 'replace',
+    keepLimit = false,
+  ) {
+    if (!keepLimit) visibleLimit = pageSize;
+    const query = search.value
+      .trim()
+      .toLowerCase()
+      .split(/\s+/)
+      .filter(Boolean);
+    const source = sources.find((input) => input.checked)!.value;
+    let matched = 0;
+    const sorted = [...cards].sort((a, b) => {
+      if (
+        sort.value === 'featured' &&
+        a.dataset.featured !== b.dataset.featured
+      )
+        return a.dataset.featured === 'true' ? -1 : 1;
+      if (sort.value === 'newest' && a.dataset.added !== b.dataset.added)
+        return b.dataset.added!.localeCompare(a.dataset.added!);
+      return a.dataset.name!.localeCompare(b.dataset.name!);
+    });
+    for (const card of sorted) {
+      const matches =
+        query.every((term) => card.dataset.search!.includes(term)) &&
+        (!category.value || card.dataset.category === category.value) &&
+        (!tag.value || card.dataset.tags!.split(',').includes(tag.value)) &&
+        (!source || card.dataset.source === source);
+      if (matches) matched++;
+      card.hidden = !matches || matched > visibleLimit;
+      grid.append(card);
+    }
+    const shown = Math.min(matched, visibleLimit);
+    const noun =
+      matched === cards.length ? 'apps' : matched === 1 ? 'result' : 'results';
+    count.textContent =
+      matched > shown
+        ? `Showing ${shown} of ${matched} ${noun}`
+        : `${matched} ${noun}`;
+    moreContainer.hidden = matched <= visibleLimit;
+    more.textContent = `Show ${Math.min(pageSize, matched - shown)} More`;
+    empty.hidden = matched > 0;
+    grid.hidden = matched === 0;
+    clear.hidden = !(search.value || category.value || tag.value || source);
+    if (writeUrl) {
+      const url = new URL(location.href);
+      for (const [key, value] of [
+        ['q', search.value.trim()],
+        ['category', category.value],
+        ['tag', tag.value],
+        ['source', source],
+        ['sort', sort.value === 'name' ? '' : sort.value],
+      ]) {
+        if (value) url.searchParams.set(key, value);
+        else url.searchParams.delete(key);
+      }
+      if (writeUrl === 'push' && url.href !== location.href)
+        history.pushState({ catalogLimit: visibleLimit }, '', url);
+      else
+        history.replaceState(
+          { ...history.state, catalogLimit: visibleLimit },
+          '',
+          url,
+        );
+    } else {
+      history.replaceState(
+        { ...history.state, catalogLimit: visibleLimit },
+        '',
+        location.href,
+      );
+    }
+  }
+
+  form.addEventListener('submit', (event) => event.preventDefault());
+  search.addEventListener('input', () => {
+    sidebarSearch.value = search.value;
+    update();
+  });
+  // The sidebar field drives this page directly instead of reloading it.
+  sidebarSearch.form!.addEventListener('submit', (event) =>
+    event.preventDefault(),
+  );
+  sidebarSearch.addEventListener('input', () => {
+    search.value = sidebarSearch.value;
+    update();
+  });
+  [category, tag, sort, ...sources].forEach((element) =>
+    element.addEventListener('change', () => update('push')),
+  );
+  function reset() {
+    search.value = sidebarSearch.value = '';
+    category.value = '';
+    tag.value = '';
+    sort.value = 'name';
+    sources[0].checked = true;
+    update('push');
+    search.focus();
+  }
+  clear.addEventListener('click', reset);
+  document.querySelector('#reset-search')!.addEventListener('click', reset);
+  more.addEventListener('click', () => {
+    const before = new Set(cards.filter((card) => !card.hidden));
+    visibleLimit += pageSize;
+    update(false, true);
+    cards
+      .find((card) => !card.hidden && !before.has(card))
+      ?.querySelector<HTMLAnchorElement>('.lockup-link')
+      ?.focus({ preventScroll: true });
+  });
+  window.addEventListener('popstate', () => {
+    readUrl();
+    update(false, true);
+  });
+  readUrl();
+  update(false, true);
+</script>

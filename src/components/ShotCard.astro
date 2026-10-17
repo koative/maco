@@ -1,0 +1,30 @@
+---
+import AppIcon from './AppIcon.astro';
+import type { CatalogApp } from '../lib/catalog';
+interface Props {
+  app: CatalogApp;
+}
+const { app } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const shot = app.screenshots[0];
+---
+
+<a class="shot-card" href={`${base}apps/${app.slug}/`}>
+  <div class="shot-frame">
+    <img
+      src={shot.url}
+      alt={shot.alt}
+      loading="lazy"
+      decoding="async"
+      width="640"
+      height="400"
+    />
+  </div>
+  <div class="shot-meta">
+    <AppIcon app={app} size={40} />
+    <div class="lockup-text">
+      <h3>{app.name}</h3>
+      <span class="lockup-summary">{app.category}</span>
+    </div>
+  </div>
+</a>

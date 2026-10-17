@@ -2,16 +2,30 @@
 <html lang="en">
 <meta charset="utf-8">
 <title>Maco social card</title>
+<!-- Capture at 1200 × 630 in a browser on macOS so system-ui resolves to SF Pro. Icons are the catalog's own upstream artwork. -->
 <style>
-@font-face{font-family:Manrope;src:url('../node_modules/@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2') format('woff2');font-weight:200 800}
-*{box-sizing:border-box}html,body{margin:0;width:1200px;height:630px;overflow:hidden;background:#111214;color:#f2f2ef;font-family:Manrope,sans-serif}
-body{padding:66px 76px;display:flex;flex-direction:column;justify-content:space-between}
-.brand{display:flex;gap:17px;align-items:center;font-size:38px;font-weight:750;letter-spacing:-1px}.brand span{color:#d9e6a3}
-svg{width:40px;height:40px;color:#d9e6a3}
-h1{font-size:76px;font-weight:650;line-height:1.12;letter-spacing:-2.6px;margin:0}h1 span{color:#d9e6a3}
-footer{border-top:1px solid #343639;padding-top:25px;display:flex;justify-content:space-between;font-size:20px;color:#a7aaae}
+*{box-sizing:border-box}
+html,body{margin:0;width:1200px;height:630px;overflow:hidden;background:#f5f5f7;color:#1d1d1f;font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased}
+body{padding:64px 76px;display:flex;flex-direction:column;justify-content:space-between}
+.brand{display:flex;gap:14px;align-items:center;font-size:34px;font-weight:700;letter-spacing:-.6px}
+.mark{display:grid;place-items:center;width:52px;height:52px;border-radius:12px;background:#0071e3;color:#fff}
+.mark svg{width:30px;height:30px}
+h1{margin:0;font-size:62px;font-weight:700;line-height:1.08;letter-spacing:-1.6px}
+h1 span{color:#6e6e73}
+.shelf{display:flex;gap:22px;align-items:center}
+.shelf img{width:84px;height:84px;object-fit:contain}
+.get{margin-left:auto;padding:12px 30px;border-radius:999px;background:#0071e3;color:#fff;font-size:24px;font-weight:700}
 </style>
-<div class="brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="m12 3 9 5v9l-9 5-9-5V8Z"/><path d="m3 8 9 5 9-5M12 13v9"/></svg><div>maco<span>.</span></div></div>
-<h1>Your next favorite<br>Mac app. <span>Open source.</span></h1>
-<footer><span>Discover. Compare. Make it yours.</span><span>by Koative</span></footer>
+<div class="brand"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"><path d="m12 3 9 5v9l-9 5-9-5V8Z"/><path d="m3 8 9 5 9-5M12 13v9"/></svg></span>Maco</div>
+<h1>Your next favorite Mac app.<br><span>Open source, with the license in view.</span></h1>
+<div class="shelf">
+  <img src="../content/apps/iina/assets/icon.png" alt="">
+  <img src="../content/apps/rectangle/assets/icon.png" alt="">
+  <img src="../content/apps/ghostty/assets/icon.png" alt="">
+  <img src="../content/apps/maccy/assets/icon.png" alt="">
+  <img src="../content/apps/zed/assets/icon.png" alt="">
+  <img src="../content/apps/localsend/assets/icon.png" alt="">
+  <img src="../content/apps/handbrake/assets/icon.png" alt="">
+  <span class="get">Get</span>
+</div>
 </html>

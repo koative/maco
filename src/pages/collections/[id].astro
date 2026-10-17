@@ -1,0 +1,60 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AppIcon from '../../components/AppIcon.astro';
+import AppLockup from '../../components/AppLockup.astro';
+import { getApps } from '../../lib/catalog';
+import { collections } from '../../lib/collections';
+export function getStaticPaths() {
+  return collections.map((collection) => ({
+    params: { id: collection.id },
+    props: { collection },
+  }));
+}
+const { collection } = Astro.props;
+const all = getApps();
+const apps = collection.apps.flatMap((slug) => {
+  const app = all.find((entry) => entry.slug === slug);
+  return app ? [app] : [];
+});
+const others = collections.filter((entry) => entry.id !== collection.id);
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout
+  title={`${collection.name} — Maco`}
+  description={`${collection.description} ${apps.length} open-source Mac apps picked by Maco.`}
+  section={`collections/${collection.id}/`}
+>
+  <header class="page-head">
+    <h1>{collection.name}</h1>
+    <p>{collection.description}</p>
+  </header>
+  <div class="lockup-grid">
+    {apps.map((app) => (
+      <AppLockup app={app} />
+    ))}
+  </div>
+  <section class="section" aria-labelledby="more-collections">
+    <header class="shelf-head">
+      <div>
+        <h2 id="more-collections">More Collections</h2>
+      </div>
+    </header>
+    <ul class="collection-links">
+      {others.map((other) => (
+        <li>
+          <a href={`${base}collections/${other.id}/`}>
+            <span class="collection-icons" aria-hidden="true">
+              {other.apps.slice(0, 3).map((slug) => {
+                const app = all.find((entry) => entry.slug === slug);
+                return app && <AppIcon app={app} size={36} />;
+              })}
+            </span>
+            <span class="collection-name">{other.name}</span>
+            <span class="collection-description">{other.description}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Layout>

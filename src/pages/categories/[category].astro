@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AppLockup from '../../components/AppLockup.astro';
+import CategoryGlyph from '../../components/CategoryGlyph.astro';
+import Shelf from '../../components/Shelf.astro';
+import ShotCard from '../../components/ShotCard.astro';
+import { ChevronLeft } from '@lucide/astro';
+import { getApps, categories } from '../../lib/catalog';
+import { categorySlug } from '../../lib/collections';
+export function getStaticPaths() {
+  return categories.map((category) => ({
+    params: { category: categorySlug(category) },
+    props: { category },
+  }));
+}
+const { category } = Astro.props;
+const apps = getApps().filter((app) => app.category === category);
+const withShots = apps.filter((app) => app.screenshots.length);
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout
+  title={`${category} apps for Mac — Maco`}
+  description={`${apps.length} open-source and source-available ${category.toLowerCase()} apps for macOS, with license details and official download links.`}
+  section={`categories/${categorySlug(category)}/`}
+>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href={`${base}categories/`}>
+      <ChevronLeft size={16} stroke-width={2.4} />
+      Categories
+    </a>
+  </nav>
+  <header class="page-head page-head-glyph">
+    <CategoryGlyph category={category} size={56} />
+    <div>
+      <h1>{category}</h1>
+      <p>{apps.length} apps</p>
+    </div>
+  </header>
+  {withShots.length > 0 && (
+    <Shelf id="in-action" title="See It in Action" variant="shots">
+      {withShots.map((app) => (
+        <ShotCard app={app} />
+      ))}
+    </Shelf>
+  )}
+  <section class="section" aria-labelledby="all-title">
+    <header class="shelf-head">
+      <div>
+        <h2 id="all-title">All {category} Apps</h2>
+      </div>
+    </header>
+    <div class="lockup-grid">
+      {apps.map((app) => (
+        <AppLockup app={app} />
+      ))}
+    </div>
+  </section>
+</Layout>

@@ -2,25 +2,25 @@
 version: 1
 slug: "src-pages-index-astro"
 primary_target: "src/pages/index.astro"
-related_targets: ["src/styles/global.css","src/pages/apps/[slug].astro"]
+related_targets: ["src/layouts/Layout.astro","src/styles/global.css","src/pages/apps/[slug].astro","src/pages/search.astro"]
 ---
 
-# Catalog and application details
+# Maco store shell, Discover, browse, and app pages
 
-Mode: Operate. Replacement visual world explicitly requested after the user rejected the first pastel library design. User chose: dark, sharp, large imagery, premium showcase. Preserve all working catalog behavior and content. Code-led.
+Mode: Operate. Redesign requested 2026-10-17: "move the project to a real App Store experience" with Impeccable. User confirmed: light + dark following the system appearance, Mac App Store sidebar shell. Pinned canon (the user's own words name the category standard); reference product: the macOS App Store (Sonoma/Sequoia) and apps.apple.com. Preserve product truth: Maco name, English UI, license evidence, source-available labelling, URL-backed search filters, no-JS full catalog, provenance of every image.
 
 ## Direction contract
 
-THESIS: An independent software showcase with a sharp dark canvas, confident typography and large authentic application screenshots. Replace the sidebar and pastel cards with a broad horizontal composition.
+seed: none (pinned by the user's brief; no concept roll, the canon was requested by name)
 
-OWN-WORLD: Graphite #111214, lifted surfaces #191b1e, warm-white #f2f2ef, muted silver #a7aaae, restrained golden-olive #d9e6a3 for active controls. One-pixel seams, 12px image panels, large Manrope headings, readable DM Sans body. App screenshots supply color without glow or invented artwork.
+THESIS: A working Mac App Store for open-source software. Sidebar navigation, Discover shelves, category and collection pages, an app product page with a Get button that goes to the official download. Refuses the old one-page dark showcase and any marketing hero, About included.
 
-STORY: Understand the collection at a glance, inspect two screenshot-led spotlights, jump into search and category tabs, open an app's detail and verify source/license before download.
+OWN-WORLD: Apple system palette in light and dark: white / #1e1e1e content, an opaque #f2f2f5 / #262628 sidebar (nothing scrolls beneath a sticky web sidebar, so vibrancy there would be decorative blur; blur lives only on the mobile bars and the spotlight lockup band, which sit over real content), #1d1d1f / #f5f5f7 labels, secondary grey labels, hairline separators, Apple link blue for actions and Get pills on a grey fill, orange for source-available, eleven system colours for category glyph tiles and icon fallbacks. Platform system type (SF on Apple devices), bold large titles, 13–15px UI labels. 16px card radii, pill controls, window shadow only on screenshots.
 
-FIRST VIEWPORT: Centered 1440px shell with 64px desktop gutters, 100px horizontal navigation. A responsive 62–90px headline on the left balances a short introduction and prominent browse action on the right. Beneath it, two wide unequal screenshot-led product stages: IINA and Rectangle. No persistent side rail, pastel panels, or floating decorative dock. Signature interaction: focused screenshot stage reveals its arrow and lifts the genuine app screenshot by 5px, reduced motion stays still.
+STORY: Land on Discover, see real app screenshots in large spotlight cards, scan shelves of lockups (icon, name, summary, Get), jump into a collection, category or search, open an app page, read license/source facts in the info strip, then Get from the official project.
 
-FORM: Dark-first premium software showcase, explicitly pinned by the user; reroll seed reference unavailable. The pinned direction overrides the roll. The dark-console challenger contributes seam precision, and the streaming-wall challenger contributes authentic imagery scale, while navigation remains a familiar web catalog.
+FIRST VIEWPORT: Desktop: 260px sidebar (brand, search field, Discover, Search, Categories, four collections, eleven categories, About/Contribute/GitHub). Main: "Discover" large title with catalogue totals, then a horizontally paged row of two-and-a-bit spotlight cards (tinted stage, real screenshot with window shadow, headline, blurred lockup band with Get over the screenshot's lower edge) and the first lockup shelf's header peeking. Mobile: compact top bar, bottom tab bar (Discover, Categories, Search, About).
 
-FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+FORM: Mac App Store canon executed straight; the world supplies type, palette, density; navigation and controls are standard web controls. Signature move: the app icon lifts from the shelf into the product page header via a cross-document view transition (reduced motion: instant).
 
-Expansion (2026-10-17): preserve the dark design while supporting a larger catalog. Add four editorial collection links, 11 categories, explicit source-availability filtering, and progressive 24-item batches with a visible result total. All records remain present without JavaScript.
+FINISH: desktop + mobile, light + dark captures; detector; finish review; DESIGN.md and design.json rewritten from the built world; README preview and social card recaptured.

@@ -1,515 +1,158 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import AppIcon from '../components/AppIcon.astro';
-import AppCard from '../components/AppCard.astro';
-import Github from '../components/GithubIcon.astro';
+import AppLockup from '../components/AppLockup.astro';
+import CategoryGlyph from '../components/CategoryGlyph.astro';
+import Shelf from '../components/Shelf.astro';
+import ShotCard from '../components/ShotCard.astro';
+import SpotlightCard from '../components/SpotlightCard.astro';
+import { ArrowUpRight } from '@lucide/astro';
 import { getApps, categories } from '../lib/catalog';
-import { collections } from '../lib/collections';
-import {
-  ArrowRight,
-  ArrowUpRight,
-  Search,
-  X,
-  SlidersHorizontal,
-  PackageOpen,
-} from '@lucide/astro';
+import { collections, spotlights, categorySlug } from '../lib/collections';
+import { site } from '../lib/site';
 const apps = getApps();
+const bySlug = new Map(apps.map((app) => [app.slug, app]));
 const openSourceCount = apps.filter(
   (app) => app.sourceAvailability === 'open-source',
 ).length;
-const sourceAvailableCount = apps.length - openSourceCount;
+const sourceAvailable = apps.filter(
+  (app) => app.sourceAvailability === 'source-available',
+);
+const spotlit = spotlights.flatMap((spot) => {
+  const app = bySlug.get(spot.slug);
+  return app?.screenshots.length ? [{ ...spot, app }] : [];
+});
+const inAction = apps.filter(
+  (app) =>
+    app.screenshots.length &&
+    !spotlit.some((spot) => spot.app.slug === app.slug),
+);
 const base = import.meta.env.BASE_URL;
-const picks = ['iina', 'rectangle']
-  .map((slug) => apps.find((app) => app.slug === slug))
-  .filter((app): app is (typeof apps)[number] => !!app);
-const tagCounts = new Map<string, number>();
-apps
-  .flatMap((app) => app.tags)
-  .forEach((tag) => tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1));
-const tags = [...tagCounts.keys()].sort((a, b) => a.localeCompare(b));
 ---
 
-<Layout>
-  <section class="intro" aria-labelledby="intro-title">
-    <h1 id="intro-title">
-      Your Mac.
-      <br />
-      <span>Wide open.</span>
-    </h1>
-    <div class="intro-copy">
-      <p>
-        Remarkable apps. Code you can explore.
-        <br />
-        Discover independent software that makes
-        <br class="desktop-break" /> your everyday a little better.
-      </p>
-      <div class="intro-actions">
-        <a class="button button-light" href="#catalog">
-          Explore the collection <ArrowRight size={18} />
-        </a>
-        <span>{apps.length} apps & counting</span>
-      </div>
-    </div>
-  </section>
-  <section class="featured" aria-labelledby="featured-title">
-    <div class="section-heading">
-      <h2 id="featured-title">In the spotlight</h2>
-      <span>Good places to start.</span>
-    </div>
-    <div class="feature-grid">
-      {picks.map((app, i) => (
-        <a href={`${base}apps/${app.slug}/`} class={`feature feature-${i}`}>
-          <div class="feature-visual">
-            <div class="feature-visual-copy">
-              <h3>
-                {i === 0
-                  ? 'Press play.\nEnjoy everything.'
-                  : 'Less arranging.\nMore doing.'}
-              </h3>
-              <span>
-                {i === 0
-                  ? 'THE MODERN MEDIA PLAYER'
-                  : 'WINDOW MANAGEMENT, SIMPLIFIED'}
-              </span>
-            </div>
-            {app.screenshots.length ? (
-              <img
-                class="spotlight-screen"
-                src={app.screenshots[0].url}
-                alt={app.screenshots[0].alt}
-                loading="eager"
-                width="800"
-                height="500"
-              />
-            ) : (
-              <AppIcon app={app} size={150} eager />
-            )}
-          </div>
-          <div class="feature-bottom">
-            <AppIcon app={app} size={46} eager />
-            <div>
-              <h3>{app.name}</h3>
-              <span>
-                {app.category} <span class="meta-dot">·</span>{' '}
-                {app.license.replace('-only', '')}
-              </span>
-            </div>
-            <span class="feature-open" aria-hidden="true">
-              <ArrowUpRight size={22} />
-            </span>
-          </div>
-        </a>
-      ))}
-    </div>
-  </section>
-  <section class="collections" aria-labelledby="collections-title">
-    <div class="section-heading">
-      <h2 id="collections-title">A good place to start.</h2>
-      <span>Handpicked for the way you work.</span>
-    </div>
-    <div class="collection-grid">
-      {collections.map((collection) => (
-        <a
-          class="collection-link"
-          data-collection-link={collection.id}
-          href={`${base}?collection=${collection.id}#catalog`}
-        >
-          <div class="collection-icons" aria-hidden="true">
-            {collection.apps.slice(0, 3).map((slug) => {
-              const app = apps.find((app) => app.slug === slug);
-              return app && <AppIcon app={app} size={38} />;
-            })}
-          </div>
-          <h3>
-            {collection.name} <ArrowUpRight size={16} />
-          </h3>
-          <p>{collection.description}</p>
-        </a>
-      ))}
-    </div>
-  </section>
-  <section class="catalog" id="catalog" aria-labelledby="catalog-title">
-    <div class="catalog-heading">
+<Layout section="">
+  <header class="page-head">
+    <h1>Discover</h1>
+    <p>
+      {apps.length} Mac apps with published source code: {openSourceCount} open
+      source, {sourceAvailable.length} source available.
+    </p>
+  </header>
+
+  <Shelf id="spotlight" title="In the Spotlight" variant="spotlights">
+    {spotlit.map((spot, index) => (
+      <SpotlightCard
+        app={spot.app}
+        headline={spot.headline}
+        stage={spot.stage}
+        eager={index < 2}
+      />
+    ))}
+  </Shelf>
+
+  {collections.map((collection) => (
+    <Shelf
+      id={`collection-${collection.id}`}
+      title={collection.name}
+      subtitle={collection.description}
+      href={`${base}collections/${collection.id}/`}
+    >
+      {collection.apps.map((slug) => {
+        const app = bySlug.get(slug);
+        return app && <AppLockup app={app} />;
+      })}
+    </Shelf>
+  ))}
+
+  <section class="section" aria-labelledby="categories-title">
+    <header class="shelf-head">
       <div>
-        <h2 id="catalog-title">
-          Find your next favorite.
-          <span class="inline-count">{apps.length}</span>
-        </h2>
-        <p>
-          {openSourceCount} open-source apps
-          {sourceAvailableCount > 0 &&
-            ` + ${sourceAvailableCount} source-available apps, clearly labeled.`}
-        </p>
+        <h2 id="categories-title">Browse by Category</h2>
       </div>
-      <a
-        class="suggest-link"
-        href="https://github.com/koative/maco/issues/new?template=app.yml"
-      >
-        Suggest an app <ArrowUpRight size={16} />
-      </a>
-    </div>
-    <nav class="category-nav" aria-label="App categories">
-      <a href={`${base}#catalog`} data-category="" class="selected">
-        All apps <span>{apps.length}</span>
-      </a>
-      {categories.map((category) => (
-        <a
-          href={`${base}?category=${encodeURIComponent(category)}#catalog`}
-          data-category={category}
-        >
-          {category}
-          <span>{apps.filter((app) => app.category === category).length}</span>
+      <div class="shelf-actions">
+        <a class="see-all" href={`${base}categories/`}>
+          See All<span class="sr-only"> categories</span>
         </a>
+      </div>
+    </header>
+    <ul class="category-grid">
+      {categories.map((category) => (
+        <li>
+          <a
+            class="category-tile"
+            href={`${base}categories/${categorySlug(category)}/`}
+          >
+            <CategoryGlyph category={category} size={36} />
+            <span>{category}</span>
+            <span class="count">
+              {apps.filter((app) => app.category === category).length}
+            </span>
+          </a>
+        </li>
       ))}
-    </nav>
-    <form class="catalog-controls" id="catalog-controls" role="search" hidden>
-      <div class="search-field">
-        <Search size={20} />
-        <label class="sr-only" for="search">
-          Search apps, categories, or tags
-        </label>
-        <input
-          id="search"
-          name="q"
-          type="search"
-          placeholder="Search apps, categories, or tags…"
-          autocomplete="off"
-        />
-        <kbd aria-hidden="true">/</kbd>
-      </div>
-      <div class="select-field">
-        <label class="sr-only" for="category-filter">
-          Category
-        </label>
-        <select id="category-filter" name="category">
-          <option value="">All categories</option>
-          {categories.map((category) => (
-            <option>{category}</option>
-          ))}
-        </select>
-      </div>
-      <div class="select-field sort-field">
-        <label class="sr-only" for="sort">
-          Sort apps
-        </label>
-        <select id="sort" name="sort">
-          <option value="name">Name: A–Z</option>
-          <option value="featured">Featured first</option>
-          <option value="newest">Recently added</option>
-        </select>
-      </div>
-    </form>
-    <div class="filter-line" id="filter-line" hidden>
-      <div class="tag-filter">
-        <SlidersHorizontal size={15} />
-        <label for="tag-filter">Explore by tag</label>
-        <select id="tag-filter">
-          <option value="">All tags</option>
-          {tags.map((tag) => (
-            <option value={tag}>
-              {tag.replaceAll('-', ' ')} ({tagCounts.get(tag)})
-            </option>
-          ))}
-        </select>
-      </div>
-      <div class="tag-filter source-filter">
-        <label for="source-filter">Source</label>
-        <select id="source-filter" name="source">
-          <option value="">All licenses</option>
-          <option value="open-source">Open source only</option>
-          <option value="source-available">Source available</option>
-        </select>
-      </div>
-      <div class="tag-filter collection-filter">
-        <label class="sr-only" for="collection-filter">
-          Collection
-        </label>
-        <select id="collection-filter" name="collection">
-          <option value="">All collections</option>
-          {collections.map((collection) => (
-            <option value={collection.id}>{collection.name}</option>
-          ))}
-        </select>
-      </div>
-      <p id="result-count" role="status" aria-live="polite" aria-atomic="true">
-        Showing all {apps.length} apps
-      </p>
-      <button class="clear-filters" id="clear-filters" type="button" hidden>
-        Clear filters <X size={14} />
-      </button>
-    </div>
-    <noscript>
-      <p class="no-js-note">
-        Browse all apps below. Turn on JavaScript to search and filter the
-        collection.
-      </p>
-    </noscript>
-    <div class="app-grid" id="app-grid">
-      {apps.map((app) => (
-        <AppCard app={app} />
-      ))}
-    </div>
-    <div class="load-more" id="load-more-container" hidden>
-      <button type="button" class="button button-outline" id="load-more">
-        Show more apps <ArrowRight size={16} />
-      </button>
-    </div>
-    <div class="empty-state" id="empty-state" hidden>
-      <PackageOpen size={38} />
-      <h3>No apps found. Yet.</h3>
-      <p>
-        Try another name, category, or tag. Your next favorite might be one
-        filter away.
-      </p>
-      <button type="button" class="button" id="reset-search">
-        Show all apps <ArrowRight size={16} />
-      </button>
-    </div>
+    </ul>
   </section>
-  <section class="open-note">
-    <div class="note-mark">
-      <Github size={29} />
+
+  <Shelf
+    id="in-action"
+    title="See It in Action"
+    subtitle="Real screenshots from each project."
+    variant="shots"
+  >
+    {inAction.map((app) => (
+      <ShotCard app={app} />
+    ))}
+  </Shelf>
+
+  <Shelf
+    id="source-available"
+    title="Source Available"
+    subtitle="Published code with extra license restrictions, explained on every page."
+    href={`${base}search/?source=source-available`}
+  >
+    {sourceAvailable.map((app) => (
+      <AppLockup app={app} />
+    ))}
+  </Shelf>
+
+  <section class="contribute" aria-labelledby="contribute-title">
+    <div class="contribute-icons" aria-hidden="true">
+      {['ghostty', 'iina', 'localsend', 'zed', 'maccy'].map((slug) => {
+        const app = bySlug.get(slug);
+        return app && <AppIcon app={app} size={44} />;
+      })}
     </div>
     <div>
-      <h2>
-        Good software deserves
-        <br />
-        to be discovered.
-      </h2>
+      <h2 id="contribute-title">Know a great open-source Mac app?</h2>
       <p>
-        Know something we should see? This collection is built by people
-        <br class="desktop-break" /> who care about open software. You’re one of
-        them.
+        Every listing is one folder of Markdown and images. Suggest an app, fix
+        a link, or add a better screenshot.
       </p>
     </div>
-    <a
-      class="button button-dark"
-      href="https://github.com/koative/maco/blob/main/CONTRIBUTING.md"
-    >
-      Add to the collection <ArrowUpRight size={17} />
-    </a>
+    <div class="contribute-actions">
+      <a class="button" href={`${site.repository}/issues/new?template=app.yml`}>
+        Suggest an App
+      </a>
+      <a
+        class="button button-secondary"
+        href={`${site.repository}/blob/main/CONTRIBUTING.md`}
+      >
+        Contribution Guide <ArrowUpRight size={15} />
+      </a>
+    </div>
   </section>
 </Layout>
 <script>
-  const controls =
-    document.querySelector<HTMLFormElement>('#catalog-controls')!;
-  const filterLine = document.querySelector<HTMLElement>('#filter-line')!;
-  controls.hidden = false;
-  filterLine.hidden = false;
-  const search = document.querySelector<HTMLInputElement>('#search')!;
-  const category =
-    document.querySelector<HTMLSelectElement>('#category-filter')!;
-  const tag = document.querySelector<HTMLSelectElement>('#tag-filter')!;
-  const source = document.querySelector<HTMLSelectElement>('#source-filter')!;
-  const collection =
-    document.querySelector<HTMLSelectElement>('#collection-filter')!;
-  const moreContainer = document.querySelector<HTMLElement>(
-    '#load-more-container',
-  )!;
-  const more = document.querySelector<HTMLButtonElement>('#load-more')!;
-  const pageSize = 24;
-  let visibleLimit = pageSize;
-  const sort = document.querySelector<HTMLSelectElement>('#sort')!;
-  const grid = document.querySelector<HTMLElement>('#app-grid')!;
-  const cards = [...document.querySelectorAll<HTMLElement>('[data-app]')];
-  const count = document.querySelector<HTMLElement>('#result-count')!;
-  const clear = document.querySelector<HTMLButtonElement>('#clear-filters')!;
-  const empty = document.querySelector<HTMLElement>('#empty-state')!;
-  function readUrl() {
-    const previousLimit = Number(history.state?.catalogLimit);
-    visibleLimit = Number.isFinite(previousLimit)
-      ? Math.max(pageSize, Math.min(cards.length, previousLimit))
-      : pageSize;
-    const params = new URLSearchParams(location.search);
-    search.value = params.get('q') || '';
-    category.value = params.get('category') || '';
-    tag.value = params.get('tag') || '';
-    source.value = params.get('source') || '';
-    collection.value = params.get('collection') || '';
-    sort.value = params.get('sort') || 'name';
-    if (!sort.value) sort.value = 'name';
-  }
-  function update(
-    writeUrl: false | 'replace' | 'push' = 'replace',
-    keepLimit = false,
-  ) {
-    if (!keepLimit) visibleLimit = pageSize;
-    const query = search.value
-      .trim()
-      .toLowerCase()
-      .split(/\s+/)
-      .filter(Boolean);
-    let visible = 0;
-    const sorted = [...cards].sort((a, b) => {
-      if (
-        sort.value === 'featured' &&
-        a.dataset.featured !== b.dataset.featured
-      )
-        return a.dataset.featured === 'true' ? -1 : 1;
-      if (sort.value === 'newest' && a.dataset.added !== b.dataset.added)
-        return b.dataset.added!.localeCompare(a.dataset.added!);
-      return a.dataset.name!.localeCompare(b.dataset.name!);
-    });
-    sorted.forEach((card) => {
-      const matches =
-        query.every((term) => card.dataset.search!.includes(term)) &&
-        (!category.value || card.dataset.category === category.value) &&
-        (!tag.value || card.dataset.tags!.split(',').includes(tag.value)) &&
-        (!source.value || card.dataset.source === source.value) &&
-        (!collection.value ||
-          card.dataset.collections!.split(',').includes(collection.value));
-      if (matches) visible++;
-      card.hidden = !matches || visible > visibleLimit;
-      grid.append(card);
-    });
-    const filtered = !!(
-      search.value ||
-      category.value ||
-      tag.value ||
-      source.value ||
-      collection.value
-    );
-    const shown = Math.min(visible, visibleLimit);
-    count.textContent =
-      visible > shown
-        ? `Showing ${shown} of ${visible} apps`
-        : `${visible === cards.length ? 'Showing all' : 'Showing'} ${visible} ${visible === 1 ? 'app' : 'apps'}${visible !== cards.length ? ` of ${cards.length}` : ''}`;
-    moreContainer.hidden = visible <= visibleLimit;
-    more.textContent = `Show ${Math.min(pageSize, visible - shown)} more apps`;
-    empty.hidden = visible > 0;
-    clear.hidden = !filtered;
-    document
-      .querySelectorAll<HTMLAnchorElement>('.category-nav [data-category]')
-      .forEach((link) => {
-        const selected = link.dataset.category === category.value;
-        link.classList.toggle('selected', selected);
-        if (selected) link.setAttribute('aria-current', 'true');
-        else link.removeAttribute('aria-current');
-      });
-    if (writeUrl) {
-      const url = new URL(location.href);
-      for (const [key, value] of [
-        ['q', search.value.trim()],
-        ['category', category.value],
-        ['tag', tag.value],
-        ['source', source.value],
-        ['collection', collection.value],
-        ['sort', sort.value === 'name' ? '' : sort.value],
-      ]) {
-        if (value) url.searchParams.set(key, value);
-        else url.searchParams.delete(key);
-      }
-      if (url.href !== location.href) {
-        if (writeUrl === 'push')
-          history.pushState({ catalogLimit: visibleLimit }, '', url);
-        else
-          history.replaceState(
-            { ...history.state, catalogLimit: visibleLimit },
-            '',
-            url,
-          );
-      }
-    }
-    history.replaceState(
-      { ...history.state, catalogLimit: visibleLimit },
-      '',
-      location.href,
-    );
-  }
-  controls.addEventListener('submit', (event) => event.preventDefault());
-  search.addEventListener('input', () => update());
-  [category, tag, source, collection, sort].forEach((element) =>
-    element.addEventListener('change', () => update('push')),
+  import { collections } from '../lib/collections';
+  // Links shared before the store had dedicated pages used query filters on the home page.
+  const params = new URLSearchParams(location.search);
+  const collection = collections.find(
+    (entry) => entry.id === params.get('collection'),
   );
-  function reset() {
-    search.value = '';
-    category.value = '';
-    tag.value = '';
-    source.value = '';
-    collection.value = '';
-    sort.value = 'name';
-    update('push');
-    search.focus();
-  }
-  clear.addEventListener('click', reset);
-  document.querySelector('#reset-search')!.addEventListener('click', reset);
-  more.addEventListener('click', () => {
-    const previouslyVisible = new Set(cards.filter((card) => !card.hidden));
-    visibleLimit += pageSize;
-    update(false, true);
-    const firstNew = [...grid.querySelectorAll<HTMLElement>('[data-app]')].find(
-      (card) => !card.hidden && !previouslyVisible.has(card),
-    );
-    firstNew
-      ?.querySelector<HTMLAnchorElement>('.app-card-main')
-      ?.focus({ preventScroll: true });
-  });
-  document
-    .querySelectorAll<HTMLAnchorElement>('[data-collection-link]')
-    .forEach((link) => {
-      link.addEventListener('click', (event) => {
-        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)
-          return;
-        event.preventDefault();
-        search.value = '';
-        category.value = '';
-        tag.value = '';
-        source.value = '';
-        sort.value = 'name';
-        collection.value = link.dataset.collectionLink || '';
-        update('push');
-        document
-          .querySelector('#catalog')!
-          .scrollIntoView({ behavior: 'instant' });
-        collection.focus({ preventScroll: true });
-      });
-    });
-  document
-    .querySelectorAll<HTMLAnchorElement>('.category-nav [data-category]')
-    .forEach((link) =>
-      link.addEventListener('click', (event) => {
-        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)
-          return;
-        event.preventDefault();
-        category.value = link.dataset.category || '';
-        update('push');
-        document.querySelector('#catalog')!.scrollIntoView({
-          behavior: matchMedia('(prefers-reduced-motion: reduce)').matches
-            ? 'instant'
-            : 'smooth',
-        });
-      }),
-    );
-  document
-    .querySelectorAll<HTMLAnchorElement>('[data-tag-link]')
-    .forEach((link) =>
-      link.addEventListener('click', (event) => {
-        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)
-          return;
-        event.preventDefault();
-        tag.value = link.dataset.tagLink || '';
-        update('push');
-        search.focus();
-      }),
-    );
-  document.addEventListener('keydown', (event) => {
-    const target = event.target as HTMLElement;
-    if (
-      event.key === '/' &&
-      !['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName) &&
-      !target.isContentEditable &&
-      !event.ctrlKey &&
-      !event.metaKey &&
-      !event.altKey
-    ) {
-      event.preventDefault();
-      search.focus();
-    }
-  });
-  window.addEventListener('popstate', () => {
-    readUrl();
-    update(false, true);
-  });
-  readUrl();
-  update(false, true);
+  const base = import.meta.env.BASE_URL;
+  if (collection) location.replace(`${base}collections/${collection.id}/`);
+  else if (
+    ['q', 'category', 'tag', 'source', 'sort'].some((key) => params.has(key))
+  )
+    location.replace(`${base}search/${location.search}`);
 </script>

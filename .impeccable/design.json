@@ -1,392 +1,1111 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-17T15:51:18.581421+00:00",
+  "generatedAt": "2026-10-17T17:38:33.527624+00:00",
   "title": "Design System: Maco",
   "extensions": {
     "colorMeta": {
-      "accent": {
+      "bg-light": {
+        "role": "neutral",
+        "displayName": "Canvas (Light)",
+        "canonical": "light-dark(#ffffff, #1e1e1e)",
+        "tonalRamp": [
+          "oklch(15.0% 0.0000 0.00)",
+          "oklch(26.4% 0.0000 0.00)",
+          "oklch(37.9% 0.0000 0.00)",
+          "oklch(49.3% 0.0000 0.00)",
+          "oklch(60.7% 0.0000 0.00)",
+          "oklch(72.1% 0.0000 0.00)",
+          "oklch(83.6% 0.0000 0.00)",
+          "oklch(95.0% 0.0000 0.00)"
+        ]
+      },
+      "bg-dark": {
+        "role": "neutral",
+        "displayName": "Canvas (Dark)",
+        "canonical": "light-dark(#ffffff, #1e1e1e)",
+        "tonalRamp": [
+          "oklch(15.0% 0.0000 0.00)",
+          "oklch(26.4% 0.0000 0.00)",
+          "oklch(37.9% 0.0000 0.00)",
+          "oklch(49.3% 0.0000 0.00)",
+          "oklch(60.7% 0.0000 0.00)",
+          "oklch(72.1% 0.0000 0.00)",
+          "oklch(83.6% 0.0000 0.00)",
+          "oklch(95.0% 0.0000 0.00)"
+        ]
+      },
+      "bg-sidebar-light": {
+        "role": "neutral",
+        "displayName": "Sidebar Grey (Light)",
+        "canonical": "light-dark(#f2f2f5, #262628)",
+        "tonalRamp": [
+          "oklch(15.0% 0.0040 286.32)",
+          "oklch(26.4% 0.0040 286.32)",
+          "oklch(37.9% 0.0040 286.32)",
+          "oklch(49.3% 0.0040 286.32)",
+          "oklch(60.7% 0.0040 286.32)",
+          "oklch(72.1% 0.0040 286.32)",
+          "oklch(83.6% 0.0040 286.32)",
+          "oklch(95.0% 0.0040 286.32)"
+        ]
+      },
+      "bg-sidebar-dark": {
+        "role": "neutral",
+        "displayName": "Sidebar Grey (Dark)",
+        "canonical": "light-dark(#f2f2f5, #262628)",
+        "tonalRamp": [
+          "oklch(15.0% 0.0037 286.15)",
+          "oklch(26.4% 0.0037 286.15)",
+          "oklch(37.9% 0.0037 286.15)",
+          "oklch(49.3% 0.0037 286.15)",
+          "oklch(60.7% 0.0037 286.15)",
+          "oklch(72.1% 0.0037 286.15)",
+          "oklch(83.6% 0.0037 286.15)",
+          "oklch(95.0% 0.0037 286.15)"
+        ]
+      },
+      "bg-elevated-light": {
+        "role": "neutral",
+        "displayName": "Elevated Grey (Light)",
+        "canonical": "light-dark(#f5f5f7, #2c2c2e)",
+        "tonalRamp": [
+          "oklch(15.0% 0.0027 286.35)",
+          "oklch(26.4% 0.0027 286.35)",
+          "oklch(37.9% 0.0027 286.35)",
+          "oklch(49.3% 0.0027 286.35)",
+          "oklch(60.7% 0.0027 286.35)",
+          "oklch(72.1% 0.0027 286.35)",
+          "oklch(83.6% 0.0027 286.35)",
+          "oklch(95.0% 0.0027 286.35)"
+        ]
+      },
+      "bg-elevated-dark": {
+        "role": "neutral",
+        "displayName": "Elevated Grey (Dark)",
+        "canonical": "light-dark(#f5f5f7, #2c2c2e)",
+        "tonalRamp": [
+          "oklch(15.0% 0.0036 286.18)",
+          "oklch(26.4% 0.0036 286.18)",
+          "oklch(37.9% 0.0036 286.18)",
+          "oklch(49.3% 0.0036 286.18)",
+          "oklch(60.7% 0.0036 286.18)",
+          "oklch(72.1% 0.0036 286.18)",
+          "oklch(83.6% 0.0036 286.18)",
+          "oklch(95.0% 0.0036 286.18)"
+        ]
+      },
+      "bg-bar-light": {
+        "role": "neutral",
+        "displayName": "Bar Glass (Light)",
+        "canonical": "light-dark(rgb(250 250 252 / 0.8), rgb(30 30 30 / 0.78))",
+        "tonalRamp": [
+          "oklch(15.0% 0.0026 286.35)",
+          "oklch(26.4% 0.0026 286.35)",
+          "oklch(37.9% 0.0026 286.35)",
+          "oklch(49.3% 0.0026 286.35)",
+          "oklch(60.7% 0.0026 286.35)",
+          "oklch(72.1% 0.0026 286.35)",
+          "oklch(83.6% 0.0026 286.35)",
+          "oklch(95.0% 0.0026 286.35)"
+        ]
+      },
+      "bg-bar-dark": {
+        "role": "neutral",
+        "displayName": "Bar Glass (Dark)",
+        "canonical": "light-dark(rgb(250 250 252 / 0.8), rgb(30 30 30 / 0.78))",
+        "tonalRamp": [
+          "oklch(15.0% 0.0000 0.00)",
+          "oklch(26.4% 0.0000 0.00)",
+          "oklch(37.9% 0.0000 0.00)",
+          "oklch(49.3% 0.0000 0.00)",
+          "oklch(60.7% 0.0000 0.00)",
+          "oklch(72.1% 0.0000 0.00)",
+          "oklch(83.6% 0.0000 0.00)",
+          "oklch(95.0% 0.0000 0.00)"
+        ]
+      },
+      "fill-light": {
+        "role": "neutral",
+        "displayName": "Fill (Light)",
+        "canonical": "light-dark(#e8e8ed, #3a3a3c)",
+        "tonalRamp": [
+          "oklch(15.0% 0.0067 286.27)",
+          "oklch(26.4% 0.0067 286.27)",
+          "oklch(37.9% 0.0067 286.27)",
+          "oklch(49.3% 0.0067 286.27)",
+          "oklch(60.7% 0.0067 286.27)",
+          "oklch(72.1% 0.0067 286.27)",
+          "oklch(83.6% 0.0067 286.27)",
+          "oklch(95.0% 0.0067 286.27)"
+        ]
+      },
+      "fill-dark": {
+        "role": "neutral",
+        "displayName": "Fill (Dark)",
+        "canonical": "light-dark(#e8e8ed, #3a3a3c)",
+        "tonalRamp": [
+          "oklch(15.0% 0.0034 286.22)",
+          "oklch(26.4% 0.0034 286.22)",
+          "oklch(37.9% 0.0034 286.22)",
+          "oklch(49.3% 0.0034 286.22)",
+          "oklch(60.7% 0.0034 286.22)",
+          "oklch(72.1% 0.0034 286.22)",
+          "oklch(83.6% 0.0034 286.22)",
+          "oklch(95.0% 0.0034 286.22)"
+        ]
+      },
+      "fill-hover-light": {
+        "role": "neutral",
+        "displayName": "Fill Hover (Light)",
+        "canonical": "light-dark(#dcdce2, #464649)",
+        "tonalRamp": [
+          "oklch(15.0% 0.0081 286.23)",
+          "oklch(26.4% 0.0081 286.23)",
+          "oklch(37.9% 0.0081 286.23)",
+          "oklch(49.3% 0.0081 286.23)",
+          "oklch(60.7% 0.0081 286.23)",
+          "oklch(72.1% 0.0081 286.23)",
+          "oklch(83.6% 0.0081 286.23)",
+          "oklch(95.0% 0.0081 286.23)"
+        ]
+      },
+      "fill-hover-dark": {
+        "role": "neutral",
+        "displayName": "Fill Hover (Dark)",
+        "canonical": "light-dark(#dcdce2, #464649)",
+        "tonalRamp": [
+          "oklch(15.0% 0.0050 286.17)",
+          "oklch(26.4% 0.0050 286.17)",
+          "oklch(37.9% 0.0050 286.17)",
+          "oklch(49.3% 0.0050 286.17)",
+          "oklch(60.7% 0.0050 286.17)",
+          "oklch(72.1% 0.0050 286.17)",
+          "oklch(83.6% 0.0050 286.17)",
+          "oklch(95.0% 0.0050 286.17)"
+        ]
+      },
+      "field-light": {
+        "role": "neutral",
+        "displayName": "Field (Light)",
+        "canonical": "light-dark(rgb(0 0 0 / 0.055), rgb(255 255 255 / 0.08))",
+        "tonalRamp": [
+          "oklch(15.0% 0.0000 0.00)",
+          "oklch(26.4% 0.0000 0.00)",
+          "oklch(37.9% 0.0000 0.00)",
+          "oklch(49.3% 0.0000 0.00)",
+          "oklch(60.7% 0.0000 0.00)",
+          "oklch(72.1% 0.0000 0.00)",
+          "oklch(83.6% 0.0000 0.00)",
+          "oklch(95.0% 0.0000 0.00)"
+        ]
+      },
+      "field-dark": {
+        "role": "neutral",
+        "displayName": "Field (Dark)",
+        "canonical": "light-dark(rgb(0 0 0 / 0.055), rgb(255 255 255 / 0.08))",
+        "tonalRamp": [
+          "oklch(15.0% 0.0000 0.00)",
+          "oklch(26.4% 0.0000 0.00)",
+          "oklch(37.9% 0.0000 0.00)",
+          "oklch(49.3% 0.0000 0.00)",
+          "oklch(60.7% 0.0000 0.00)",
+          "oklch(72.1% 0.0000 0.00)",
+          "oklch(83.6% 0.0000 0.00)",
+          "oklch(95.0% 0.0000 0.00)"
+        ]
+      },
+      "selected-light": {
+        "role": "neutral",
+        "displayName": "Selected (Light)",
+        "canonical": "light-dark(rgb(0 0 0 / 0.075), rgb(255 255 255 / 0.1))",
+        "tonalRamp": [
+          "oklch(15.0% 0.0000 0.00)",
+          "oklch(26.4% 0.0000 0.00)",
+          "oklch(37.9% 0.0000 0.00)",
+          "oklch(49.3% 0.0000 0.00)",
+          "oklch(60.7% 0.0000 0.00)",
+          "oklch(72.1% 0.0000 0.00)",
+          "oklch(83.6% 0.0000 0.00)",
+          "oklch(95.0% 0.0000 0.00)"
+        ]
+      },
+      "selected-dark": {
+        "role": "neutral",
+        "displayName": "Selected (Dark)",
+        "canonical": "light-dark(rgb(0 0 0 / 0.075), rgb(255 255 255 / 0.1))",
+        "tonalRamp": [
+          "oklch(15.0% 0.0000 0.00)",
+          "oklch(26.4% 0.0000 0.00)",
+          "oklch(37.9% 0.0000 0.00)",
+          "oklch(49.3% 0.0000 0.00)",
+          "oklch(60.7% 0.0000 0.00)",
+          "oklch(72.1% 0.0000 0.00)",
+          "oklch(83.6% 0.0000 0.00)",
+          "oklch(95.0% 0.0000 0.00)"
+        ]
+      },
+      "segment-thumb-light": {
+        "role": "neutral",
+        "displayName": "Segment Thumb (Light)",
+        "canonical": "light-dark(#fff, #636366)",
+        "tonalRamp": [
+          "oklch(15.0% 0.0000 0.00)",
+          "oklch(26.4% 0.0000 0.00)",
+          "oklch(37.9% 0.0000 0.00)",
+          "oklch(49.3% 0.0000 0.00)",
+          "oklch(60.7% 0.0000 0.00)",
+          "oklch(72.1% 0.0000 0.00)",
+          "oklch(83.6% 0.0000 0.00)",
+          "oklch(95.0% 0.0000 0.00)"
+        ]
+      },
+      "segment-thumb-dark": {
+        "role": "neutral",
+        "displayName": "Segment Thumb (Dark)",
+        "canonical": "light-dark(#fff, #636366)",
+        "tonalRamp": [
+          "oklch(15.0% 0.0047 286.23)",
+          "oklch(26.4% 0.0047 286.23)",
+          "oklch(37.9% 0.0047 286.23)",
+          "oklch(49.3% 0.0047 286.23)",
+          "oklch(60.7% 0.0047 286.23)",
+          "oklch(72.1% 0.0047 286.23)",
+          "oklch(83.6% 0.0047 286.23)",
+          "oklch(95.0% 0.0047 286.23)"
+        ]
+      },
+      "label-light": {
+        "role": "neutral",
+        "displayName": "Label (Light)",
+        "canonical": "light-dark(#1d1d1f, #f5f5f7)",
+        "tonalRamp": [
+          "oklch(15.0% 0.0038 286.10)",
+          "oklch(26.4% 0.0038 286.10)",
+          "oklch(37.9% 0.0038 286.10)",
+          "oklch(49.3% 0.0038 286.10)",
+          "oklch(60.7% 0.0038 286.10)",
+          "oklch(72.1% 0.0038 286.10)",
+          "oklch(83.6% 0.0038 286.10)",
+          "oklch(95.0% 0.0038 286.10)"
+        ]
+      },
+      "label-dark": {
+        "role": "neutral",
+        "displayName": "Label (Dark)",
+        "canonical": "light-dark(#1d1d1f, #f5f5f7)",
+        "tonalRamp": [
+          "oklch(15.0% 0.0027 286.35)",
+          "oklch(26.4% 0.0027 286.35)",
+          "oklch(37.9% 0.0027 286.35)",
+          "oklch(49.3% 0.0027 286.35)",
+          "oklch(60.7% 0.0027 286.35)",
+          "oklch(72.1% 0.0027 286.35)",
+          "oklch(83.6% 0.0027 286.35)",
+          "oklch(95.0% 0.0027 286.35)"
+        ]
+      },
+      "label-2-light": {
+        "role": "neutral",
+        "displayName": "Secondary Label (Light)",
+        "canonical": "light-dark(#6e6e73, #a1a1a6)",
+        "tonalRamp": [
+          "oklch(15.0% 0.0077 286.14)",
+          "oklch(26.4% 0.0077 286.14)",
+          "oklch(37.9% 0.0077 286.14)",
+          "oklch(49.3% 0.0077 286.14)",
+          "oklch(60.7% 0.0077 286.14)",
+          "oklch(72.1% 0.0077 286.14)",
+          "oklch(83.6% 0.0077 286.14)",
+          "oklch(95.0% 0.0077 286.14)"
+        ]
+      },
+      "label-2-dark": {
+        "role": "neutral",
+        "displayName": "Secondary Label (Dark)",
+        "canonical": "light-dark(#6e6e73, #a1a1a6)",
+        "tonalRamp": [
+          "oklch(15.0% 0.0072 286.22)",
+          "oklch(26.4% 0.0072 286.22)",
+          "oklch(37.9% 0.0072 286.22)",
+          "oklch(49.3% 0.0072 286.22)",
+          "oklch(60.7% 0.0072 286.22)",
+          "oklch(72.1% 0.0072 286.22)",
+          "oklch(83.6% 0.0072 286.22)",
+          "oklch(95.0% 0.0072 286.22)"
+        ]
+      },
+      "separator-light": {
+        "role": "neutral",
+        "displayName": "Separator (Light)",
+        "canonical": "light-dark(rgb(0 0 0 / 0.1), rgb(255 255 255 / 0.12))",
+        "tonalRamp": [
+          "oklch(15.0% 0.0000 0.00)",
+          "oklch(26.4% 0.0000 0.00)",
+          "oklch(37.9% 0.0000 0.00)",
+          "oklch(49.3% 0.0000 0.00)",
+          "oklch(60.7% 0.0000 0.00)",
+          "oklch(72.1% 0.0000 0.00)",
+          "oklch(83.6% 0.0000 0.00)",
+          "oklch(95.0% 0.0000 0.00)"
+        ]
+      },
+      "separator-dark": {
+        "role": "neutral",
+        "displayName": "Separator (Dark)",
+        "canonical": "light-dark(rgb(0 0 0 / 0.1), rgb(255 255 255 / 0.12))",
+        "tonalRamp": [
+          "oklch(15.0% 0.0000 0.00)",
+          "oklch(26.4% 0.0000 0.00)",
+          "oklch(37.9% 0.0000 0.00)",
+          "oklch(49.3% 0.0000 0.00)",
+          "oklch(60.7% 0.0000 0.00)",
+          "oklch(72.1% 0.0000 0.00)",
+          "oklch(83.6% 0.0000 0.00)",
+          "oklch(95.0% 0.0000 0.00)"
+        ]
+      },
+      "link-light": {
         "role": "primary",
-        "displayName": "Golden Olive",
-        "canonical": "#d9e6a3",
+        "displayName": "Link Blue (Light)",
+        "canonical": "light-dark(#0066cc, #3c9dff)",
         "tonalRamp": [
-          "oklch(15.0% 0.0880 117.13)",
-          "oklch(26.4% 0.0880 117.13)",
-          "oklch(37.9% 0.0880 117.13)",
-          "oklch(49.3% 0.0880 117.13)",
-          "oklch(60.7% 0.0880 117.13)",
-          "oklch(72.1% 0.0880 117.13)",
-          "oklch(83.6% 0.0880 117.13)",
-          "oklch(95.0% 0.0880 117.13)"
+          "oklch(15.0% 0.1771 255.83)",
+          "oklch(26.4% 0.1771 255.83)",
+          "oklch(37.9% 0.1771 255.83)",
+          "oklch(49.3% 0.1771 255.83)",
+          "oklch(60.7% 0.1771 255.83)",
+          "oklch(72.1% 0.1771 255.83)",
+          "oklch(83.6% 0.1771 255.83)",
+          "oklch(95.0% 0.1771 255.83)"
         ]
       },
-      "accent-hover": {
+      "link-dark": {
         "role": "primary",
-        "displayName": "Pale Olive",
-        "canonical": "#e6efc5",
+        "displayName": "Link Blue (Dark)",
+        "canonical": "light-dark(#0066cc, #3c9dff)",
         "tonalRamp": [
-          "oklch(15.0% 0.0559 117.32)",
-          "oklch(26.4% 0.0559 117.32)",
-          "oklch(37.9% 0.0559 117.32)",
-          "oklch(49.3% 0.0559 117.32)",
-          "oklch(60.7% 0.0559 117.32)",
-          "oklch(72.1% 0.0559 117.32)",
-          "oklch(83.6% 0.0559 117.32)",
-          "oklch(95.0% 0.0559 117.32)"
+          "oklch(15.0% 0.1700 251.96)",
+          "oklch(26.4% 0.1700 251.96)",
+          "oklch(37.9% 0.1700 251.96)",
+          "oklch(49.3% 0.1700 251.96)",
+          "oklch(60.7% 0.1700 251.96)",
+          "oklch(72.1% 0.1700 251.96)",
+          "oklch(83.6% 0.1700 251.96)",
+          "oklch(95.0% 0.1700 251.96)"
         ]
       },
-      "accent-ink": {
+      "get-ink-light": {
         "role": "primary",
-        "displayName": "Olive Ink",
-        "canonical": "#202417",
+        "displayName": "Get Blue (Light)",
+        "canonical": "light-dark(#0066cc, #6cb4ff)",
         "tonalRamp": [
-          "oklch(15.0% 0.0241 122.03)",
-          "oklch(26.4% 0.0241 122.03)",
-          "oklch(37.9% 0.0241 122.03)",
-          "oklch(49.3% 0.0241 122.03)",
-          "oklch(60.7% 0.0241 122.03)",
-          "oklch(72.1% 0.0241 122.03)",
-          "oklch(83.6% 0.0241 122.03)",
-          "oklch(95.0% 0.0241 122.03)"
+          "oklch(15.0% 0.1771 255.83)",
+          "oklch(26.4% 0.1771 255.83)",
+          "oklch(37.9% 0.1771 255.83)",
+          "oklch(49.3% 0.1771 255.83)",
+          "oklch(60.7% 0.1771 255.83)",
+          "oklch(72.1% 0.1771 255.83)",
+          "oklch(83.6% 0.1771 255.83)",
+          "oklch(95.0% 0.1771 255.83)"
         ]
       },
-      "paper": {
-        "role": "neutral",
-        "displayName": "Graphite",
-        "canonical": "#111214",
+      "get-ink-dark": {
+        "role": "primary",
+        "displayName": "Get Blue (Dark)",
+        "canonical": "light-dark(#0066cc, #6cb4ff)",
         "tonalRamp": [
-          "oklch(15.0% 0.0044 264.46)",
-          "oklch(26.4% 0.0044 264.46)",
-          "oklch(37.9% 0.0044 264.46)",
-          "oklch(49.3% 0.0044 264.46)",
-          "oklch(60.7% 0.0044 264.46)",
-          "oklch(72.1% 0.0044 264.46)",
-          "oklch(83.6% 0.0044 264.46)",
-          "oklch(95.0% 0.0044 264.46)"
+          "oklch(15.0% 0.1309 250.83)",
+          "oklch(26.4% 0.1309 250.83)",
+          "oklch(37.9% 0.1309 250.83)",
+          "oklch(49.3% 0.1309 250.83)",
+          "oklch(60.7% 0.1309 250.83)",
+          "oklch(72.1% 0.1309 250.83)",
+          "oklch(83.6% 0.1309 250.83)",
+          "oklch(95.0% 0.1309 250.83)"
         ]
       },
-      "surface": {
-        "role": "neutral",
-        "displayName": "Lifted Graphite",
-        "canonical": "#191b1e",
+      "accent-fill": {
+        "role": "primary",
+        "displayName": "Action Blue",
+        "canonical": "#0071e3",
         "tonalRamp": [
-          "oklch(15.0% 0.0066 258.37)",
-          "oklch(26.4% 0.0066 258.37)",
-          "oklch(37.9% 0.0066 258.37)",
-          "oklch(49.3% 0.0066 258.37)",
-          "oklch(60.7% 0.0066 258.37)",
-          "oklch(72.1% 0.0066 258.37)",
-          "oklch(83.6% 0.0066 258.37)",
-          "oklch(95.0% 0.0066 258.37)"
+          "oklch(15.0% 0.1933 256.16)",
+          "oklch(26.4% 0.1933 256.16)",
+          "oklch(37.9% 0.1933 256.16)",
+          "oklch(49.3% 0.1933 256.16)",
+          "oklch(60.7% 0.1933 256.16)",
+          "oklch(72.1% 0.1933 256.16)",
+          "oklch(83.6% 0.1933 256.16)",
+          "oklch(95.0% 0.1933 256.16)"
         ]
       },
-      "raised": {
-        "role": "neutral",
-        "displayName": "Charcoal",
-        "canonical": "#222428",
+      "accent-fill-hover": {
+        "role": "primary",
+        "displayName": "Action Blue Hover",
+        "canonical": "#0077ed",
         "tonalRamp": [
-          "oklch(15.0% 0.0080 264.43)",
-          "oklch(26.4% 0.0080 264.43)",
-          "oklch(37.9% 0.0080 264.43)",
-          "oklch(49.3% 0.0080 264.43)",
-          "oklch(60.7% 0.0080 264.43)",
-          "oklch(72.1% 0.0080 264.43)",
-          "oklch(83.6% 0.0080 264.43)",
-          "oklch(95.0% 0.0080 264.43)"
+          "oklch(15.0% 0.1989 255.97)",
+          "oklch(26.4% 0.1989 255.97)",
+          "oklch(37.9% 0.1989 255.97)",
+          "oklch(49.3% 0.1989 255.97)",
+          "oklch(60.7% 0.1989 255.97)",
+          "oklch(72.1% 0.1989 255.97)",
+          "oklch(83.6% 0.1989 255.97)",
+          "oklch(95.0% 0.1989 255.97)"
         ]
       },
-      "ink": {
+      "on-color": {
         "role": "neutral",
-        "displayName": "Warm White",
-        "canonical": "#f2f2ef",
+        "displayName": "White on Colour",
+        "canonical": "#fff",
         "tonalRamp": [
-          "oklch(15.0% 0.0040 106.47)",
-          "oklch(26.4% 0.0040 106.47)",
-          "oklch(37.9% 0.0040 106.47)",
-          "oklch(49.3% 0.0040 106.47)",
-          "oklch(60.7% 0.0040 106.47)",
-          "oklch(72.1% 0.0040 106.47)",
-          "oklch(83.6% 0.0040 106.47)",
-          "oklch(95.0% 0.0040 106.47)"
+          "oklch(15.0% 0.0000 0.00)",
+          "oklch(26.4% 0.0000 0.00)",
+          "oklch(37.9% 0.0000 0.00)",
+          "oklch(49.3% 0.0000 0.00)",
+          "oklch(60.7% 0.0000 0.00)",
+          "oklch(72.1% 0.0000 0.00)",
+          "oklch(83.6% 0.0000 0.00)",
+          "oklch(95.0% 0.0000 0.00)"
         ]
       },
-      "muted": {
-        "role": "neutral",
-        "displayName": "Muted Silver",
-        "canonical": "#a7aaae",
+      "orange-light": {
+        "role": "secondary",
+        "displayName": "Source-Available Orange (Light)",
+        "canonical": "light-dark(#c93400, #ff9f0a)",
         "tonalRamp": [
-          "oklch(15.0% 0.0067 255.49)",
-          "oklch(26.4% 0.0067 255.49)",
-          "oklch(37.9% 0.0067 255.49)",
-          "oklch(49.3% 0.0067 255.49)",
-          "oklch(60.7% 0.0067 255.49)",
-          "oklch(72.1% 0.0067 255.49)",
-          "oklch(83.6% 0.0067 255.49)",
-          "oklch(95.0% 0.0067 255.49)"
+          "oklch(15.0% 0.1920 35.33)",
+          "oklch(26.4% 0.1920 35.33)",
+          "oklch(37.9% 0.1920 35.33)",
+          "oklch(49.3% 0.1920 35.33)",
+          "oklch(60.7% 0.1920 35.33)",
+          "oklch(72.1% 0.1920 35.33)",
+          "oklch(83.6% 0.1920 35.33)",
+          "oklch(95.0% 0.1920 35.33)"
         ]
       },
-      "line": {
-        "role": "neutral",
-        "displayName": "Seam Gray",
-        "canonical": "#303236",
+      "orange-dark": {
+        "role": "secondary",
+        "displayName": "Source-Available Orange (Dark)",
+        "canonical": "light-dark(#c93400, #ff9f0a)",
         "tonalRamp": [
-          "oklch(15.0% 0.0076 264.46)",
-          "oklch(26.4% 0.0076 264.46)",
-          "oklch(37.9% 0.0076 264.46)",
-          "oklch(49.3% 0.0076 264.46)",
-          "oklch(60.7% 0.0076 264.46)",
-          "oklch(72.1% 0.0076 264.46)",
-          "oklch(83.6% 0.0076 264.46)",
-          "oklch(95.0% 0.0076 264.46)"
+          "oklch(15.0% 0.1711 67.22)",
+          "oklch(26.4% 0.1711 67.22)",
+          "oklch(37.9% 0.1711 67.22)",
+          "oklch(49.3% 0.1711 67.22)",
+          "oklch(60.7% 0.1711 67.22)",
+          "oklch(72.1% 0.1711 67.22)",
+          "oklch(83.6% 0.1711 67.22)",
+          "oklch(95.0% 0.1711 67.22)"
         ]
       },
-      "control-border": {
-        "role": "neutral",
-        "displayName": "Control Silver",
-        "canonical": "#727983",
+      "orange-fill-light": {
+        "role": "secondary",
+        "displayName": "Source-Available Fill (Light)",
+        "canonical": "light-dark(#fff4e8, rgb(255 159 10 / 0.12))",
         "tonalRamp": [
-          "oklch(15.0% 0.0175 257.23)",
-          "oklch(26.4% 0.0175 257.23)",
-          "oklch(37.9% 0.0175 257.23)",
-          "oklch(49.3% 0.0175 257.23)",
-          "oklch(60.7% 0.0175 257.23)",
-          "oklch(72.1% 0.0175 257.23)",
-          "oklch(83.6% 0.0175 257.23)",
-          "oklch(95.0% 0.0175 257.23)"
+          "oklch(15.0% 0.0198 70.00)",
+          "oklch(26.4% 0.0198 70.00)",
+          "oklch(37.9% 0.0198 70.00)",
+          "oklch(49.3% 0.0198 70.00)",
+          "oklch(60.7% 0.0198 70.00)",
+          "oklch(72.1% 0.0198 70.00)",
+          "oklch(83.6% 0.0198 70.00)",
+          "oklch(95.0% 0.0198 70.00)"
         ]
       },
-      "tag-surface": {
-        "role": "neutral",
-        "displayName": "Tag Charcoal",
-        "canonical": "#24272c",
+      "orange-fill-dark": {
+        "role": "secondary",
+        "displayName": "Source-Available Fill (Dark)",
+        "canonical": "light-dark(#fff4e8, rgb(255 159 10 / 0.12))",
         "tonalRamp": [
-          "oklch(15.0% 0.0102 260.70)",
-          "oklch(26.4% 0.0102 260.70)",
-          "oklch(37.9% 0.0102 260.70)",
-          "oklch(49.3% 0.0102 260.70)",
-          "oklch(60.7% 0.0102 260.70)",
-          "oklch(72.1% 0.0102 260.70)",
-          "oklch(83.6% 0.0102 260.70)",
-          "oklch(95.0% 0.0102 260.70)"
+          "oklch(15.0% 0.1711 67.22)",
+          "oklch(26.4% 0.1711 67.22)",
+          "oklch(37.9% 0.1711 67.22)",
+          "oklch(49.3% 0.1711 67.22)",
+          "oklch(60.7% 0.1711 67.22)",
+          "oklch(72.1% 0.1711 67.22)",
+          "oklch(83.6% 0.1711 67.22)",
+          "oklch(95.0% 0.1711 67.22)"
         ]
       },
-      "tag-ink": {
-        "role": "neutral",
-        "displayName": "Tag Silver",
-        "canonical": "#bbc3cf",
+      "cat-productivity": {
+        "role": "tertiary",
+        "displayName": "Productivity Blue",
+        "canonical": "#007aff",
         "tonalRamp": [
-          "oklch(15.0% 0.0190 258.36)",
-          "oklch(26.4% 0.0190 258.36)",
-          "oklch(37.9% 0.0190 258.36)",
-          "oklch(49.3% 0.0190 258.36)",
-          "oklch(60.7% 0.0190 258.36)",
-          "oklch(72.1% 0.0190 258.36)",
-          "oklch(83.6% 0.0190 258.36)",
-          "oklch(95.0% 0.0190 258.36)"
+          "oklch(15.0% 0.2177 257.42)",
+          "oklch(26.4% 0.2177 257.42)",
+          "oklch(37.9% 0.2177 257.42)",
+          "oklch(49.3% 0.2177 257.42)",
+          "oklch(60.7% 0.2177 257.42)",
+          "oklch(72.1% 0.2177 257.42)",
+          "oklch(83.6% 0.2177 257.42)",
+          "oklch(95.0% 0.2177 257.42)"
         ]
       },
-      "button-hover": {
-        "role": "neutral",
-        "displayName": "Hover Charcoal",
-        "canonical": "#303339",
+      "cat-developer-tools": {
+        "role": "tertiary",
+        "displayName": "Developer Tools Indigo",
+        "canonical": "#5e5ce6",
         "tonalRamp": [
-          "oklch(15.0% 0.0115 264.40)",
-          "oklch(26.4% 0.0115 264.40)",
-          "oklch(37.9% 0.0115 264.40)",
-          "oklch(49.3% 0.0115 264.40)",
-          "oklch(60.7% 0.0115 264.40)",
-          "oklch(72.1% 0.0115 264.40)",
-          "oklch(83.6% 0.0115 264.40)",
-          "oklch(95.0% 0.0115 264.40)"
+          "oklch(15.0% 0.2032 278.15)",
+          "oklch(26.4% 0.2032 278.15)",
+          "oklch(37.9% 0.2032 278.15)",
+          "oklch(49.3% 0.2032 278.15)",
+          "oklch(60.7% 0.2032 278.15)",
+          "oklch(72.1% 0.2032 278.15)",
+          "oklch(83.6% 0.2032 278.15)",
+          "oklch(95.0% 0.2032 278.15)"
         ]
       },
-      "selected-ink": {
-        "role": "neutral",
-        "displayName": "Selected Category Ink",
-        "canonical": "#1b1e23",
+      "cat-utilities": {
+        "role": "tertiary",
+        "displayName": "Utilities Grey",
+        "canonical": "#636366",
         "tonalRamp": [
-          "oklch(15.0% 0.0106 260.69)",
-          "oklch(26.4% 0.0106 260.69)",
-          "oklch(37.9% 0.0106 260.69)",
-          "oklch(49.3% 0.0106 260.69)",
-          "oklch(60.7% 0.0106 260.69)",
-          "oklch(72.1% 0.0106 260.69)",
-          "oklch(83.6% 0.0106 260.69)",
-          "oklch(95.0% 0.0106 260.69)"
+          "oklch(15.0% 0.0047 286.23)",
+          "oklch(26.4% 0.0047 286.23)",
+          "oklch(37.9% 0.0047 286.23)",
+          "oklch(49.3% 0.0047 286.23)",
+          "oklch(60.7% 0.0047 286.23)",
+          "oklch(72.1% 0.0047 286.23)",
+          "oklch(83.6% 0.0047 286.23)",
+          "oklch(95.0% 0.0047 286.23)"
+        ]
+      },
+      "cat-media": {
+        "role": "tertiary",
+        "displayName": "Media Pink",
+        "canonical": "#ff2d55",
+        "tonalRamp": [
+          "oklch(15.0% 0.2383 17.90)",
+          "oklch(26.4% 0.2383 17.90)",
+          "oklch(37.9% 0.2383 17.90)",
+          "oklch(49.3% 0.2383 17.90)",
+          "oklch(60.7% 0.2383 17.90)",
+          "oklch(72.1% 0.2383 17.90)",
+          "oklch(83.6% 0.2383 17.90)",
+          "oklch(95.0% 0.2383 17.90)"
+        ]
+      },
+      "cat-privacy-security": {
+        "role": "tertiary",
+        "displayName": "Privacy Green",
+        "canonical": "#248a3d",
+        "tonalRamp": [
+          "oklch(15.0% 0.1461 147.50)",
+          "oklch(26.4% 0.1461 147.50)",
+          "oklch(37.9% 0.1461 147.50)",
+          "oklch(49.3% 0.1461 147.50)",
+          "oklch(60.7% 0.1461 147.50)",
+          "oklch(72.1% 0.1461 147.50)",
+          "oklch(83.6% 0.1461 147.50)",
+          "oklch(95.0% 0.1461 147.50)"
+        ]
+      },
+      "cat-writing": {
+        "role": "tertiary",
+        "displayName": "Writing Amber",
+        "canonical": "#c96a00",
+        "tonalRamp": [
+          "oklch(15.0% 0.1514 56.52)",
+          "oklch(26.4% 0.1514 56.52)",
+          "oklch(37.9% 0.1514 56.52)",
+          "oklch(49.3% 0.1514 56.52)",
+          "oklch(60.7% 0.1514 56.52)",
+          "oklch(72.1% 0.1514 56.52)",
+          "oklch(83.6% 0.1514 56.52)",
+          "oklch(95.0% 0.1514 56.52)"
+        ]
+      },
+      "cat-design": {
+        "role": "tertiary",
+        "displayName": "Design Purple",
+        "canonical": "#af52de",
+        "tonalRamp": [
+          "oklch(15.0% 0.2129 312.41)",
+          "oklch(26.4% 0.2129 312.41)",
+          "oklch(37.9% 0.2129 312.41)",
+          "oklch(49.3% 0.2129 312.41)",
+          "oklch(60.7% 0.2129 312.41)",
+          "oklch(72.1% 0.2129 312.41)",
+          "oklch(83.6% 0.2129 312.41)",
+          "oklch(95.0% 0.2129 312.41)"
+        ]
+      },
+      "cat-internet": {
+        "role": "tertiary",
+        "displayName": "Internet Teal",
+        "canonical": "#0b84a5",
+        "tonalRamp": [
+          "oklch(15.0% 0.1049 223.92)",
+          "oklch(26.4% 0.1049 223.92)",
+          "oklch(37.9% 0.1049 223.92)",
+          "oklch(49.3% 0.1049 223.92)",
+          "oklch(60.7% 0.1049 223.92)",
+          "oklch(72.1% 0.1049 223.92)",
+          "oklch(83.6% 0.1049 223.92)",
+          "oklch(95.0% 0.1049 223.92)"
+        ]
+      },
+      "cat-education": {
+        "role": "tertiary",
+        "displayName": "Education Tan",
+        "canonical": "#a2845e",
+        "tonalRamp": [
+          "oklch(15.0% 0.0643 72.82)",
+          "oklch(26.4% 0.0643 72.82)",
+          "oklch(37.9% 0.0643 72.82)",
+          "oklch(49.3% 0.0643 72.82)",
+          "oklch(60.7% 0.0643 72.82)",
+          "oklch(72.1% 0.0643 72.82)",
+          "oklch(83.6% 0.0643 72.82)",
+          "oklch(95.0% 0.0643 72.82)"
+        ]
+      },
+      "cat-games": {
+        "role": "tertiary",
+        "displayName": "Games Red",
+        "canonical": "#ff3b30",
+        "tonalRamp": [
+          "oklch(15.0% 0.2321 28.66)",
+          "oklch(26.4% 0.2321 28.66)",
+          "oklch(37.9% 0.2321 28.66)",
+          "oklch(49.3% 0.2321 28.66)",
+          "oklch(60.7% 0.2321 28.66)",
+          "oklch(72.1% 0.2321 28.66)",
+          "oklch(83.6% 0.2321 28.66)",
+          "oklch(95.0% 0.2321 28.66)"
+        ]
+      },
+      "cat-ai": {
+        "role": "tertiary",
+        "displayName": "AI Teal-Green",
+        "canonical": "#0c817b",
+        "tonalRamp": [
+          "oklch(15.0% 0.0922 188.99)",
+          "oklch(26.4% 0.0922 188.99)",
+          "oklch(37.9% 0.0922 188.99)",
+          "oklch(49.3% 0.0922 188.99)",
+          "oklch(60.7% 0.0922 188.99)",
+          "oklch(72.1% 0.0922 188.99)",
+          "oklch(83.6% 0.0922 188.99)",
+          "oklch(95.0% 0.0922 188.99)"
+        ]
+      },
+      "stage-iina": {
+        "role": "tertiary",
+        "displayName": "IINA Stage Navy",
+        "canonical": "#1d3a5c",
+        "tonalRamp": [
+          "oklch(15.0% 0.0695 253.68)",
+          "oklch(26.4% 0.0695 253.68)",
+          "oklch(37.9% 0.0695 253.68)",
+          "oklch(49.3% 0.0695 253.68)",
+          "oklch(60.7% 0.0695 253.68)",
+          "oklch(72.1% 0.0695 253.68)",
+          "oklch(83.6% 0.0695 253.68)",
+          "oklch(95.0% 0.0695 253.68)"
+        ]
+      },
+      "stage-cap": {
+        "role": "tertiary",
+        "displayName": "Cap Stage Plum",
+        "canonical": "#3b2a5e",
+        "tonalRamp": [
+          "oklch(15.0% 0.0895 296.28)",
+          "oklch(26.4% 0.0895 296.28)",
+          "oklch(37.9% 0.0895 296.28)",
+          "oklch(49.3% 0.0895 296.28)",
+          "oklch(60.7% 0.0895 296.28)",
+          "oklch(72.1% 0.0895 296.28)",
+          "oklch(83.6% 0.0895 296.28)",
+          "oklch(95.0% 0.0895 296.28)"
+        ]
+      },
+      "stage-rectangle": {
+        "role": "tertiary",
+        "displayName": "Rectangle Stage Slate",
+        "canonical": "#4a4f57",
+        "tonalRamp": [
+          "oklch(15.0% 0.0148 259.82)",
+          "oklch(26.4% 0.0148 259.82)",
+          "oklch(37.9% 0.0148 259.82)",
+          "oklch(49.3% 0.0148 259.82)",
+          "oklch(60.7% 0.0148 259.82)",
+          "oklch(72.1% 0.0148 259.82)",
+          "oklch(83.6% 0.0148 259.82)",
+          "oklch(95.0% 0.0148 259.82)"
+        ]
+      },
+      "stage-maccy": {
+        "role": "tertiary",
+        "displayName": "Maccy Stage Pine",
+        "canonical": "#2f4a3a",
+        "tonalRamp": [
+          "oklch(15.0% 0.0429 157.62)",
+          "oklch(26.4% 0.0429 157.62)",
+          "oklch(37.9% 0.0429 157.62)",
+          "oklch(49.3% 0.0429 157.62)",
+          "oklch(60.7% 0.0429 157.62)",
+          "oklch(72.1% 0.0429 157.62)",
+          "oklch(83.6% 0.0429 157.62)",
+          "oklch(95.0% 0.0429 157.62)"
+        ]
+      },
+      "stage-markedit": {
+        "role": "tertiary",
+        "displayName": "MarkEdit Stage Umber",
+        "canonical": "#5c3b28",
+        "tonalRamp": [
+          "oklch(15.0% 0.0557 50.41)",
+          "oklch(26.4% 0.0557 50.41)",
+          "oklch(37.9% 0.0557 50.41)",
+          "oklch(49.3% 0.0557 50.41)",
+          "oklch(60.7% 0.0557 50.41)",
+          "oklch(72.1% 0.0557 50.41)",
+          "oklch(83.6% 0.0557 50.41)",
+          "oklch(95.0% 0.0557 50.41)"
+        ]
+      },
+      "stage-bruno": {
+        "role": "tertiary",
+        "displayName": "Bruno Stage Bronze",
+        "canonical": "#4d3a1f",
+        "tonalRamp": [
+          "oklch(15.0% 0.0490 74.90)",
+          "oklch(26.4% 0.0490 74.90)",
+          "oklch(37.9% 0.0490 74.90)",
+          "oklch(49.3% 0.0490 74.90)",
+          "oklch(60.7% 0.0490 74.90)",
+          "oklch(72.1% 0.0490 74.90)",
+          "oklch(83.6% 0.0490 74.90)",
+          "oklch(95.0% 0.0490 74.90)"
         ]
       }
     },
     "typographyMeta": {
-      "display": {
-        "displayName": "Home Display",
-        "purpose": "Home headline; responsive overrides are documented in DESIGN.md."
+      "large-title": {
+        "displayName": "Large Title",
+        "purpose": "Page titles: Discover, Categories, Search, category and collection names."
+      },
+      "product-title": {
+        "displayName": "Product Title",
+        "purpose": "App name on its product page; 24px at 900px and below."
+      },
+      "spotlight-headline": {
+        "displayName": "Spotlight Headline",
+        "purpose": "Editorial line on a spotlight card, 22ch max, balanced."
       },
       "headline": {
-        "displayName": "Catalog Headline",
-        "purpose": "Main catalog heading."
+        "displayName": "Headline",
+        "purpose": "Shelf and section headings; 20px at 620px and below."
+      },
+      "band-title": {
+        "displayName": "Band Title",
+        "purpose": "Contribute band heading."
+      },
+      "info-value": {
+        "displayName": "Info Value",
+        "purpose": "Large value in the product info strip; 14px for long values."
       },
       "title": {
-        "displayName": "App Title",
-        "purpose": "Catalog application names."
+        "displayName": "Title",
+        "purpose": "Markdown sub-headings and About principles."
+      },
+      "subhead": {
+        "displayName": "Subhead",
+        "purpose": "Product summary and the search page input."
+      },
+      "body-long": {
+        "displayName": "Body Long",
+        "purpose": "Markdown descriptions and About prose, 68–72ch."
+      },
+      "lockup-name": {
+        "displayName": "Lockup Name",
+        "purpose": "App names in lockups, shot cards and the spotlight band."
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Default body typography."
-      },
-      "label": {
-        "displayName": "Label",
-        "purpose": "Compact interface labels."
+        "purpose": "Page default."
       },
       "button": {
-        "displayName": "Action",
-        "purpose": "Desktop button text."
+        "displayName": "Button",
+        "purpose": "Filled pill buttons."
+      },
+      "get": {
+        "displayName": "Get",
+        "purpose": "Get pill label."
+      },
+      "callout": {
+        "displayName": "Callout",
+        "purpose": "Sidebar rows, shelf subtitles, text links."
+      },
+      "footnote": {
+        "displayName": "Footnote",
+        "purpose": "Two-line lockup summaries, counts, tags."
+      },
+      "control": {
+        "displayName": "Control",
+        "purpose": "Segmented labels and selects."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Sidebar group labels (600), info captions, figcaptions, footer."
+      },
+      "caption-2": {
+        "displayName": "Caption 2",
+        "purpose": "Fine print under Get."
+      },
+      "info-label": {
+        "displayName": "Info Label",
+        "purpose": "Uppercase term above each info-strip value; a data label, not an eyebrow."
+      },
+      "tab": {
+        "displayName": "Tab",
+        "purpose": "Bottom tab bar labels."
+      },
+      "brand": {
+        "displayName": "Brand",
+        "purpose": "Maco wordmark in the sidebar; 17px in the top bar."
+      },
+      "mono": {
+        "displayName": "Mono",
+        "purpose": "Inline and block code in Markdown descriptions."
       }
     },
     "shadows": [
       {
-        "name": "spotlight-screenshot",
-        "value": "drop-shadow(0 15px 14px #0005)",
-        "purpose": "CSS filter on genuine spotlight screenshots, not a box-shadow token."
+        "name": "spotlight-window",
+        "value": "drop-shadow(0 14px 22px rgb(0 0 0 / 0.4))",
+        "purpose": "CSS filter on the spotlight screenshot."
+      },
+      {
+        "name": "product-screenshot",
+        "value": "drop-shadow(0 8px 16px rgb(0 0 0 / 0.2))",
+        "purpose": "CSS filter on product page screenshots."
+      },
+      {
+        "name": "shot-card",
+        "value": "drop-shadow(0 6px 10px rgb(0 0 0 / 0.18))",
+        "purpose": "CSS filter on See It in Action screenshots."
+      },
+      {
+        "name": "segment-thumb",
+        "value": "0 1px 3px rgb(0 0 0 / 0.14)",
+        "purpose": "box-shadow on the checked segment; the only box shadow."
+      },
+      {
+        "name": "bar-glass",
+        "value": "backdrop-filter: blur(20px) saturate(1.8)",
+        "purpose": "Mobile top bar and tab bar over Bar Glass."
+      },
+      {
+        "name": "spotlight-band",
+        "value": "backdrop-filter: blur(20px) saturate(1.4); background: rgb(0 0 0 / 0.6)",
+        "purpose": "Lockup band over the spotlight screenshot; 0.6 keeps white text ≥5.7:1 and the 85% summary ≥4.6:1 even over a white screenshot."
       }
     ],
     "motion": [
       {
-        "name": "button-background",
-        "value": "background 0.15s",
-        "purpose": "Button hover background."
+        "name": "ease-out",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "--ease-out: icon morph and spotlight lift."
+      },
+      {
+        "name": "icon-morph",
+        "value": "::view-transition-group(app-icon) 0.42s var(--ease-out)",
+        "purpose": "Clicked app icon morphs from shelf to product header; declared only under prefers-reduced-motion: no-preference."
+      },
+      {
+        "name": "root-crossfade",
+        "value": "::view-transition-old/new(root) 0.22s",
+        "purpose": "Page cross-fade during cross-document navigation."
       },
       {
         "name": "spotlight-lift",
-        "value": "transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)",
-        "purpose": "Screenshot moves up 5px on spotlight hover or keyboard focus; suppressed for reduced motion."
+        "value": "translate 0.5s var(--ease-out); 0 -4px",
+        "purpose": "Spotlight screenshot rises 4px on hover or focus."
       },
       {
-        "name": "spotlight-arrow",
-        "value": "background 0.2s, color 0.2s",
-        "purpose": "Circular arrow fills on spotlight hover or keyboard focus."
+        "name": "fill-change",
+        "value": "background-color 0.15s",
+        "purpose": "Get pill, buttons and category tile hover."
+      },
+      {
+        "name": "shelf-paging",
+        "value": "scrollBy behavior: 'smooth' | 'instant'",
+        "purpose": "Pager scrolls one track width; instant under reduced motion."
       },
       {
         "name": "reduced-motion",
-        "value": "animation: none; transition: none; scroll-behavior: auto; transform: none",
-        "purpose": "Reduced-motion preference removes animation, transitions, spotlight lift, and smooth scrolling."
+        "value": "scroll-behavior: auto; transition: none; animation: none; translate: none",
+        "purpose": "prefers-reduced-motion: reduce removes all transitions, animations, smooth scrolling and the spotlight lift; no view transition is declared."
       }
     ],
     "breakpoints": [
       {
-        "name": "wide-min",
-        "value": "1600px"
+        "name": "desktop-compact",
+        "value": "1180px"
       },
       {
-        "name": "compact-max",
-        "value": "1200px"
+        "name": "shell-collapse",
+        "value": "900px"
       },
       {
-        "name": "tablet-max",
-        "value": "960px"
-      },
-      {
-        "name": "mobile-max",
-        "value": "640px"
-      },
-      {
-        "name": "narrow-max",
-        "value": "380px"
+        "name": "phone",
+        "value": "620px"
       }
     ]
   },
   "components": [
     {
-      "name": "Primary action",
+      "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Implemented desktop action treatment; the site reduces padding and minimum height on smaller screens.",
-      "html": "<button type=\"button\" class=\"ds-button ds-button-light\">Explore the collection <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></button>",
-      "css": ".ds-button {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  gap: 13px;\n  border-radius: 7px;\n  background: var(--raised, #222428);\n  color: var(--ink, #f2f2ef);\n  padding: 13px 19px;\n  font-size: 13px;\n  font-weight: 550;\n  min-height: 46px;\n  transition: background 0.15s;\n}\n.ds-button:hover {\n  background: #303339;\n}\n.ds-button-light {\n  background: var(--accent, #d9e6a3);\n  color: #202417;\n}\n.ds-button-light:hover {\n  background: #e6efc5;\n}\n.ds-button{font-family:var(--font, \"DM Sans Variable\", sans-serif);line-height:1.6;border:0;text-decoration:none;cursor:pointer;}.ds-button:disabled{opacity:.5;cursor:not-allowed;}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent, #d9e6a3);outline-offset:5px;}\n@media(prefers-reduced-motion:reduce){.ds-button{transition:none}}"
+      "description": "Action Blue pill for primary actions such as Suggest an App and the product page Get.",
+      "html": "<a class=\"ds-button\" href=\"#\">Suggest an App</a>",
+      "css": ":host{color-scheme:light dark;}.ds-button{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:36px;padding:0 18px;border:0;border-radius:999px;background:var(--accent-fill, #0071e3);color:#fff;font:600 15px/1.47 var(--font, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif);text-decoration:none;white-space:nowrap;transition:background-color .15s;}.ds-button:hover{background:var(--accent-fill-hover, #0077ed);}.ds-button:focus-visible{outline:2px solid var(--link, light-dark(#0066cc, #3c9dff));outline-offset:2px;}@media (prefers-reduced-motion:reduce){.ds-button{transition:none;}}"
     },
     {
-      "name": "Default action",
+      "name": "Secondary Button",
       "kind": "button",
-      "refersTo": "button-default",
-      "description": "Implemented desktop action treatment; the site reduces padding and minimum height on smaller screens.",
-      "html": "<button type=\"button\" class=\"ds-button \">Show all apps <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></button>",
-      "css": ".ds-button {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  gap: 13px;\n  border-radius: 7px;\n  background: var(--raised, #222428);\n  color: var(--ink, #f2f2ef);\n  padding: 13px 19px;\n  font-size: 13px;\n  font-weight: 550;\n  min-height: 46px;\n  transition: background 0.15s;\n}\n.ds-button:hover {\n  background: #303339;\n}\n.ds-button{font-family:var(--font, \"DM Sans Variable\", sans-serif);line-height:1.6;border:0;text-decoration:none;cursor:pointer;}.ds-button:disabled{opacity:.5;cursor:not-allowed;}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent, #d9e6a3);outline-offset:5px;}\n@media(prefers-reduced-motion:reduce){.ds-button{transition:none}}"
+      "refersTo": "button-secondary",
+      "description": "Grey-fill pill with Get Blue label: View Source, Contribution Guide, Show More.",
+      "html": "<a class=\"ds-button-secondary\" href=\"#\">Contribution Guide <svg width=\"13\" height=\"13\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></a>",
+      "css": ":host{color-scheme:light dark;}.ds-button-secondary{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:36px;padding:0 18px;border-radius:999px;background:var(--fill, light-dark(#e8e8ed, #3a3a3c));color:var(--get-ink, light-dark(#0066cc, #6cb4ff));font:600 15px/1.47 var(--font, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif);text-decoration:none;white-space:nowrap;transition:background-color .15s;}.ds-button-secondary:hover{background:var(--fill-hover, light-dark(#dcdce2, #464649));}.ds-button-secondary:focus-visible{outline:2px solid var(--link, light-dark(#0066cc, #3c9dff));outline-offset:2px;}@media (prefers-reduced-motion:reduce){.ds-button-secondary{transition:none;}}"
     },
     {
-      "name": "Outline action",
-      "kind": "button",
-      "refersTo": "button-outline",
-      "description": "Implemented desktop action treatment; the site reduces padding and minimum height on smaller screens.",
-      "html": "<button type=\"button\" class=\"ds-button ds-button-outline\">View source <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></button>",
-      "css": ".ds-button {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  gap: 13px;\n  border-radius: 7px;\n  background: var(--raised, #222428);\n  color: var(--ink, #f2f2ef);\n  padding: 13px 19px;\n  font-size: 13px;\n  font-weight: 550;\n  min-height: 46px;\n  transition: background 0.15s;\n}\n.ds-button:hover {\n  background: #303339;\n}\n.ds-button-outline {\n  background: transparent;\n  border: 1px solid #44484e;\n}\n.ds-button-outline:hover {\n  background: var(--raised, #222428);\n}\n.ds-button{font-family:var(--font, \"DM Sans Variable\", sans-serif);line-height:1.6;border:0;text-decoration:none;cursor:pointer;}.ds-button:disabled{opacity:.5;cursor:not-allowed;}\n.ds-button-outline{border:1px solid #44484e;}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent, #d9e6a3);outline-offset:5px;}\n@media(prefers-reduced-motion:reduce){.ds-button{transition:none}}"
+      "name": "Lockup with Get Pill",
+      "kind": "card",
+      "refersTo": "lockup",
+      "description": "App row: icon (letter-tile fallback shown), name, two-line summary, Get pill to the official download, license fine print.",
+      "html": "<article class=\"ds-lockup\"><a class=\"ds-lockup-link\" href=\"#\"><span class=\"ds-icon-fallback\" aria-hidden=\"true\">J</span><span class=\"ds-lockup-text\"><span class=\"ds-lockup-name\">Joplin</span><span class=\"ds-lockup-summary\">Organize notes, to-do lists, and attachments in notebooks.</span></span></a><span class=\"ds-lockup-get\"><a class=\"ds-get\" href=\"#\" aria-label=\"Get Joplin from the official download page\">Get</a><span class=\"ds-fine-print\">AGPL-3.0+</span></span></article><article class=\"ds-lockup\"><a class=\"ds-lockup-link\" href=\"#\"><span class=\"ds-icon-fallback\" style=\"background:var(--cat-writing, #c96a00)\" aria-hidden=\"true\">M</span><span class=\"ds-lockup-text\"><span class=\"ds-lockup-name\">Mos</span><span class=\"ds-lockup-summary\">Smooth out mouse-wheel scrolling and set its direction.</span></span></a><span class=\"ds-lockup-get\"><a class=\"ds-get\" href=\"#\" aria-label=\"Get Mos from the official download page\">Get</a><span class=\"ds-fine-print ds-restricted\">Source available</span></span></article>",
+      "css": ":host{color-scheme:light dark;}.ds-lockup{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:14px;max-width:380px;padding:12px 0;border-bottom:1px solid var(--separator, light-dark(rgb(0 0 0 / 0.1), rgb(255 255 255 / 0.12)));font-family:var(--font, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif);color:var(--label, light-dark(#1d1d1f, #f5f5f7));}.ds-lockup-link{display:flex;align-items:center;gap:14px;min-width:0;color:inherit;text-decoration:none;}.ds-lockup-link:hover .ds-lockup-name{text-decoration:underline;text-underline-offset:.18em;}.ds-lockup-text{display:grid;min-width:0;}.ds-lockup-name{overflow:hidden;font-size:15px;line-height:1.27;font-weight:600;letter-spacing:-.01em;text-overflow:ellipsis;white-space:nowrap;}.ds-lockup-summary{display:-webkit-box;margin-top:2px;overflow:hidden;color:var(--label-2, light-dark(#6e6e73, #a1a1a6));font-size:13px;line-height:1.35;-webkit-box-orient:vertical;-webkit-line-clamp:2;}.ds-icon-fallback{display:inline-grid;flex:none;place-items:center;width:64px;height:64px;border-radius:22.5%;background:var(--cat-media, #ff2d55);color:#fff;font-size:29px;font-weight:700;line-height:1;}.ds-lockup-get{display:grid;justify-items:center;gap:4px;min-width:72px;}.ds-get{display:inline-grid;place-items:center;min-width:68px;height:28px;padding:0 16px;border-radius:999px;background:var(--fill, light-dark(#e8e8ed, #3a3a3c));color:var(--get-ink, light-dark(#0066cc, #6cb4ff));font-size:14px;font-weight:700;letter-spacing:.01em;text-decoration:none;transition:background-color .15s;}.ds-get:hover{background:var(--fill-hover, light-dark(#dcdce2, #464649));}.ds-get:focus-visible,.ds-lockup-link:focus-visible{outline:2px solid var(--link, light-dark(#0066cc, #3c9dff));outline-offset:2px;}.ds-fine-print{max-width:96px;color:var(--label-2, light-dark(#6e6e73, #a1a1a6));font-size:11px;line-height:1.2;text-align:center;}.ds-restricted{color:var(--orange, light-dark(#c93400, #ff9f0a));font-weight:600;}"
     },
     {
-      "name": "Search field",
+      "name": "Spotlight Card",
+      "kind": "custom",
+      "refersTo": "spotlight",
+      "description": "Tinted stage with headline, real screenshot under a window shadow, and a blurred 0.6-tint lockup band with an on-stage Get pill; the band overlaps the screenshot on desktop and sits just below it at ≤900px. Preview uses a placeholder window block in place of the screenshot.",
+      "html": "<article class=\"ds-spotlight\"><a class=\"ds-spotlight-link\" href=\"#\"><span class=\"ds-spotlight-headline\">Press play. Enjoy everything.</span><span class=\"ds-spotlight-stage\"><span class=\"ds-shot\" role=\"img\" aria-label=\"Screenshot placeholder\"></span></span><span class=\"ds-spotlight-foot\"><span class=\"ds-icon\" aria-hidden=\"true\">I</span><span class=\"ds-foot-text\"><span class=\"ds-foot-name\">IINA</span><span class=\"ds-foot-summary\">A considered video player with the controls and shortcuts Mac users expect.</span></span></span></a><a class=\"ds-get-stage\" href=\"#\" aria-label=\"Get IINA from the official download page\">Get</a></article>",
+      "css": ".ds-spotlight{position:relative;width:520px;max-width:100%;height:380px;overflow:hidden;border-radius:16px;background:var(--stage, #1d3a5c);color:#fff;font-family:var(--font, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif);}.ds-spotlight-link{display:flex;flex-direction:column;height:100%;color:inherit;text-decoration:none;}.ds-spotlight-link:focus-visible{outline:none;}.ds-spotlight:has(.ds-spotlight-link:focus-visible){outline:2px solid var(--link, light-dark(#0066cc, #3c9dff));outline-offset:2px;}.ds-spotlight-headline{max-width:22ch;padding:24px 26px 0;font-size:24px;line-height:1.15;font-weight:700;letter-spacing:-.02em;text-wrap:balance;}.ds-spotlight-stage{flex:1;min-height:0;padding:18px 30px 14px;display:flex;align-items:flex-end;}.ds-shot{display:block;width:100%;height:85%;border-radius:10px;background:linear-gradient(#3a3a3c 0 22px,#e8e8ed 22px);filter:drop-shadow(0 14px 22px rgb(0 0 0 / 0.4));transition:translate .5s cubic-bezier(0.22, 1, 0.36, 1);}.ds-spotlight-link:hover .ds-shot,.ds-spotlight-link:focus-visible .ds-shot{translate:0 -4px;}.ds-spotlight-foot{position:absolute;inset:auto 0 0;display:flex;align-items:center;gap:12px;padding:14px 120px 14px 20px;background:rgb(0 0 0 / 0.6);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);}.ds-icon{display:inline-grid;flex:none;place-items:center;width:48px;height:48px;border-radius:22.5%;background:var(--cat-productivity, #007aff);font-size:22px;font-weight:700;}.ds-foot-text{display:grid;min-width:0;}.ds-foot-name{font-size:15px;font-weight:600;letter-spacing:-.01em;}.ds-foot-summary{overflow:hidden;color:rgb(255 255 255 / 0.85);font-size:13px;text-overflow:ellipsis;white-space:nowrap;}.ds-get-stage{position:absolute;right:20px;bottom:24px;display:inline-grid;place-items:center;min-width:68px;height:28px;padding:0 16px;border-radius:999px;background:rgb(255 255 255 / 0.2);color:#fff;font-size:14px;font-weight:700;letter-spacing:.01em;text-decoration:none;transition:background-color .15s;}.ds-get-stage:hover{background:rgb(255 255 255 / 0.3);}.ds-get-stage:focus-visible{outline:2px solid var(--link, light-dark(#0066cc, #3c9dff));outline-offset:2px;}@media (max-width:900px){.ds-spotlight{height:360px;}.ds-spotlight-stage{padding:16px 18px 40px;}}@media (prefers-reduced-motion:reduce){.ds-shot,.ds-get-stage{transition:none;}.ds-spotlight-link:hover .ds-shot,.ds-spotlight-link:focus-visible .ds-shot{translate:none;}}"
+    },
+    {
+      "name": "Category Tile",
+      "kind": "card",
+      "refersTo": "category-tile",
+      "description": "Elevated tile with a category glyph in its system colour, name and tabular count.",
+      "html": "<a class=\"ds-category-tile\" href=\"#\"><span class=\"ds-glyph\" style=\"background:var(--cat-design, #af52de)\" aria-hidden=\"true\"><svg width=\"21\" height=\"21\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"13.5\" cy=\"6.5\" r=\".5\" fill=\"currentColor\"/><circle cx=\"17.5\" cy=\"10.5\" r=\".5\" fill=\"currentColor\"/><circle cx=\"8.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\"/><circle cx=\"6.5\" cy=\"12.5\" r=\".5\" fill=\"currentColor\"/><path d=\"M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.9 0 1.7-.8 1.7-1.7 0-.4-.2-.8-.4-1.1-.3-.3-.4-.7-.4-1.1a1.6 1.6 0 0 1 1.6-1.7h2c3 0 5.5-2.5 5.5-5.5C22 6 17.5 2 12 2z\"/></svg></span><span>Design</span><span class=\"ds-count\">28</span></a>",
+      "css": ":host{color-scheme:light dark;}.ds-category-tile{display:flex;align-items:center;gap:12px;width:260px;padding:11px 14px 11px 11px;border-radius:12px;background:var(--bg-elevated, light-dark(#f5f5f7, #2c2c2e));color:var(--label, light-dark(#1d1d1f, #f5f5f7));font:600 15px/1.47 var(--font, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif);text-decoration:none;transition:background-color .15s;}.ds-category-tile:hover{background:var(--fill, light-dark(#e8e8ed, #3a3a3c));}.ds-category-tile:focus-visible{outline:2px solid var(--link, light-dark(#0066cc, #3c9dff));outline-offset:2px;}.ds-glyph{display:inline-grid;flex:none;place-items:center;width:36px;height:36px;border-radius:8.64px;color:#fff;}.ds-count{margin-left:auto;color:var(--label-2, light-dark(#6e6e73, #a1a1a6));font-size:13px;font-weight:400;font-variant-numeric:tabular-nums;}"
+    },
+    {
+      "name": "Search Field",
       "kind": "input",
       "refersTo": "search-field",
-      "description": "Named search input with container focus state and slash shortcut hint. The preview does not attach catalog filtering.",
-      "html": "<div class=\"ds-search-field\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg><input type=\"search\" aria-label=\"Search apps, categories, or tags\" placeholder=\"Search apps, categories, or tags\u2026\" autocomplete=\"off\"/><kbd aria-hidden=\"true\">/</kbd></div>",
-      "css": ".ds-search-field {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  flex: 1;\n  min-width: 160px;\n  padding: 0 16px;\n  background: var(--surface, #191b1e);\n  border: 1px solid #727983;\n  border-radius: 8px;\n}\n.ds-search-field > svg {\n  color: #999fa8;\n}\n.ds-search-field:focus-within {\n  border-color: var(--accent, #d9e6a3);\n  outline: 1px solid var(--accent, #d9e6a3);\n}\n.ds-search-field input {\n  height: 51px;\n  width: 100%;\n  min-width: 0;\n  background: transparent;\n  border: 0;\n  outline: 0;\n  font-size: 13px;\n}\n.ds-search-field input:focus-visible {\n  outline: none;\n}\n.ds-search-field input::placeholder {\n  color: #9aa0aa;\n  opacity: 1;\n}\n.ds-search-field kbd {\n  border: 1px solid #454a53;\n  border-radius: 4px;\n  color: #b1b7c0;\n  font-size: 11px;\n  padding: 0 7px;\n}\n.ds-search-field{font-family:var(--font, \"DM Sans Variable\", sans-serif);line-height:1.6;color:var(--ink, #f2f2ef);}.ds-search-field input{font:inherit;color:inherit;caret-color:var(--accent, #d9e6a3);}.ds-search-field svg{flex-shrink:0;}.ds-search-field input{font-size:13px;}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent, #d9e6a3);outline-offset:5px;}\n.ds-search-field input:focus-visible{outline:none;}"
+      "description": "44px field with inset glyph; focus rings the container.",
+      "html": "<div class=\"ds-search-field\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg><input type=\"search\" aria-label=\"Search apps, categories, or tags\" placeholder=\"Apps, categories, or tags\" autocomplete=\"off\"></div>",
+      "css": ":host{color-scheme:light dark;}.ds-search-field{position:relative;display:flex;align-items:center;max-width:720px;height:44px;border-radius:10px;background:var(--field, light-dark(rgb(0 0 0 / 0.055), rgb(255 255 255 / 0.08)));font-family:var(--font, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif);}.ds-search-field svg{position:absolute;left:13px;color:var(--label-2, light-dark(#6e6e73, #a1a1a6));pointer-events:none;}.ds-search-field input{width:100%;height:100%;padding:0 14px 0 40px;border:0;background:none;color:var(--label, light-dark(#1d1d1f, #f5f5f7));font:inherit;font-size:17px;}.ds-search-field input::placeholder{color:var(--label-2, light-dark(#6e6e73, #a1a1a6));opacity:1;}.ds-search-field input:focus-visible{outline:none;}.ds-search-field:focus-within{outline:2px solid var(--link, light-dark(#0066cc, #3c9dff));outline-offset:0;}"
     },
     {
-      "name": "Category navigation",
+      "name": "Segmented Control and Select",
+      "kind": "input",
+      "refersTo": "segmented",
+      "description": "Radio-backed segmented control beside a native select with a CSS chevron.",
+      "html": "<div class=\"ds-filters\"><fieldset class=\"ds-segmented\"><legend class=\"ds-sr\">License</legend><label><input type=\"radio\" name=\"ds-src\" checked> All</label><label><input type=\"radio\" name=\"ds-src\"> Open Source</label><label><input type=\"radio\" name=\"ds-src\"> Source Available</label></fieldset><label class=\"ds-select\"><span class=\"ds-sr\">Category</span><select><option>All Categories</option><option>Design</option></select></label></div>",
+      "css": ":host{color-scheme:light dark;}.ds-filters{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-family:var(--font, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif);color:var(--label, light-dark(#1d1d1f, #f5f5f7));}.ds-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}.ds-segmented{display:inline-flex;margin:0;padding:2px;border:0;border-radius:9px;background:var(--field, light-dark(rgb(0 0 0 / 0.055), rgb(255 255 255 / 0.08)));}.ds-segmented label{position:relative;padding:5px 13px;border-radius:7px;font-size:13px;font-weight:500;cursor:pointer;white-space:nowrap;}.ds-segmented input{position:absolute;inset:0;margin:0;opacity:0;cursor:pointer;}.ds-segmented label:has(input:checked){background:var(--segment-thumb, light-dark(#fff, #636366));box-shadow:0 1px 3px rgb(0 0 0 / 0.14);font-weight:600;}.ds-segmented label:has(input:focus-visible){outline:2px solid var(--link, light-dark(#0066cc, #3c9dff));outline-offset:1px;}.ds-select{position:relative;display:inline-flex;}.ds-select::after{content:'';position:absolute;right:12px;top:50%;width:6px;height:6px;border-right:1.6px solid var(--label-2, light-dark(#6e6e73, #a1a1a6));border-bottom:1.6px solid var(--label-2, light-dark(#6e6e73, #a1a1a6));rotate:45deg;translate:0 -70%;pointer-events:none;}.ds-select select{max-width:240px;height:32px;padding:0 30px 0 12px;border:0;border-radius:8px;background:var(--field, light-dark(rgb(0 0 0 / 0.055), rgb(255 255 255 / 0.08)));color:inherit;font:500 13px var(--font, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif);appearance:none;cursor:pointer;}.ds-select select:focus-visible{outline:2px solid var(--link, light-dark(#0066cc, #3c9dff));outline-offset:2px;}"
+    },
+    {
+      "name": "Sidebar",
       "kind": "nav",
-      "refersTo": "category-selected",
-      "description": "Horizontal category links; selected categories have a warm-white fill and aria-current.",
-      "html": "<nav class=\"ds-category-nav\" aria-label=\"App categories\"><a href=\"#catalog\" class=\"ds-selected\" aria-current=\"true\">All apps</a><a href=\"#catalog\">Productivity</a><a href=\"#catalog\">Developer tools</a></nav>",
-      "css": ".ds-category-nav {\n  display: flex;\n  gap: 8px;\n  align-items: center;\n  overflow-x: auto;\n  padding: 0 0 22px;\n  scrollbar-width: thin;\n}\n.ds-category-nav > a {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 9px 13px;\n  border: 1px solid #35383e;\n  border-radius: 7px;\n  white-space: nowrap;\n  color: #b8bdc4;\n  font-size: 12px;\n  min-height: 39px;\n}\n.ds-category-nav > a:hover {\n  border-color: #60666f;\n  color: var(--ink, #f2f2ef);\n}\n.ds-category-nav > a.ds-selected {\n  background: var(--ink, #f2f2ef);\n  color: #1b1e23;\n  border-color: var(--ink, #f2f2ef);\n}\n.ds-category-nav > a > span {\n  font-size: 10px;\n  opacity: 0.7;\n  font-variant-numeric: tabular-nums;\n}\n.ds-category-nav{font-family:var(--font, \"DM Sans Variable\", sans-serif);line-height:1.6;}.ds-category-nav a{text-decoration:none;}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent, #d9e6a3);outline-offset:5px;}"
+      "refersTo": "sidebar",
+      "description": "Opaque 260px sidebar: brand, search, primary rows, group label, category row with glyph tile. No backdrop blur.",
+      "html": "<nav class=\"ds-sidebar\" aria-label=\"Store\"><a class=\"ds-brand\" href=\"#\"><span class=\"ds-brand-mark\" aria-hidden=\"true\">M</span>Maco</a><a class=\"ds-row\" href=\"#\" aria-current=\"page\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M11.5 2.3a.5.5 0 0 1 1 0l2.3 4.7a2 2 0 0 0 1.5 1.1l5.2.8a.5.5 0 0 1 .3.9l-3.8 3.7a2 2 0 0 0-.6 1.8l.9 5.2a.5.5 0 0 1-.8.6l-4.6-2.5a2 2 0 0 0-1.9 0l-4.6 2.5a.5.5 0 0 1-.8-.6l.9-5.2a2 2 0 0 0-.6-1.8L1.2 9.8a.5.5 0 0 1 .3-.9l5.2-.8a2 2 0 0 0 1.5-1.1z\"/></svg>Discover</a><a class=\"ds-row\" href=\"#\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg>Search</a><span class=\"ds-group\">Categories</span><a class=\"ds-row\" href=\"#\"><span class=\"ds-glyph\" aria-hidden=\"true\"><svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"13.5\" cy=\"6.5\" r=\".5\" fill=\"currentColor\"/><circle cx=\"17.5\" cy=\"10.5\" r=\".5\" fill=\"currentColor\"/><circle cx=\"8.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\"/><circle cx=\"6.5\" cy=\"12.5\" r=\".5\" fill=\"currentColor\"/><path d=\"M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.9 0 1.7-.8 1.7-1.7 0-.4-.2-.8-.4-1.1-.3-.3-.4-.7-.4-1.1a1.6 1.6 0 0 1 1.6-1.7h2c3 0 5.5-2.5 5.5-5.5C22 6 17.5 2 12 2z\"/></svg></span>Design</a></nav>",
+      "css": ":host{color-scheme:light dark;}.ds-sidebar{display:grid;gap:1px;width:260px;padding:18px 12px 14px;background:var(--bg-sidebar, light-dark(#f2f2f5, #262628));border-right:1px solid var(--separator, light-dark(rgb(0 0 0 / 0.1), rgb(255 255 255 / 0.12)));font-family:var(--font, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif);}.ds-brand{display:inline-flex;align-items:center;gap:9px;padding:0 8px 14px;color:var(--label, light-dark(#1d1d1f, #f5f5f7));font-size:19px;font-weight:700;letter-spacing:-.02em;text-decoration:none;}.ds-brand-mark{display:grid;place-items:center;width:28px;height:28px;border-radius:7px;background:var(--accent-fill, #0071e3);color:#fff;font-size:15px;}.ds-row{display:flex;align-items:center;gap:10px;min-height:32px;padding:4px 10px;border-radius:8px;color:var(--label, light-dark(#1d1d1f, #f5f5f7));font-size:14px;line-height:1.25;text-decoration:none;}.ds-row > svg{flex:none;width:20px;color:var(--link, light-dark(#0066cc, #3c9dff));}.ds-row:hover,.ds-row[aria-current='page']{background:var(--selected, light-dark(rgb(0 0 0 / 0.075), rgb(255 255 255 / 0.1)));}.ds-row[aria-current='page']{font-weight:600;}.ds-row:focus-visible{outline:2px solid var(--link, light-dark(#0066cc, #3c9dff));outline-offset:2px;}.ds-group{display:block;padding:18px 10px 6px;color:var(--label-2, light-dark(#6e6e73, #a1a1a6));font-size:12px;font-weight:600;}.ds-glyph{display:inline-grid;flex:none;place-items:center;width:20px;height:20px;border-radius:4.8px;background:var(--cat-design, #af52de);color:#fff;}"
     },
     {
-      "name": "Topic tag",
-      "kind": "chip",
-      "refersTo": "tag",
-      "description": "Compact topic link with a brighter hover fill and support for long labels.",
-      "html": "<a class=\"ds-tag\" href=\"?tag=video#catalog\">video</a>",
-      "css": ".ds-tag {\n  display: inline-flex;\n  font-size: 10px;\n  color: #bbc3cf;\n  background: #24272c;\n  border-radius: 4px;\n  padding: 4px 8px;\n  max-width: 55%;\n  overflow-wrap: anywhere;\n}\n.ds-tag:hover {\n  background: #353b44;\n  color: var(--ink, #f2f2ef);\n}\n.ds-tag{font-family:var(--font, \"DM Sans Variable\", sans-serif);line-height:1.6;text-decoration:none;}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent, #d9e6a3);outline-offset:5px;}"
-    },
-    {
-      "name": "Catalog entry",
-      "kind": "card",
-      "refersTo": "app-card",
-      "description": "Actual catalog structure with the implemented two-letter icon fallback shown for an image-free preview.",
-      "html": "<article class=\"ds-app-card\"><a class=\"ds-app-card-main\" href=\"apps/iina/\"><span class=\"ds-app-icon ds-icon-fallback\" aria-hidden=\"true\">II</span><div class=\"ds-app-card-name\"><h3>IINA</h3><span>Media</span></div><svg class=\"ds-card-arrow\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg><p>A considered video player with the controls and shortcuts Mac users expect.</p></a><div class=\"ds-app-card-meta\"><a class=\"ds-tag\" href=\"?tag=video#catalog\">video</a><span class=\"ds-license-label\">GPL-3.0</span></div></article>",
-      "css": ".ds-app-icon {\n  object-fit: contain;\n  flex-shrink: 0;\n  display: block;\n}\n.ds-icon-fallback {\n  background: #30362b;\n  border-radius: 12px;\n  display: grid;\n  place-items: center;\n  font: 600 22px var(--display, \"Manrope Variable\",sans-serif);\n  color: var(--accent, #d9e6a3);\n}\n.ds-app-card {\n  min-width: 0;\n  padding: 29px 0 24px;\n  border-bottom: 1px solid var(--line, #303236);\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n.ds-app-card-main {\n  display: grid;\n  grid-template-columns: 57px 1fr 18px;\n  align-items: center;\n  column-gap: 14px;\n}\n.ds-app-card .ds-app-icon {\n  width: 54px;\n  height: 54px;\n}\n.ds-app-card-name {\n  min-width: 0;\n}\n.ds-app-card-name h3 {\n  font-size: 18px;\n  line-height: 1.3;\n  letter-spacing: -0.025em;\n}\n.ds-app-card-name > span {\n  font-size: 11px;\n  color: var(--muted, #a7aaae);\n  display: block;\n  margin-top: 5px;\n}\n.ds-card-arrow {\n  color: #b3bac4;\n  transition: color 0.15s;\n}\n.ds-app-card-main:hover .ds-card-arrow {\n  color: var(--accent, #d9e6a3);\n}\n.ds-app-card-main:hover h3 {\n  color: var(--accent, #d9e6a3);\n}\n.ds-app-card-main > p {\n  grid-column: 1/-1;\n  font-size: 13px;\n  color: #aeb4bd;\n  line-height: 1.7;\n  margin-top: 18px;\n  min-height: 45px;\n  max-width: 350px;\n}\n.ds-app-card-meta {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  gap: 10px;\n  margin-top: 20px;\n}\n.ds-tag {\n  display: inline-flex;\n  font-size: 10px;\n  color: #bbc3cf;\n  background: #24272c;\n  border-radius: 4px;\n  padding: 4px 8px;\n  max-width: 55%;\n  overflow-wrap: anywhere;\n}\n.ds-tag:hover {\n  background: #353b44;\n  color: var(--ink, #f2f2ef);\n}\n.ds-license-label {\n  font-size: 10px;\n  color: #a0a8b4;\n  text-align: right;\n  line-height: 1.4;\n  max-width: 50%;\n}\n.ds-app-card{font-family:var(--font, \"DM Sans Variable\", sans-serif);line-height:1.6;color:var(--ink, #f2f2ef);max-width:400px}.ds-app-card a{text-decoration:none;color:inherit}.ds-app-card h3{margin:0;font-family:var(--display, \"Manrope Variable\",sans-serif);font-weight:600}.ds-app-card p{margin-bottom:0}.ds-app-card .ds-tag{color:#bbc3cf;}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent, #d9e6a3);outline-offset:5px;}\n@media(prefers-reduced-motion:reduce){.ds-card-arrow{transition:none}}"
-    },
-    {
-      "name": "Header navigation",
+      "name": "Tab Bar",
       "kind": "nav",
-      "description": "Desktop text navigation; the shipping layout selectively hides links as space narrows.",
-      "html": "<nav class=\"ds-top-links\" aria-label=\"Main navigation\"><a href=\"#catalog\" aria-current=\"page\">Explore</a><a href=\"about/\">Our story</a><a href=\"https://github.com/koative/maco/blob/main/CONTRIBUTING.md\">Contribute <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></a></nav>",
-      "css": ".ds-top-links {\n  display: flex;\n  gap: 32px;\n  font-size: 13px;\n  align-items: center;\n  margin-left: 50px;\n}\n.ds-top-links a {\n  color: var(--muted, #a7aaae);\n  display: flex;\n  align-items: center;\n  gap: 5px;\n}\n.ds-top-links a[aria-current='page'] {\n  color: var(--ink, #f2f2ef);\n}\n.ds-top-links a:hover {\n  color: var(--ink, #f2f2ef);\n}\n.ds-top-links{font-family:var(--font, \"DM Sans Variable\", sans-serif);line-height:1.6;}.ds-top-links a{text-decoration:none;color:var(--muted, #a7aaae)}.ds-top-links a:hover,.ds-top-links a[aria-current=\"page\"]{color:var(--ink, #f2f2ef)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent, #d9e6a3);outline-offset:5px;}"
+      "refersTo": "tabbar",
+      "description": "Mobile (≤900px) fixed bottom bar over Bar Glass with blur; current tab in Link Blue.",
+      "html": "<nav class=\"ds-tabbar\" aria-label=\"Tabs\"><a href=\"#\" aria-current=\"page\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M11.5 2.3a.5.5 0 0 1 1 0l2.3 4.7a2 2 0 0 0 1.5 1.1l5.2.8a.5.5 0 0 1 .3.9l-3.8 3.7a2 2 0 0 0-.6 1.8l.9 5.2a.5.5 0 0 1-.8.6l-4.6-2.5a2 2 0 0 0-1.9 0l-4.6 2.5a.5.5 0 0 1-.8-.6l.9-5.2a2 2 0 0 0-.6-1.8L1.2 9.8a.5.5 0 0 1 .3-.9l5.2-.8a2 2 0 0 0 1.5-1.1z\"/></svg>Discover</a><a href=\"#\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg>Search</a></nav>",
+      "css": ":host{color-scheme:light dark;}.ds-tabbar{display:grid;grid-template-columns:repeat(2,1fr);width:320px;padding:6px 8px;background:var(--bg-bar, light-dark(rgb(250 250 252 / 0.8), rgb(30 30 30 / 0.78)));border-top:1px solid var(--separator, light-dark(rgb(0 0 0 / 0.1), rgb(255 255 255 / 0.12)));backdrop-filter:blur(20px) saturate(1.8);-webkit-backdrop-filter:blur(20px) saturate(1.8);font-family:var(--font, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif);}.ds-tabbar a{display:grid;justify-items:center;gap:2px;padding:4px 0;color:var(--label-2, light-dark(#6e6e73, #a1a1a6));font-size:10px;font-weight:500;text-decoration:none;}.ds-tabbar a[aria-current='page']{color:var(--link, light-dark(#0066cc, #3c9dff));}.ds-tabbar a:focus-visible{outline:2px solid var(--link, light-dark(#0066cc, #3c9dff));outline-offset:2px;}"
+    },
+    {
+      "name": "License Note",
+      "kind": "custom",
+      "refersTo": "license-note",
+      "description": "Orange-fill panel explaining source-available restrictions on a product page.",
+      "html": "<section class=\"ds-license-note\"><h2>Source available, with restrictions</h2><p>The license permits reading and modifying the code but limits commercial redistribution.</p><a href=\"#\">Read the license <svg width=\"13\" height=\"13\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></a></section>",
+      "css": ":host{color-scheme:light dark;}.ds-license-note{max-width:820px;padding:16px 20px;border-radius:12px;background:var(--orange-fill, light-dark(#fff4e8, rgb(255 159 10 / 0.12)));color:var(--label, light-dark(#1d1d1f, #f5f5f7));font:400 15px/1.47 var(--font, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif);}.ds-license-note h2{margin:0;color:var(--orange, light-dark(#c93400, #ff9f0a));font-size:15px;font-weight:700;}.ds-license-note p{margin:4px 0 8px;max-width:72ch;}.ds-license-note a{display:inline-flex;align-items:center;gap:3px;color:var(--link, light-dark(#0066cc, #3c9dff));font-size:14px;text-decoration:none;}.ds-license-note a:hover{text-decoration:underline;text-underline-offset:.18em;}.ds-license-note a:focus-visible{outline:2px solid var(--link, light-dark(#0066cc, #3c9dff));outline-offset:2px;}"
     }
   ],
   "narrative": {
-    "northStar": "The Independent Software Showcase",
-    "overview": "Maco presents useful Mac software with a dark, sharp, premium character. Large authentic application screenshots supply the strongest color and visual interest; confident headings and restrained controls frame the software. This is the user-selected direction captured from the implemented site.\n\nBroad compositions and generous section spacing give way to compact, seam-separated catalog entries. Surfaces stay quiet and readable, with a pale golden-olive accent reserved for actions, focus, and small identity details. The earlier pastel library direction was rejected and is not a source of visual authority.",
+    "northStar": "The Store, Straight",
+    "overview": "Maco is a working Mac App Store for open-source software, and it executes that canon without irony: a sidebar shell, Discover shelves, lockups with Get pills, spotlight cards over real screenshots, product pages with an info strip. The world supplies type, palette and density; navigation and controls stay standard web controls. Appearance follows the system (`color-scheme: light dark`), so every colour role ships as a `light-dark()` pair and the page never offers its own toggle.\n\nThe surface is quiet and bright in light mode, graphite in dark: white or #1e1e1e content beside an opaque sidebar, near-black or near-white labels, secondary grey labels, hairline separators. Colour comes from three places only: Apple link blue for actions, eleven system colours for category tiles and icon fallbacks, and the apps' own icons and screenshots. Orange means one thing: source-available. Maco is an independent directory by Koative and is not affiliated with, endorsed by, or connected to Apple; the store vocabulary is a familiar interface, never a claim.",
     "keyCharacteristics": [
-      "Graphite canvas, warm-white type, and muted silver supporting text.",
-      "Large genuine application imagery with clear source attribution.",
-      "Precise one-pixel seams and restrained rounded controls.",
-      "Expressive Manrope headings paired with readable DM Sans body text.",
-      "Responsive catalog density and visible keyboard focus."
+      "System light and dark, every role a `light-dark()` pair; no manual theme switch.",
+      "260px opaque sidebar on desktop; compact top bar and four-tab bottom bar at 900px and below.",
+      "Platform system type (SF on Apple devices), bold large titles, 13–15px UI labels.",
+      "Horizontally paged shelves of lockups, spotlights and screenshot cards.",
+      "Real app icons and screenshots carry the visual interest; nothing is invented.",
+      "One signature motion: the clicked app icon lifts into the product page header."
     ],
     "rules": [
       {
-        "name": "The Evidence Rule",
-        "body": "Let actual application imagery supply visual variety; preserve its provenance and attribution.",
+        "name": "The Paired Role Rule",
+        "body": "A colour role is a `light-dark()` pair on `:root` or it is appearance-invariant on purpose (accent fill, category spectrum, stages, white on colour). Never hard-code a single-appearance neutral in a component.",
         "section": "colors"
+      },
+      {
+        "name": "The One Meaning Rule",
+        "body": "Orange means source-available and nothing else; blue means \"you can act on this\". Category colours never style text or controls.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Family Rule",
+        "body": "Everything is the system stack. Never load a display face; distinction comes from 700-weight titles with negative tracking.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Count Rule",
+        "body": "Counts and result totals use `font-variant-numeric: tabular-nums`.",
+        "section": "typography"
+      },
+      {
+        "name": "The Shadow Belongs to the Window Rule",
+        "body": "Only screenshots cast shadows. Cards, tiles, buttons and bars stay flat.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Blur Over Content Rule",
+        "body": "Backdrop blur is used only where content actually scrolls or sits beneath: the mobile top and tab bars (`blur(20px) saturate(1.8)` over Bar Glass) and the spotlight band (`blur(20px) saturate(1.4)` over `rgb(0 0 0 / 0.6)`, a tint dense enough to keep white text at 5.7:1 or better and the summary at 4.6:1 or better even over a white screenshot). The sticky desktop sidebar is opaque because nothing passes under it.",
+        "section": "elevation"
       }
     ],
     "dos": [
-      "Do preserve the graphite, warm-white, silver, and golden-olive color hierarchy.",
-      "Do use genuine application screenshots and retain source and image credits.",
-      "Do use seam-separated catalog entries and the established responsive grid.",
-      "Do preserve visible focus, semantic labels, live result counts, and reduced-motion handling.",
-      "Do keep source, license, and official destination information close to application discovery."
+      "Do define every new neutral as a `light-dark()` pair on `:root` and check both appearances.",
+      "Do keep the desktop sidebar opaque (bg-sidebar) with a hairline edge.",
+      "Do use Link Blue for links and focus, Action Blue fills for primary actions, and the grey-fill Get pill for every download.",
+      "Do point every Get at the project's official download and name the app in its accessible label.",
+      "Do mark source-available software in orange fine print and explain the restriction on its page.",
+      "Do use the app's real icon and screenshots with their credits; fall back to the letter tile when no icon exists.",
+      "Do keep shadows on screenshots only, as `drop-shadow()` filters.",
+      "Do keep the icon view transition behind `prefers-reduced-motion: no-preference` and make paging instant under reduced motion.",
+      "Do keep the 2px Link Blue focus ring visible on every control."
     ],
     "donts": [
-      "Don't reintroduce the rejected pastel library visual direction.",
-      "Don't replace actual application imagery with invented interfaces or decorative artwork.",
-      "Don't add shadows, gradients, or glowing surfaces as a default card treatment.",
-      "Don't infer new type scales, component variants, or token ramps as shipping implementation rules."
+      "Don't put vibrancy or backdrop blur on the sticky desktop sidebar; nothing scrolls beneath it.",
+      "Don't invent ratings, reviews, star counts, download counts, prices or compatibility badges; the store shows only verified facts.",
+      "Don't add eyebrows or kickers above headings.",
+      "Don't imply Apple affiliation or endorsement: no Apple logos, no \"App Store\" branding, no \"Download on the App Store\" badges. Maco is independent and not affiliated with Apple.",
+      "Don't use category colours for text, buttons or backgrounds beyond glyph tiles and icon fallbacks.",
+      "Don't use orange for anything other than source-available status.",
+      "Don't load a web font or a second type family.",
+      "Don't add box shadows or outlines to cards, tiles or buttons.",
+      "Don't add a manual light/dark toggle; appearance follows the system.",
+      "Don't reintroduce the replaced dark Golden Olive showcase or the earlier pastel library."
     ]
   }
 }

@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { ArrowUpRight, ArrowRight } from '@lucide/astro';
-const base = import.meta.env.BASE_URL;
+import { ArrowUpRight } from '@lucide/astro';
 const sources = [
   [
     'serhii-londar/open-source-mac-os-apps',
@@ -31,20 +30,16 @@ const sources = [
 <Layout
   title="About Maco — An open-source Mac app directory"
   description="Learn how Maco selects macOS apps, reviews source licenses, credits original creators, and welcomes contributions to its open-source app directory."
-  active="about"
+  type="AboutPage"
 >
   <article class="about-page">
-    <h1>
-      Your Mac deserves
-      <br />a little more open.
-    </h1>
-    <p class="about-lead">
-      Great software is being made in the open, every day. Maco is a place to
-      find it, understand it, and support the people behind it.
-    </p>
-    <a class="button button-dark" href={`${base}#catalog`}>
-      Explore the collection <ArrowRight size={16} />
-    </a>
+    <header class="page-head">
+      <h1>About Maco</h1>
+      <p>
+        Great software is being made in the open, every day. Maco is a place to
+        find it, understand it, and support the people behind it.
+      </p>
+    </header>
     <section>
       <h2>A collection with a point of view.</h2>
       <p>
@@ -128,7 +123,7 @@ const sources = [
         screenshot? You don’t need to be the original developer to help.
       </p>
       <a
-        class="button button-dark"
+        class="button"
         href="https://github.com/koative/maco/blob/main/CONTRIBUTING.md"
       >
         Contribute to Maco <ArrowUpRight size={16} />

@@ -1,14 +1,30 @@
 ---
 import '../styles/global.css';
-import '@fontsource-variable/manrope';
-import '@fontsource-variable/dm-sans';
-import { ArrowUpRight, Box } from '@lucide/astro';
+import {
+  ArrowUpRight,
+  Box,
+  GitBranch,
+  Hammer,
+  Info,
+  LampDesk,
+  Paintbrush,
+  Search,
+  Shapes,
+  Star,
+  Sun,
+} from '@lucide/astro';
 import Github from '../components/GithubIcon.astro';
+import CategoryGlyph from '../components/CategoryGlyph.astro';
+import { categories } from '../lib/catalog';
+import { collections, categorySlug } from '../lib/collections';
 import { site, absoluteUrl, serializeJsonLd } from '../lib/site';
 interface Props {
   title?: string;
   description?: string;
-  active?: string;
+  /** schema.org type of this page. */
+  type?: 'CollectionPage' | 'AboutPage' | 'WebPage';
+  /** Sidebar entry to keep selected when this page sits beneath it, e.g. "categories/media/". */
+  section?: string;
   image?: string;
   imageAlt?: string;
   noindex?: boolean;
@@ -17,7 +33,8 @@ interface Props {
 const {
   title = site.title,
   description = site.description,
-  active = 'explore',
+  type = 'CollectionPage',
+  section,
   image,
   imageAlt = 'Maco — Discover open-source Mac apps',
   noindex = false,
@@ -26,6 +43,7 @@ const {
 const base = import.meta.env.BASE_URL;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const shareImage = absoluteUrl(image || 'social-card.png');
+const contributeUrl = `${site.repository}/blob/main/CONTRIBUTING.md`;
 const graph = [
   {
     '@type': 'WebSite',
@@ -41,12 +59,7 @@ const graph = [
     },
   },
   {
-    '@type':
-      active === 'about'
-        ? 'AboutPage'
-        : active === 'explore'
-          ? 'CollectionPage'
-          : 'WebPage',
+    '@type': type,
     '@id': `${canonical.href}#webpage`,
     url: canonical.href,
     name: title,
@@ -56,15 +69,40 @@ const graph = [
   },
   ...structuredData,
 ];
+const path = Astro.url.pathname;
+const link = (href: string) => ({
+  href: `${base}${href}`,
+  'aria-current': path === `${base}${href}` ? ('page' as const) : undefined,
+  class: href === section ? 'selected' : undefined,
+});
+const collectionGlyphs = {
+  everyday: Sun,
+  focus: LampDesk,
+  developer: Hammer,
+  creative: Paintbrush,
+};
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#111214" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="theme-color"
+      content="#f5f5f7"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#1e1e1e"
+      media="(prefers-color-scheme: dark)"
+    />
     <meta
       name="robots"
       content={
@@ -77,7 +115,7 @@ const graph = [
     <meta property="og:locale" content="en_US" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonical} />
+    {!noindex && <meta property="og:url" content={canonical} />}
     <meta property="og:image" content={shareImage} />
     <meta property="og:image:alt" content={imageAlt} />
     {!image && (
@@ -91,7 +129,8 @@ const graph = [
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={shareImage} />
     <meta name="twitter:image:alt" content={imageAlt} />
-    <link rel="canonical" href={canonical} />
+    {/* The 404 page has no address of its own to point at. */}
+    {!noindex && <link rel="canonical" href={canonical} />}
     <link
       rel="sitemap"
       type="application/xml"
@@ -113,68 +152,209 @@ const graph = [
     <a class="skip-link" href="#main">
       Skip to content
     </a>
-    <div class="page-shell">
-      <header class="topbar">
-        <a class="brand" href={base} aria-label="Maco home">
-          <span class="brand-symbol">
-            <Box size={24} stroke-width={1.7} />
+    <div class="shell">
+      <aside class="sidebar">
+        <a class="brand" href={base}>
+          <span class="brand-mark" aria-hidden="true">
+            <Box size={17} stroke-width={2.1} />
           </span>
-          maco<span class="brand-dot">.</span>
+          Maco
         </a>
-        <nav class="top-links" aria-label="Main navigation">
-          <a
-            href={`${base}#catalog`}
-            aria-current={active === 'explore' ? 'page' : undefined}
-          >
-            Explore
+        <form class="sidebar-search" action={`${base}search/`} role="search">
+          <Search size={14} stroke-width={2.2} aria-hidden="true" />
+          <label class="sr-only" for="sidebar-search">
+            Search apps
+          </label>
+          <input
+            id="sidebar-search"
+            name="q"
+            type="search"
+            placeholder="Search"
+            autocomplete="off"
+            enterkeyhint="search"
+          />
+        </form>
+        <nav class="sidebar-nav" aria-label="Store">
+          <ul>
+            <li>
+              <a {...link('')}>
+                <Star size={17} />
+                Discover
+              </a>
+            </li>
+            <li>
+              <a {...link('search/')}>
+                <Search size={17} />
+                Search
+              </a>
+            </li>
+            <li>
+              <a {...link('categories/')}>
+                <Shapes size={17} />
+                Categories
+              </a>
+            </li>
+          </ul>
+          <span class="nav-group" id="nav-collections">
+            Collections
+          </span>
+          <ul aria-labelledby="nav-collections">
+            {collections.map((collection) => {
+              const Glyph = collectionGlyphs[collection.id];
+              return (
+                <li>
+                  <a {...link(`collections/${collection.id}/`)}>
+                    <Glyph size={17} />
+                    {collection.name}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+          <span class="nav-group" id="nav-categories">
+            Categories
+          </span>
+          <ul aria-labelledby="nav-categories">
+            {categories.map((category) => (
+              <li>
+                <a {...link(`categories/${categorySlug(category)}/`)}>
+                  <CategoryGlyph category={category} size={20} />
+                  {category}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <nav class="sidebar-foot" aria-label="Project">
+          <a {...link('about/')}>
+            <Info size={17} />
+            About Maco
           </a>
-          <a
-            href={`${base}about/`}
-            aria-current={active === 'about' ? 'page' : undefined}
-          >
-            Our story
+          <a href={contributeUrl}>
+            <GitBranch size={17} />
+            Contribute
+            <ArrowUpRight class="external" size={13} />
           </a>
-          <a
-            class="nav-contribute"
-            href="https://github.com/koative/maco/blob/main/CONTRIBUTING.md"
-          >
-            Contribute <ArrowUpRight size={13} />
+          <a href={site.repository}>
+            <Github size={17} />
+            GitHub
+            <ArrowUpRight class="external" size={13} />
           </a>
         </nav>
+      </aside>
+      <header class="topbar">
+        <a class="brand" href={base}>
+          <span class="brand-mark" aria-hidden="true">
+            <Box size={17} stroke-width={2.1} />
+          </span>
+          Maco
+        </a>
         <a
-          class="github-link"
-          href="https://github.com/koative/maco"
+          class="topbar-github"
+          href={site.repository}
           aria-label="Maco on GitHub"
         >
-          <Github size={18} />
-          <span>Star on GitHub</span>
-          <ArrowUpRight size={14} />
+          <Github size={20} />
         </a>
       </header>
-      <main id="main">
+      <main id="main" tabindex="-1">
         <slot />
+        <footer class="footer">
+          <nav aria-label="Footer">
+            <a href={`${base}about/`}>About Maco</a>
+            <a href={contributeUrl}>Contribute</a>
+            <a href={`${site.repository}/issues/new?template=app.yml`}>
+              Suggest an App
+            </a>
+            <a href={site.repository}>Source Code</a>
+            <a href={`${base}catalog.json`}>Catalog JSON</a>
+          </nav>
+          <p>
+            Maco is an independent directory by{' '}
+            <a href="https://github.com/koative">Koative</a>. Downloads come
+            from each project’s official source. App names, icons, and
+            screenshots belong to their owners.
+          </p>
+        </footer>
       </main>
-      <footer class="footer">
-        <div>
-          <a class="footer-name" href={base}>
-            maco.
-          </a>
-          <span>Good software belongs to everyone.</span>
-        </div>
-        <nav aria-label="Footer">
-          <a href={`${base}about/`}>About</a>
-          <a href="https://github.com/koative/maco/blob/main/CONTRIBUTING.md">
-            Contribute <ArrowUpRight size={13} />
-          </a>
-          <a href="https://github.com/koative/maco">
-            Source <ArrowUpRight size={13} />
-          </a>
-        </nav>
-        <p>
-          Made with care by <a href="https://github.com/koative">Koative</a>.
-          App trademarks belong to their owners.
-        </p>
-      </footer>
+      <nav class="tabbar" aria-label="Tabs">
+        <a {...link('')}>
+          <Star size={22} />
+          Discover
+        </a>
+        <a {...link('categories/')}>
+          <Shapes size={22} />
+          Categories
+        </a>
+        <a {...link('search/')}>
+          <Search size={22} />
+          Search
+        </a>
+        <a {...link('about/')}>
+          <Info size={22} />
+          About
+        </a>
+      </nav>
     </div>
   </body>
 </html>
+<script>
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
+
+  // Shelf paging: show chevrons only when the track overflows.
+  document.querySelectorAll<HTMLElement>('[data-shelf]').forEach((shelf) => {
+    const track = shelf.querySelector<HTMLElement>('[data-track]')!;
+    shelf.dataset.paged = '';
+    const [prev, next] =
+      shelf.querySelectorAll<HTMLButtonElement>('[data-page]');
+    const sync = () => {
+      const overflow = track.scrollWidth > track.clientWidth + 1;
+      prev.hidden = next.hidden = !overflow;
+      prev.disabled = track.scrollLeft <= 1;
+      next.disabled =
+        track.scrollLeft + track.clientWidth >= track.scrollWidth - 1;
+    };
+    for (const button of [prev, next])
+      button.addEventListener('click', () =>
+        track.scrollBy({
+          left: Number(button.dataset.page) * track.clientWidth,
+          behavior: reduceMotion.matches ? 'instant' : 'smooth',
+        }),
+      );
+    track.addEventListener('scroll', sync, { passive: true });
+    new ResizeObserver(sync).observe(track);
+  });
+
+  // Name only the clicked app's icon so it can morph into the product page header.
+  document.addEventListener('click', (event) => {
+    const link = (event.target as Element).closest?.('a');
+    const icon = link?.querySelector<HTMLElement>('.app-icon');
+    if (!link || !icon || !link.pathname.includes('/apps/')) return;
+    document
+      .querySelectorAll<HTMLElement>('.app-icon')
+      .forEach((other) => other.style.removeProperty('view-transition-name'));
+    icon.style.setProperty('view-transition-name', 'app-icon');
+  });
+
+  // "/" focuses the visible search field.
+  document.addEventListener('keydown', (event) => {
+    const target = event.target as HTMLElement;
+    if (
+      event.key !== '/' ||
+      event.ctrlKey ||
+      event.metaKey ||
+      event.altKey ||
+      ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName) ||
+      target.isContentEditable
+    )
+      return;
+    const field = [
+      ...document.querySelectorAll<HTMLInputElement>(
+        '#search, #sidebar-search',
+      ),
+    ].find((input) => input.offsetParent);
+    if (!field) return;
+    event.preventDefault();
+    field.focus();
+  });
+</script>

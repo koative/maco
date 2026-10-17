@@ -1,0 +1,43 @@
+---
+import AppIcon from './AppIcon.astro';
+import type { CatalogApp } from '../lib/catalog';
+interface Props {
+  app: CatalogApp;
+  headline: string;
+  stage: string;
+  eager?: boolean;
+}
+const { app, headline, stage, eager = false } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const shot = app.screenshots[0];
+---
+
+<article class="spotlight" style={`--stage:${stage}`}>
+  <a class="spotlight-link" href={`${base}apps/${app.slug}/`}>
+    <div class="spotlight-headline">{headline}</div>
+    <div class="spotlight-stage">
+      <img
+        src={shot.url}
+        alt={shot.alt}
+        loading={eager ? 'eager' : 'lazy'}
+        decoding="async"
+        width="960"
+        height="600"
+      />
+    </div>
+    <div class="spotlight-foot">
+      <AppIcon app={app} size={48} eager={eager} />
+      <div class="lockup-text">
+        <h3>{app.name}</h3>
+        <span class="lockup-summary">{app.summary}</span>
+      </div>
+    </div>
+  </a>
+  <a
+    class="get get-on-stage"
+    href={app.download}
+    aria-label={`Get ${app.name} from the official download page`}
+  >
+    Get
+  </a>
+</article>

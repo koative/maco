@@ -1,0 +1,44 @@
+---
+import {
+  BrainCircuit,
+  Clapperboard,
+  Feather,
+  Gamepad2,
+  Globe,
+  GraduationCap,
+  Hammer,
+  ListChecks,
+  Lock,
+  Palette,
+  Wrench,
+} from '@lucide/astro';
+import { categorySlug } from '../lib/collections';
+import type { categories } from '../lib/catalog';
+interface Props {
+  category: (typeof categories)[number];
+  size?: number;
+}
+const { category, size = 28 } = Astro.props;
+const glyphs = {
+  Productivity: ListChecks,
+  'Developer tools': Hammer,
+  Utilities: Wrench,
+  Media: Clapperboard,
+  'Privacy & security': Lock,
+  Writing: Feather,
+  Design: Palette,
+  Internet: Globe,
+  Education: GraduationCap,
+  Games: Gamepad2,
+  AI: BrainCircuit,
+};
+const Glyph = glyphs[category];
+---
+
+<span
+  class="category-glyph"
+  style={`--tile:var(--cat-${categorySlug(category)});--size:${size}px`}
+  aria-hidden="true"
+>
+  <Glyph size={Math.round(size * 0.58)} stroke-width={2} />
+</span>

@@ -3,14 +3,22 @@ import Layout from '../layouts/Layout.astro';
 import { ArrowLeft, PackageOpen } from '@lucide/astro';
 ---
 
-<Layout title="Page not found — Maco" active="404" noindex>
-  <section class="not-found">
-    <PackageOpen size={45} />
-    <h1>This shelf is empty.</h1>
-    <p>We couldn’t find that page. Let’s get you back to the collection.</p>
-    <a class="button button-dark" href={import.meta.env.BASE_URL}>
-      <ArrowLeft size={16} />
-      Back to all apps
-    </a>
+<Layout title="Page not found — Maco" type="WebPage" noindex>
+  <section class="empty-state not-found">
+    <PackageOpen size={44} stroke-width={1.5} />
+    <h1>This Page Isn’t Available</h1>
+    <p>The link may be broken, or the page may have moved.</p>
+    <div class="contribute-actions">
+      <a class="button" href={import.meta.env.BASE_URL}>
+        <ArrowLeft size={16} />
+        Discover
+      </a>
+      <a
+        class="button button-secondary"
+        href={`${import.meta.env.BASE_URL}search/`}
+      >
+        Search Apps
+      </a>
+    </div>
   </section>
 </Layout>

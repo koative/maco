@@ -1,0 +1,46 @@
+---
+import AppIcon from './AppIcon.astro';
+import type { CatalogApp } from '../lib/catalog';
+import { licenseLabel } from '../lib/collections';
+interface Props {
+  app: CatalogApp;
+  /** Adds the data attributes the search page filters on. */
+  searchable?: boolean;
+}
+const { app, searchable = false } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const restricted = app.sourceAvailability === 'source-available';
+const filters = searchable
+  ? {
+      'data-app': '',
+      'data-name': app.name,
+      'data-search':
+        `${app.name} ${app.summary} ${app.category} ${app.tags.join(' ')}`.toLowerCase(),
+      'data-category': app.category,
+      'data-tags': app.tags.join(','),
+      'data-added': app.added,
+      'data-featured': String(app.featured),
+      'data-source': app.sourceAvailability,
+    }
+  : {};
+---
+
+<article class="lockup" {...filters}>
+  <a class="lockup-link" href={`${base}apps/${app.slug}/`}>
+    <AppIcon app={app} size={64} />
+    <div class="lockup-text">
+      <h3>{app.name}</h3>
+      <span class="lockup-summary">{app.summary}</span>
+    </div>
+  </a>
+  <div class="lockup-get">
+    <a
+      class="get"
+      href={app.download}
+      aria-label={`Get ${app.name} from the official download page`}
+    >
+      Get
+    </a>
+    <span class:list={['fine-print', { restricted }]}>{licenseLabel(app)}</span>
+  </div>
+</article>
