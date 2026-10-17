@@ -1,0 +1,392 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-17T15:51:18.581421+00:00",
+  "title": "Design System: OpenStore",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "Golden Olive",
+        "canonical": "#d9e6a3",
+        "tonalRamp": [
+          "oklch(15.0% 0.0880 117.13)",
+          "oklch(26.4% 0.0880 117.13)",
+          "oklch(37.9% 0.0880 117.13)",
+          "oklch(49.3% 0.0880 117.13)",
+          "oklch(60.7% 0.0880 117.13)",
+          "oklch(72.1% 0.0880 117.13)",
+          "oklch(83.6% 0.0880 117.13)",
+          "oklch(95.0% 0.0880 117.13)"
+        ]
+      },
+      "accent-hover": {
+        "role": "primary",
+        "displayName": "Pale Olive",
+        "canonical": "#e6efc5",
+        "tonalRamp": [
+          "oklch(15.0% 0.0559 117.32)",
+          "oklch(26.4% 0.0559 117.32)",
+          "oklch(37.9% 0.0559 117.32)",
+          "oklch(49.3% 0.0559 117.32)",
+          "oklch(60.7% 0.0559 117.32)",
+          "oklch(72.1% 0.0559 117.32)",
+          "oklch(83.6% 0.0559 117.32)",
+          "oklch(95.0% 0.0559 117.32)"
+        ]
+      },
+      "accent-ink": {
+        "role": "primary",
+        "displayName": "Olive Ink",
+        "canonical": "#202417",
+        "tonalRamp": [
+          "oklch(15.0% 0.0241 122.03)",
+          "oklch(26.4% 0.0241 122.03)",
+          "oklch(37.9% 0.0241 122.03)",
+          "oklch(49.3% 0.0241 122.03)",
+          "oklch(60.7% 0.0241 122.03)",
+          "oklch(72.1% 0.0241 122.03)",
+          "oklch(83.6% 0.0241 122.03)",
+          "oklch(95.0% 0.0241 122.03)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Graphite",
+        "canonical": "#111214",
+        "tonalRamp": [
+          "oklch(15.0% 0.0044 264.46)",
+          "oklch(26.4% 0.0044 264.46)",
+          "oklch(37.9% 0.0044 264.46)",
+          "oklch(49.3% 0.0044 264.46)",
+          "oklch(60.7% 0.0044 264.46)",
+          "oklch(72.1% 0.0044 264.46)",
+          "oklch(83.6% 0.0044 264.46)",
+          "oklch(95.0% 0.0044 264.46)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Lifted Graphite",
+        "canonical": "#191b1e",
+        "tonalRamp": [
+          "oklch(15.0% 0.0066 258.37)",
+          "oklch(26.4% 0.0066 258.37)",
+          "oklch(37.9% 0.0066 258.37)",
+          "oklch(49.3% 0.0066 258.37)",
+          "oklch(60.7% 0.0066 258.37)",
+          "oklch(72.1% 0.0066 258.37)",
+          "oklch(83.6% 0.0066 258.37)",
+          "oklch(95.0% 0.0066 258.37)"
+        ]
+      },
+      "raised": {
+        "role": "neutral",
+        "displayName": "Charcoal",
+        "canonical": "#222428",
+        "tonalRamp": [
+          "oklch(15.0% 0.0080 264.43)",
+          "oklch(26.4% 0.0080 264.43)",
+          "oklch(37.9% 0.0080 264.43)",
+          "oklch(49.3% 0.0080 264.43)",
+          "oklch(60.7% 0.0080 264.43)",
+          "oklch(72.1% 0.0080 264.43)",
+          "oklch(83.6% 0.0080 264.43)",
+          "oklch(95.0% 0.0080 264.43)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Warm White",
+        "canonical": "#f2f2ef",
+        "tonalRamp": [
+          "oklch(15.0% 0.0040 106.47)",
+          "oklch(26.4% 0.0040 106.47)",
+          "oklch(37.9% 0.0040 106.47)",
+          "oklch(49.3% 0.0040 106.47)",
+          "oklch(60.7% 0.0040 106.47)",
+          "oklch(72.1% 0.0040 106.47)",
+          "oklch(83.6% 0.0040 106.47)",
+          "oklch(95.0% 0.0040 106.47)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Silver",
+        "canonical": "#a7aaae",
+        "tonalRamp": [
+          "oklch(15.0% 0.0067 255.49)",
+          "oklch(26.4% 0.0067 255.49)",
+          "oklch(37.9% 0.0067 255.49)",
+          "oklch(49.3% 0.0067 255.49)",
+          "oklch(60.7% 0.0067 255.49)",
+          "oklch(72.1% 0.0067 255.49)",
+          "oklch(83.6% 0.0067 255.49)",
+          "oklch(95.0% 0.0067 255.49)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Seam Gray",
+        "canonical": "#303236",
+        "tonalRamp": [
+          "oklch(15.0% 0.0076 264.46)",
+          "oklch(26.4% 0.0076 264.46)",
+          "oklch(37.9% 0.0076 264.46)",
+          "oklch(49.3% 0.0076 264.46)",
+          "oklch(60.7% 0.0076 264.46)",
+          "oklch(72.1% 0.0076 264.46)",
+          "oklch(83.6% 0.0076 264.46)",
+          "oklch(95.0% 0.0076 264.46)"
+        ]
+      },
+      "control-border": {
+        "role": "neutral",
+        "displayName": "Control Silver",
+        "canonical": "#727983",
+        "tonalRamp": [
+          "oklch(15.0% 0.0175 257.23)",
+          "oklch(26.4% 0.0175 257.23)",
+          "oklch(37.9% 0.0175 257.23)",
+          "oklch(49.3% 0.0175 257.23)",
+          "oklch(60.7% 0.0175 257.23)",
+          "oklch(72.1% 0.0175 257.23)",
+          "oklch(83.6% 0.0175 257.23)",
+          "oklch(95.0% 0.0175 257.23)"
+        ]
+      },
+      "tag-surface": {
+        "role": "neutral",
+        "displayName": "Tag Charcoal",
+        "canonical": "#24272c",
+        "tonalRamp": [
+          "oklch(15.0% 0.0102 260.70)",
+          "oklch(26.4% 0.0102 260.70)",
+          "oklch(37.9% 0.0102 260.70)",
+          "oklch(49.3% 0.0102 260.70)",
+          "oklch(60.7% 0.0102 260.70)",
+          "oklch(72.1% 0.0102 260.70)",
+          "oklch(83.6% 0.0102 260.70)",
+          "oklch(95.0% 0.0102 260.70)"
+        ]
+      },
+      "tag-ink": {
+        "role": "neutral",
+        "displayName": "Tag Silver",
+        "canonical": "#bbc3cf",
+        "tonalRamp": [
+          "oklch(15.0% 0.0190 258.36)",
+          "oklch(26.4% 0.0190 258.36)",
+          "oklch(37.9% 0.0190 258.36)",
+          "oklch(49.3% 0.0190 258.36)",
+          "oklch(60.7% 0.0190 258.36)",
+          "oklch(72.1% 0.0190 258.36)",
+          "oklch(83.6% 0.0190 258.36)",
+          "oklch(95.0% 0.0190 258.36)"
+        ]
+      },
+      "button-hover": {
+        "role": "neutral",
+        "displayName": "Hover Charcoal",
+        "canonical": "#303339",
+        "tonalRamp": [
+          "oklch(15.0% 0.0115 264.40)",
+          "oklch(26.4% 0.0115 264.40)",
+          "oklch(37.9% 0.0115 264.40)",
+          "oklch(49.3% 0.0115 264.40)",
+          "oklch(60.7% 0.0115 264.40)",
+          "oklch(72.1% 0.0115 264.40)",
+          "oklch(83.6% 0.0115 264.40)",
+          "oklch(95.0% 0.0115 264.40)"
+        ]
+      },
+      "selected-ink": {
+        "role": "neutral",
+        "displayName": "Selected Category Ink",
+        "canonical": "#1b1e23",
+        "tonalRamp": [
+          "oklch(15.0% 0.0106 260.69)",
+          "oklch(26.4% 0.0106 260.69)",
+          "oklch(37.9% 0.0106 260.69)",
+          "oklch(49.3% 0.0106 260.69)",
+          "oklch(60.7% 0.0106 260.69)",
+          "oklch(72.1% 0.0106 260.69)",
+          "oklch(83.6% 0.0106 260.69)",
+          "oklch(95.0% 0.0106 260.69)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Home Display",
+        "purpose": "Home headline; responsive overrides are documented in DESIGN.md."
+      },
+      "headline": {
+        "displayName": "Catalog Headline",
+        "purpose": "Main catalog heading."
+      },
+      "title": {
+        "displayName": "App Title",
+        "purpose": "Catalog application names."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default body typography."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Compact interface labels."
+      },
+      "button": {
+        "displayName": "Action",
+        "purpose": "Desktop button text."
+      }
+    },
+    "shadows": [
+      {
+        "name": "spotlight-screenshot",
+        "value": "drop-shadow(0 15px 14px #0005)",
+        "purpose": "CSS filter on genuine spotlight screenshots, not a box-shadow token."
+      }
+    ],
+    "motion": [
+      {
+        "name": "button-background",
+        "value": "background 0.15s",
+        "purpose": "Button hover background."
+      },
+      {
+        "name": "spotlight-lift",
+        "value": "transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Screenshot moves up 5px on spotlight hover or keyboard focus; suppressed for reduced motion."
+      },
+      {
+        "name": "spotlight-arrow",
+        "value": "background 0.2s, color 0.2s",
+        "purpose": "Circular arrow fills on spotlight hover or keyboard focus."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation: none; transition: none; scroll-behavior: auto; transform: none",
+        "purpose": "Reduced-motion preference removes animation, transitions, spotlight lift, and smooth scrolling."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide-min",
+        "value": "1600px"
+      },
+      {
+        "name": "compact-max",
+        "value": "1200px"
+      },
+      {
+        "name": "tablet-max",
+        "value": "960px"
+      },
+      {
+        "name": "mobile-max",
+        "value": "640px"
+      },
+      {
+        "name": "narrow-max",
+        "value": "380px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Implemented desktop action treatment; the site reduces padding and minimum height on smaller screens.",
+      "html": "<button type=\"button\" class=\"ds-button ds-button-light\">Explore the collection <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></button>",
+      "css": ".ds-button {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  gap: 13px;\n  border-radius: 7px;\n  background: var(--raised, #222428);\n  color: var(--ink, #f2f2ef);\n  padding: 13px 19px;\n  font-size: 13px;\n  font-weight: 550;\n  min-height: 46px;\n  transition: background 0.15s;\n}\n.ds-button:hover {\n  background: #303339;\n}\n.ds-button-light {\n  background: var(--accent, #d9e6a3);\n  color: #202417;\n}\n.ds-button-light:hover {\n  background: #e6efc5;\n}\n.ds-button{font-family:var(--font, \"DM Sans Variable\", sans-serif);line-height:1.6;border:0;text-decoration:none;cursor:pointer;}.ds-button:disabled{opacity:.5;cursor:not-allowed;}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent, #d9e6a3);outline-offset:5px;}\n@media(prefers-reduced-motion:reduce){.ds-button{transition:none}}"
+    },
+    {
+      "name": "Default action",
+      "kind": "button",
+      "refersTo": "button-default",
+      "description": "Implemented desktop action treatment; the site reduces padding and minimum height on smaller screens.",
+      "html": "<button type=\"button\" class=\"ds-button \">Show all apps <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></button>",
+      "css": ".ds-button {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  gap: 13px;\n  border-radius: 7px;\n  background: var(--raised, #222428);\n  color: var(--ink, #f2f2ef);\n  padding: 13px 19px;\n  font-size: 13px;\n  font-weight: 550;\n  min-height: 46px;\n  transition: background 0.15s;\n}\n.ds-button:hover {\n  background: #303339;\n}\n.ds-button{font-family:var(--font, \"DM Sans Variable\", sans-serif);line-height:1.6;border:0;text-decoration:none;cursor:pointer;}.ds-button:disabled{opacity:.5;cursor:not-allowed;}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent, #d9e6a3);outline-offset:5px;}\n@media(prefers-reduced-motion:reduce){.ds-button{transition:none}}"
+    },
+    {
+      "name": "Outline action",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Implemented desktop action treatment; the site reduces padding and minimum height on smaller screens.",
+      "html": "<button type=\"button\" class=\"ds-button ds-button-outline\">View source <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></button>",
+      "css": ".ds-button {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  gap: 13px;\n  border-radius: 7px;\n  background: var(--raised, #222428);\n  color: var(--ink, #f2f2ef);\n  padding: 13px 19px;\n  font-size: 13px;\n  font-weight: 550;\n  min-height: 46px;\n  transition: background 0.15s;\n}\n.ds-button:hover {\n  background: #303339;\n}\n.ds-button-outline {\n  background: transparent;\n  border: 1px solid #44484e;\n}\n.ds-button-outline:hover {\n  background: var(--raised, #222428);\n}\n.ds-button{font-family:var(--font, \"DM Sans Variable\", sans-serif);line-height:1.6;border:0;text-decoration:none;cursor:pointer;}.ds-button:disabled{opacity:.5;cursor:not-allowed;}\n.ds-button-outline{border:1px solid #44484e;}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent, #d9e6a3);outline-offset:5px;}\n@media(prefers-reduced-motion:reduce){.ds-button{transition:none}}"
+    },
+    {
+      "name": "Search field",
+      "kind": "input",
+      "refersTo": "search-field",
+      "description": "Named search input with container focus state and slash shortcut hint. The preview does not attach catalog filtering.",
+      "html": "<div class=\"ds-search-field\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg><input type=\"search\" aria-label=\"Search apps, categories, or tags\" placeholder=\"Search apps, categories, or tags\u2026\" autocomplete=\"off\"/><kbd aria-hidden=\"true\">/</kbd></div>",
+      "css": ".ds-search-field {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  flex: 1;\n  min-width: 160px;\n  padding: 0 16px;\n  background: var(--surface, #191b1e);\n  border: 1px solid #727983;\n  border-radius: 8px;\n}\n.ds-search-field > svg {\n  color: #999fa8;\n}\n.ds-search-field:focus-within {\n  border-color: var(--accent, #d9e6a3);\n  outline: 1px solid var(--accent, #d9e6a3);\n}\n.ds-search-field input {\n  height: 51px;\n  width: 100%;\n  min-width: 0;\n  background: transparent;\n  border: 0;\n  outline: 0;\n  font-size: 13px;\n}\n.ds-search-field input:focus-visible {\n  outline: none;\n}\n.ds-search-field input::placeholder {\n  color: #9aa0aa;\n  opacity: 1;\n}\n.ds-search-field kbd {\n  border: 1px solid #454a53;\n  border-radius: 4px;\n  color: #b1b7c0;\n  font-size: 11px;\n  padding: 0 7px;\n}\n.ds-search-field{font-family:var(--font, \"DM Sans Variable\", sans-serif);line-height:1.6;color:var(--ink, #f2f2ef);}.ds-search-field input{font:inherit;color:inherit;caret-color:var(--accent, #d9e6a3);}.ds-search-field svg{flex-shrink:0;}.ds-search-field input{font-size:13px;}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent, #d9e6a3);outline-offset:5px;}\n.ds-search-field input:focus-visible{outline:none;}"
+    },
+    {
+      "name": "Category navigation",
+      "kind": "nav",
+      "refersTo": "category-selected",
+      "description": "Horizontal category links; selected categories have a warm-white fill and aria-current.",
+      "html": "<nav class=\"ds-category-nav\" aria-label=\"App categories\"><a href=\"#catalog\" class=\"ds-selected\" aria-current=\"true\">All apps</a><a href=\"#catalog\">Productivity</a><a href=\"#catalog\">Developer tools</a></nav>",
+      "css": ".ds-category-nav {\n  display: flex;\n  gap: 8px;\n  align-items: center;\n  overflow-x: auto;\n  padding: 0 0 22px;\n  scrollbar-width: thin;\n}\n.ds-category-nav > a {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 9px 13px;\n  border: 1px solid #35383e;\n  border-radius: 7px;\n  white-space: nowrap;\n  color: #b8bdc4;\n  font-size: 12px;\n  min-height: 39px;\n}\n.ds-category-nav > a:hover {\n  border-color: #60666f;\n  color: var(--ink, #f2f2ef);\n}\n.ds-category-nav > a.ds-selected {\n  background: var(--ink, #f2f2ef);\n  color: #1b1e23;\n  border-color: var(--ink, #f2f2ef);\n}\n.ds-category-nav > a > span {\n  font-size: 10px;\n  opacity: 0.7;\n  font-variant-numeric: tabular-nums;\n}\n.ds-category-nav{font-family:var(--font, \"DM Sans Variable\", sans-serif);line-height:1.6;}.ds-category-nav a{text-decoration:none;}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent, #d9e6a3);outline-offset:5px;}"
+    },
+    {
+      "name": "Topic tag",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Compact topic link with a brighter hover fill and support for long labels.",
+      "html": "<a class=\"ds-tag\" href=\"?tag=video#catalog\">video</a>",
+      "css": ".ds-tag {\n  display: inline-flex;\n  font-size: 10px;\n  color: #bbc3cf;\n  background: #24272c;\n  border-radius: 4px;\n  padding: 4px 8px;\n  max-width: 55%;\n  overflow-wrap: anywhere;\n}\n.ds-tag:hover {\n  background: #353b44;\n  color: var(--ink, #f2f2ef);\n}\n.ds-tag{font-family:var(--font, \"DM Sans Variable\", sans-serif);line-height:1.6;text-decoration:none;}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent, #d9e6a3);outline-offset:5px;}"
+    },
+    {
+      "name": "Catalog entry",
+      "kind": "card",
+      "refersTo": "app-card",
+      "description": "Actual catalog structure with the implemented two-letter icon fallback shown for an image-free preview.",
+      "html": "<article class=\"ds-app-card\"><a class=\"ds-app-card-main\" href=\"apps/iina/\"><span class=\"ds-app-icon ds-icon-fallback\" aria-hidden=\"true\">II</span><div class=\"ds-app-card-name\"><h3>IINA</h3><span>Media</span></div><svg class=\"ds-card-arrow\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg><p>A considered video player with the controls and shortcuts Mac users expect.</p></a><div class=\"ds-app-card-meta\"><a class=\"ds-tag\" href=\"?tag=video#catalog\">video</a><span class=\"ds-license-label\">GPL-3.0</span></div></article>",
+      "css": ".ds-app-icon {\n  object-fit: contain;\n  flex-shrink: 0;\n  display: block;\n}\n.ds-icon-fallback {\n  background: #30362b;\n  border-radius: 12px;\n  display: grid;\n  place-items: center;\n  font: 600 22px var(--display, \"Manrope Variable\",sans-serif);\n  color: var(--accent, #d9e6a3);\n}\n.ds-app-card {\n  min-width: 0;\n  padding: 29px 0 24px;\n  border-bottom: 1px solid var(--line, #303236);\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n.ds-app-card-main {\n  display: grid;\n  grid-template-columns: 57px 1fr 18px;\n  align-items: center;\n  column-gap: 14px;\n}\n.ds-app-card .ds-app-icon {\n  width: 54px;\n  height: 54px;\n}\n.ds-app-card-name {\n  min-width: 0;\n}\n.ds-app-card-name h3 {\n  font-size: 18px;\n  line-height: 1.3;\n  letter-spacing: -0.025em;\n}\n.ds-app-card-name > span {\n  font-size: 11px;\n  color: var(--muted, #a7aaae);\n  display: block;\n  margin-top: 5px;\n}\n.ds-card-arrow {\n  color: #b3bac4;\n  transition: color 0.15s;\n}\n.ds-app-card-main:hover .ds-card-arrow {\n  color: var(--accent, #d9e6a3);\n}\n.ds-app-card-main:hover h3 {\n  color: var(--accent, #d9e6a3);\n}\n.ds-app-card-main > p {\n  grid-column: 1/-1;\n  font-size: 13px;\n  color: #aeb4bd;\n  line-height: 1.7;\n  margin-top: 18px;\n  min-height: 45px;\n  max-width: 350px;\n}\n.ds-app-card-meta {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  gap: 10px;\n  margin-top: 20px;\n}\n.ds-tag {\n  display: inline-flex;\n  font-size: 10px;\n  color: #bbc3cf;\n  background: #24272c;\n  border-radius: 4px;\n  padding: 4px 8px;\n  max-width: 55%;\n  overflow-wrap: anywhere;\n}\n.ds-tag:hover {\n  background: #353b44;\n  color: var(--ink, #f2f2ef);\n}\n.ds-license-label {\n  font-size: 10px;\n  color: #a0a8b4;\n  text-align: right;\n  line-height: 1.4;\n  max-width: 50%;\n}\n.ds-app-card{font-family:var(--font, \"DM Sans Variable\", sans-serif);line-height:1.6;color:var(--ink, #f2f2ef);max-width:400px}.ds-app-card a{text-decoration:none;color:inherit}.ds-app-card h3{margin:0;font-family:var(--display, \"Manrope Variable\",sans-serif);font-weight:600}.ds-app-card p{margin-bottom:0}.ds-app-card .ds-tag{color:#bbc3cf;}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent, #d9e6a3);outline-offset:5px;}\n@media(prefers-reduced-motion:reduce){.ds-card-arrow{transition:none}}"
+    },
+    {
+      "name": "Header navigation",
+      "kind": "nav",
+      "description": "Desktop text navigation; the shipping layout selectively hides links as space narrows.",
+      "html": "<nav class=\"ds-top-links\" aria-label=\"Main navigation\"><a href=\"#catalog\" aria-current=\"page\">Explore</a><a href=\"about/\">Our story</a><a href=\"https://github.com/koative/openstore/blob/main/CONTRIBUTING.md\">Contribute <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></a></nav>",
+      "css": ".ds-top-links {\n  display: flex;\n  gap: 32px;\n  font-size: 13px;\n  align-items: center;\n  margin-left: 50px;\n}\n.ds-top-links a {\n  color: var(--muted, #a7aaae);\n  display: flex;\n  align-items: center;\n  gap: 5px;\n}\n.ds-top-links a[aria-current='page'] {\n  color: var(--ink, #f2f2ef);\n}\n.ds-top-links a:hover {\n  color: var(--ink, #f2f2ef);\n}\n.ds-top-links{font-family:var(--font, \"DM Sans Variable\", sans-serif);line-height:1.6;}.ds-top-links a{text-decoration:none;color:var(--muted, #a7aaae)}.ds-top-links a:hover,.ds-top-links a[aria-current=\"page\"]{color:var(--ink, #f2f2ef)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent, #d9e6a3);outline-offset:5px;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Independent Software Showcase",
+    "overview": "OpenStore presents useful Mac software with a dark, sharp, premium character. Large authentic application screenshots supply the strongest color and visual interest; confident headings and restrained controls frame the software. This is the user-selected direction captured from the implemented site.\n\nBroad compositions and generous section spacing give way to compact, seam-separated catalog entries. Surfaces stay quiet and readable, with a pale golden-olive accent reserved for actions, focus, and small identity details. The earlier pastel library direction was rejected and is not a source of visual authority.",
+    "keyCharacteristics": [
+      "Graphite canvas, warm-white type, and muted silver supporting text.",
+      "Large genuine application imagery with clear source attribution.",
+      "Precise one-pixel seams and restrained rounded controls.",
+      "Expressive Manrope headings paired with readable DM Sans body text.",
+      "Responsive catalog density and visible keyboard focus."
+    ],
+    "rules": [
+      {
+        "name": "The Evidence Rule",
+        "body": "Let actual application imagery supply visual variety; preserve its provenance and attribution.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "Do preserve the graphite, warm-white, silver, and golden-olive color hierarchy.",
+      "Do use genuine application screenshots and retain source and image credits.",
+      "Do use seam-separated catalog entries and the established responsive grid.",
+      "Do preserve visible focus, semantic labels, live result counts, and reduced-motion handling.",
+      "Do keep source, license, and official destination information close to application discovery."
+    ],
+    "donts": [
+      "Don't reintroduce the rejected pastel library visual direction.",
+      "Don't replace actual application imagery with invented interfaces or decorative artwork.",
+      "Don't add shadows, gradients, or glowing surfaces as a default card treatment.",
+      "Don't infer new type scales, component variants, or token ramps as shipping implementation rules."
+    ]
+  }
+}
