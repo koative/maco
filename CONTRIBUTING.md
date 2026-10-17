@@ -1,6 +1,6 @@
-# Contributing to Openstore
+# Contributing to OpenStore
 
-Openstore is a curated collection of open-source macOS apps. App records are the source of truth: both the website and the README catalog are generated from `content/apps/`.
+OpenStore is a curated collection of open-source macOS apps. App records are the source of truth: both the website and the README catalog are generated from `content/apps/`.
 
 ## Before adding an app
 
@@ -63,6 +63,8 @@ Describe what this app does, where it fits into a workflow, and any meaningful
 limits. Use your own words rather than copying an upstream README.
 ```
 
+Body Markdown supports headings, lists, emphasis, links, quotes, code, and tables. Raw HTML and inline Markdown images are not rendered; add imagery through the attributed screenshot fields. Top-level body headings are demoted so the app name remains the page title.
+
 All links must use HTTPS. Keep summaries at most 130 characters. Tags must be unique lowercase words separated by hyphens, with one to ten tags per app. Dates must be quoted ISO dates; `verified` records the most recent manual check and cannot precede `added`. It is not a security audit or endorsement.
 
 Categories are `Productivity`, `Developer tools`, `Utilities`, `Media`, `Privacy & security`, and `Writing`. Choose one main category; use tags for overlap. The `featured` flag is an editorial choice, not a popularity metric. License values use reviewed SPDX identifiers, with `AND` or `OR` expressions when upstream requires them.
@@ -73,7 +75,7 @@ Use clear upstream app icons and screenshots, with readable screenshots and desc
 
 Every image file needs an `assets` entry with its original source URL, owner credit, and applicable license. Code and image licenses may differ; verify both. If reuse rights are unclear, omit the image and explain the gap in your pull request. The `icon` field is optional and `screenshots` can be empty. Third-party images retain their upstream license and trademark rights.
 
-Asset paths must begin with `./assets/`, remain inside the app folder, and point to existing files. Symlinks and path traversal are rejected. List provenance even for images not currently shown. The build copies these files into `public/catalog/`; do not edit generated copies.
+Asset paths must begin with `./assets/`, remain inside the app folder, and point to existing files. Symlinks and path traversal are rejected. List provenance even for images not currently shown. Keep the applicable upstream license notices as `.txt` files in `assets/`; the build preserves and links each notice. The build copies these files into `public/catalog/`; do not edit generated copies.
 
 ## Local workflow
 
@@ -91,6 +93,7 @@ npm run validate
 npm test
 npm run check
 npm run build
+npm run check:links
 npm run check:generated
 ```
 

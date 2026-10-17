@@ -1,0 +1,10 @@
+node_modules
+dist
+.astro
+.impeccable
+artifacts
+.playwright-cli
+public/catalog
+public/catalog.json
+content/apps
+package-lock.json

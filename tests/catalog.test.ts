@@ -7,13 +7,29 @@ import { stringify as stringifyYaml } from 'yaml';
 import { appSchema, loadCatalog } from '../src/lib/catalog.ts';
 
 const valid = {
-  name: 'Example App', summary: 'A small, useful example application for your Mac.',
-  category: 'Utilities', tags: ['menu-bar'], repository: 'https://github.com/example/app',
-  website: 'https://example.org', license: 'MIT', licenseUrl: 'https://github.com/example/app/blob/main/LICENSE',
-  download: 'https://github.com/example/app/releases', featured: false,
-  added: '2026-10-17', verified: '2026-10-17', icon: './assets/icon.png', screenshots: [],
+  name: 'Example App',
+  summary: 'A small, useful example application for your Mac.',
+  category: 'Utilities',
+  tags: ['menu-bar'],
+  repository: 'https://github.com/example/app',
+  website: 'https://example.org',
+  license: 'MIT',
+  licenseUrl: 'https://github.com/example/app/blob/main/LICENSE',
+  download: 'https://github.com/example/app/releases',
+  featured: false,
+  added: '2026-10-17',
+  verified: '2026-10-17',
+  icon: './assets/icon.png',
+  screenshots: [],
   sources: ['https://github.com/example/app'],
-  assets: [{ path: './assets/icon.png', source: 'https://example.org/icon.png', credit: 'Example contributors', license: 'MIT' }],
+  assets: [
+    {
+      path: './assets/icon.png',
+      source: 'https://example.org/icon.png',
+      credit: 'Example contributors',
+      license: 'MIT',
+    },
+  ],
 };
 function fixture(t: TestContext) {
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'openstore-test-'));
@@ -21,7 +37,10 @@ function fixture(t: TestContext) {
   const write = (slug: string, data: unknown = valid) => {
     const folder = path.join(directory, slug);
     fs.mkdirSync(path.join(folder, 'assets'), { recursive: true });
-    fs.writeFileSync(path.join(folder, 'index.md'), `---\n${stringifyYaml(data)}---\n\nAn original description of this app.`);
+    fs.writeFileSync(
+      path.join(folder, 'index.md'),
+      `---\n${stringifyYaml(data)}---\n\nAn original description of this app.`,
+    );
     fs.writeFileSync(path.join(folder, 'assets/icon.png'), 'test image');
     return folder;
   };
@@ -39,7 +58,12 @@ test('loads a folder and resolves images under the configured deployment base', 
 });
 
 test('rejects traversal and malformed local asset paths', () => {
-  for (const icon of ['../secret.png', './assets/../../secret.png', '/tmp/icon.png', 'https://example.org/icon.png']) {
+  for (const icon of [
+    '../secret.png',
+    './assets/../../secret.png',
+    '/tmp/icon.png',
+    'https://example.org/icon.png',
+  ]) {
     assert.equal(appSchema.safeParse({ ...valid, icon }).success, false, icon);
   }
 });
@@ -51,7 +75,10 @@ test('rejects external, missing and uncredited image files', (t) => {
   write('example');
   fs.unlinkSync(path.join(folder, 'assets/icon.png'));
   assert.throws(() => loadCatalog(directory), /does not exist/);
-  fs.symlinkSync(path.join(folder, 'index.md'), path.join(folder, 'assets/icon.png'));
+  fs.symlinkSync(
+    path.join(folder, 'index.md'),
+    path.join(folder, 'assets/icon.png'),
+  );
   assert.throws(() => loadCatalog(directory), /Symbolic links/);
 });
 
@@ -59,13 +86,19 @@ test('requires provenance for image files even when not displayed', (t) => {
   const { directory, write } = fixture(t);
   const folder = write('example');
   fs.writeFileSync(path.join(folder, 'assets/unlisted.png'), 'test image');
-  assert.throws(() => loadCatalog(directory), /Missing image provenance.*unlisted/);
+  assert.throws(
+    () => loadCatalog(directory),
+    /Missing image provenance.*unlisted/,
+  );
 });
 
 test('rejects duplicate repositories regardless of case, .git or trailing slash', (t) => {
   const { directory, write } = fixture(t);
   write('first');
-  write('second', { ...valid, repository: 'https://github.com/Example/App.git/' });
+  write('second', {
+    ...valid,
+    repository: 'https://github.com/Example/App.git/',
+  });
   assert.throws(() => loadCatalog(directory), /Duplicate repository/);
 });
 
@@ -86,8 +119,17 @@ test('validates HTTPS, SPDX, unique normalized tags and real dates', () => {
     { added: '2026-02-30' },
     { verified: '2026-10-16' },
     { summary: 'a'.repeat(131) },
-  ]) assert.equal(appSchema.safeParse({ ...valid, ...patch }).success, false, JSON.stringify(patch));
-  assert.equal(appSchema.safeParse({ ...valid, license: 'GPL-2.0-only OR GPL-3.0-only' }).success, true);
+  ])
+    assert.equal(
+      appSchema.safeParse({ ...valid, ...patch }).success,
+      false,
+      JSON.stringify(patch),
+    );
+  assert.equal(
+    appSchema.safeParse({ ...valid, license: 'GPL-2.0-only OR GPL-3.0-only' })
+      .success,
+    true,
+  );
 });
 
 test('rejects malformed frontmatter, duplicate YAML keys and missing prose', (t) => {
@@ -97,9 +139,15 @@ test('rejects malformed frontmatter, duplicate YAML keys and missing prose', (t)
   const original = fs.readFileSync(index, 'utf8');
   fs.writeFileSync(index, original.replace(/^---\n/, ''));
   assert.throws(() => loadCatalog(directory), /Expected YAML frontmatter/);
-  fs.writeFileSync(index, original.replace('name: Example App', 'name: Example App\nname: Duplicate'));
+  fs.writeFileSync(
+    index,
+    original.replace('name: Example App', 'name: Example App\nname: Duplicate'),
+  );
   assert.throws(() => loadCatalog(directory), /unique/);
-  fs.writeFileSync(index, original.replace('An original description of this app.', ''));
+  fs.writeFileSync(
+    index,
+    original.replace('An original description of this app.', ''),
+  );
   assert.throws(() => loadCatalog(directory), /original description/);
 });
 
@@ -107,11 +155,21 @@ test('exposes all actual license notices with deployment-aware links', (t) => {
   const { directory, write } = fixture(t);
   const folder = write('example');
   assert.deepEqual(loadCatalog(directory)[0].notices, []);
-  for (const name of ['UPSTREAM-LICENSE.txt', 'ARTWORK-NOTICE.txt', 'CC-BY-SA-4.0.txt']) {
-    fs.writeFileSync(path.join(folder, 'assets', name), 'License and attribution notice');
+  for (const name of [
+    'UPSTREAM-LICENSE.txt',
+    'ARTWORK-NOTICE.txt',
+    'CC-BY-SA-4.0.txt',
+  ]) {
+    fs.writeFileSync(
+      path.join(folder, 'assets', name),
+      'License and attribution notice',
+    );
   }
   const notices = loadCatalog(directory, '/preview/')[0].notices;
-  assert.deepEqual(notices.map(notice => notice.name), ['ARTWORK-NOTICE.txt', 'CC-BY-SA-4.0.txt', 'UPSTREAM-LICENSE.txt']);
+  assert.deepEqual(
+    notices.map((notice) => notice.name),
+    ['ARTWORK-NOTICE.txt', 'CC-BY-SA-4.0.txt', 'UPSTREAM-LICENSE.txt'],
+  );
   for (const notice of notices) {
     assert.equal(notice.url, `/preview/catalog/example/assets/${notice.name}`);
     assert.equal(notice.path, `./assets/${notice.name}`);
