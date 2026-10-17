@@ -4,9 +4,9 @@
 
 [Explore the catalog](https://maco.koative.com/) · [Contribute an app](CONTRIBUTING.md) · [Research & inclusion policy](docs/RESEARCH.md)
 
-![Maco dark catalog preview](docs/preview.png)
+![Maco's Discover page: a sidebar store layout, spotlight cards with real app screenshots, and shelves of apps with Get buttons](docs/preview.png)
 
-Maco brings app discovery, license evidence, screenshots, and official project links together. Every entry is a small, reviewable folder. The website and the catalog below come from the same Markdown source.
+Maco is an app-store-style catalog of open-source Mac software. Browse Discover shelves, collections, and categories, search the whole catalog, and open a product page that puts the source code, license, and official download side by side. Light and dark appearance follow your system. Every entry is a small, reviewable folder, and the website and the catalog below come from the same Markdown source.
 
 ## One app, one folder
 
@@ -41,7 +41,7 @@ Open the address printed by the dev server (normally `http://localhost:4321/`). 
 
 The [discovery queue](research/README.md) tracks repository leads from ten directories. Refresh it with `bun run discover`; only independently reviewed app folders enter the store.
 
-See [publishing and SEO](docs/PUBLISHING.md) for the shared site configuration, social card, custom subdomain setup, and sitemap submission.
+See [publishing and SEO](docs/PUBLISHING.md) for the shared site configuration, social card, custom domain setup, and sitemap submission.
 
 ## Catalog principles
 
@@ -184,7 +184,7 @@ See [publishing and SEO](docs/PUBLISHING.md) for the shared site configuration, 
 | [MiddleDrag](https://maco.koative.com/apps/middledrag/) · [Source](https://github.com/NullPointerDepressiveDisorder/MiddleDrag) | Add middle-click and middle-drag gestures to the Mac trackpad. | [MIT](https://github.com/NullPointerDepressiveDisorder/MiddleDrag/blob/main/LICENSE) |
 | [MonitorControl](https://maco.koative.com/apps/monitorcontrol/) · [Source](https://github.com/MonitorControl/MonitorControl) | Adjust supported external displays using familiar Mac controls. | [MIT](https://github.com/MonitorControl/MonitorControl/blob/main/License.txt) |
 | [Monolingual](https://maco.koative.com/apps/monolingual/) · [Source](https://github.com/IngmarStein/Monolingual) | Remove language resources you do not need from installed software. | [GPL-3.0](https://github.com/IngmarStein/Monolingual/blob/main/LICENSE.txt) |
-| [Mos](https://maco.koative.com/apps/mos/) · [Source](https://github.com/Caldis/Mos) | Smooth mouse-wheel scrolling and set its direction independently. | [CC-BY-NC-4.0](https://github.com/Caldis/Mos/blob/master/LICENSE) · **Source available** |
+| [Mos](https://maco.koative.com/apps/mos/) · [Source](https://github.com/Caldis/Mos) | Smooth out mouse-wheel scrolling and set its direction independently of the trackpad. | [CC-BY-NC-4.0](https://github.com/Caldis/Mos/blob/master/LICENSE) · **Source available** |
 | [MountMate](https://maco.koative.com/apps/mountmate/) · [Source](https://github.com/homielab/mountmate) | Mount and unmount external drives and reconnect network shares from the menu bar. | [MIT](https://github.com/homielab/mountmate/blob/main/LICENSE) |
 | [NAPS2](https://maco.koative.com/apps/naps2/) · [Source](https://github.com/cyanfish/naps2) | Scan documents, arrange pages, and create searchable PDFs with a focused desktop scanning app. | [GPL-2.0-or-later](https://github.com/cyanfish/naps2/blob/master/LICENSE) |
 | [NearDrop](https://maco.koative.com/apps/neardrop/) · [Source](https://github.com/grishka/NearDrop) | Exchange files with Android Quick Share devices on the same network. | [Unlicense](https://github.com/grishka/NearDrop/blob/master/UNLICENSE) |
@@ -296,7 +296,7 @@ See [publishing and SEO](docs/PUBLISHING.md) for the shared site configuration, 
 | [Blender](https://maco.koative.com/apps/blender/) · [Source](https://github.com/blender/blender) | Model, animate, render, and composite 3D scenes in a complete creation suite. | [GPL-3.0](https://github.com/blender/blender/blob/main/doc/license/GPL3-license.txt) |
 | [Blockbench](https://maco.koative.com/apps/blockbench/) · [Source](https://github.com/JannisX11/blockbench) | Model, texture, and animate low-poly assets with a desktop editor built for block-based workflows. | [GPL-3.0](https://github.com/JannisX11/blockbench/blob/master/LICENSE.MD) |
 | [darktable](https://maco.koative.com/apps/darktable/) · [Source](https://github.com/darktable-org/darktable) | Develop RAW photographs with a nondestructive editing pipeline and a searchable photo library. | [GPL-3.0](https://github.com/darktable-org/darktable/blob/master/LICENSE) |
-| [digiKam](https://maco.koative.com/apps/digikam/) · [Source](https://github.com/KDE/digikam) | Organize large photo collections with albums, tags, metadata editing, and image search. | [GPL-2.0](https://github.com/KDE/digikam/blob/master/COPYING) |
+| [digiKam](https://maco.koative.com/apps/digikam/) · [Source](https://invent.kde.org/graphics/digikam) | Organize large photo collections with albums, tags, metadata editing, and image search. | [GPL-2.0-or-later](https://invent.kde.org/graphics/digikam/-/blob/master/LICENSES/GPL-2.0-or-later.txt) |
 | [draw.io Desktop](https://maco.koative.com/apps/drawio/) · [Source](https://github.com/jgraph/drawio-desktop) | Create flowcharts, architecture diagrams, and other visual documents in an offline desktop editor. | [GPL-3.0](https://github.com/jgraph/drawio-desktop/blob/dev/LICENSE) |
 | [FreeCAD](https://maco.koative.com/apps/freecad/) · [Source](https://github.com/FreeCAD/FreeCAD) | Build parametric 3D models with sketches, constraints, and specialized design workbenches. | [LGPL-2.1](https://github.com/FreeCAD/FreeCAD/blob/main/LICENSE) |
 | [Fritzing](https://maco.koative.com/apps/fritzing/) · [Source](https://github.com/fritzing/fritzing-app) | Document circuits with breadboard views, schematics, and printed circuit board layouts. | [GPL-3.0](https://github.com/fritzing/fritzing-app/blob/develop/LICENSE.GPL3) |
@@ -328,7 +328,7 @@ See [publishing and SEO](docs/PUBLISHING.md) for the shared site configuration, 
 | [Betterbird](https://maco.koative.com/apps/betterbird/) · [Source](https://github.com/Betterbird/thunderbird-patches) | A Thunderbird-based email client with an additional set of fixes and usability changes. | [MPL-2.0](https://github.com/Betterbird/thunderbird-patches/blob/main/LICENSE) |
 | [Brave](https://maco.koative.com/apps/brave/) · [Source](https://github.com/brave/brave-browser) | A Chromium-based browser with built-in controls for advertisements and trackers. | [MPL-2.0](https://github.com/brave/brave-browser/blob/master/LICENSE) |
 | [Cyberduck](https://maco.koative.com/apps/cyberduck/) · [Source](https://github.com/iterate-ch/cyberduck) | Browse remote servers and cloud storage from your desktop. | [GPL-3.0](https://github.com/iterate-ch/cyberduck/blob/master/LICENSE.txt) |
-| [Element](https://maco.koative.com/apps/element/) · [Source](https://github.com/element-hq/element-web) | A Matrix chat client for rooms, direct conversations, and community collaboration. | [AGPL-3.0](https://github.com/element-hq/element-web/blob/develop/LICENSE-AGPL-3.0) |
+| [Element](https://maco.koative.com/apps/element/) · [Source](https://github.com/element-hq/element-web) | A Matrix chat client for rooms, direct conversations, and community collaboration. | [AGPL-3.0-or-later OR GPL-3.0-or-later](https://github.com/element-hq/element-web/blob/develop/LICENSE-AGPL-3.0) |
 | [Firefox](https://maco.koative.com/apps/firefox/) · [Source](https://github.com/mozilla-firefox/firefox) | Mozilla's web browser with extensions, tab tools, and privacy controls. | [MPL-2.0](https://github.com/mozilla-firefox/firefox/blob/main/toolkit/content/licenses/mpl.html) |
 | [Floorp](https://maco.koative.com/apps/floorp/) · [Source](https://github.com/Floorp-Projects/Floorp) | A Firefox-based browser with additional workspace and interface customization tools. | [MPL-2.0](https://github.com/Floorp-Projects/Floorp/blob/main/LICENSE) |
 | [Fluent Reader](https://maco.koative.com/apps/fluent-reader/) · [Source](https://github.com/yang991178/fluent-reader) | Follow RSS subscriptions in a desktop reader with several article layouts and reading controls. | [BSD-3-Clause](https://github.com/yang991178/fluent-reader/blob/master/LICENSE) |
@@ -397,7 +397,7 @@ See [publishing and SEO](docs/PUBLISHING.md) for the shared site configuration, 
 | [AnythingLLM](https://maco.koative.com/apps/anythingllm/) · [Source](https://github.com/Mintplex-Labs/anything-llm) | A desktop AI workspace for chatting with models and organizing document collections. | [MIT](https://github.com/Mintplex-Labs/anything-llm/blob/master/LICENSE) |
 | [Chatbox](https://maco.koative.com/apps/chatbox/) · [Source](https://github.com/chatboxai/chatbox) | A desktop chat interface for supported AI models and providers. | [GPL-3.0](https://github.com/chatboxai/chatbox/blob/main/LICENSE) |
 | [Cherry Studio](https://maco.koative.com/apps/cherry-studio/) · [Source](https://github.com/CherryHQ/cherry-studio) | A desktop AI client for organizing conversations across multiple model providers. | [AGPL-3.0](https://github.com/CherryHQ/cherry-studio/blob/main/LICENSE) |
-| [ComfyUI Desktop](https://maco.koative.com/apps/comfyui-desktop/) · [Source](https://github.com/Comfy-Org/desktop) | A desktop package for building and running node-based ComfyUI workflows. | [GPL-3.0](https://github.com/Comfy-Org/desktop/blob/main/LICENSE) |
+| [Comfy Desktop](https://maco.koative.com/apps/comfyui-desktop/) · [Source](https://github.com/Comfy-Org/Comfy-Desktop) | A desktop package for building and running node-based ComfyUI workflows. | [AGPL-3.0-or-later](https://github.com/Comfy-Org/Comfy-Desktop/blob/main/LICENSE) |
 | [DiffusionBee](https://maco.koative.com/apps/diffusionbee/) · [Source](https://github.com/divamgupta/diffusionbee-stable-diffusion-ui) | A Mac desktop interface for generating images with supported local diffusion models. | [AGPL-3.0](https://github.com/divamgupta/diffusionbee-stable-diffusion-ui/blob/master/LICENSE) |
 | [GPT4All](https://maco.koative.com/apps/gpt4all/) · [Source](https://github.com/nomic-ai/gpt4all) | Run supported language models locally and work with documents through a desktop interface. | [MIT](https://github.com/nomic-ai/gpt4all/blob/main/LICENSE.txt) |
 | [Jan](https://maco.koative.com/apps/jan/) · [Source](https://github.com/janhq/jan) | A desktop workspace for chatting with local models and supported remote AI services. | [Apache-2.0](https://github.com/janhq/jan/blob/main/LICENSE) |
@@ -412,6 +412,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the complete entry format, image poli
 
 ## Credits and licensing
 
-Built with [Astro](https://astro.build/) and [Lucide](https://lucide.dev/). Bundled font and icon licenses are preserved in [third-party notices](public/third-party-notices.txt). Discovery sources include [mac-apps](https://github.com/jeffreyjackson/mac-apps), [open-source-mac-os-apps](https://github.com/serhii-londar/open-source-mac-os-apps), and [awesome-mac](https://github.com/jaywcjlove/awesome-mac); the full comparison is in [our research](docs/RESEARCH.md).
+Built with [Astro](https://astro.build/) and [Lucide](https://lucide.dev/). Text uses each visitor's system fonts; the bundled icon license is preserved in [third-party notices](public/third-party-notices.txt). Discovery sources include [mac-apps](https://github.com/jeffreyjackson/mac-apps), [open-source-mac-os-apps](https://github.com/serhii-londar/open-source-mac-os-apps), and [awesome-mac](https://github.com/jaywcjlove/awesome-mac); the full comparison is in [our research](docs/RESEARCH.md).
 
 Maco's original code and text are MIT licensed. Third-party application code, logos, screenshots, fonts, and other assets retain their own licenses and trademark rights. App code licenses are listed for discovery and do not automatically license every visual asset.

@@ -75,7 +75,9 @@ Categories are `Productivity`, `Developer tools`, `Utilities`, `Media`, `Privacy
 
 Use clear upstream app icons and screenshots, with readable screenshots and descriptive alt text. Keep assets local, sized for their actual use, and preferably PNG or WebP. Avoid oversized retina originals when a smaller image remains sharp. Never fabricate a screenshot or use a discovery list's image without tracing its origin.
 
-Every image file needs an `assets` entry with its original source URL, owner credit, and applicable license. Code and image licenses may differ; verify both. If reuse rights are unclear, omit the image and explain the gap in your pull request. The `icon` field is optional and `screenshots` can be empty. Third-party images retain their upstream license and trademark rights.
+Every image file needs an `assets` entry with its original source URL, owner credit, and applicable license. Code and image licenses may differ; verify both. The `icon` field is optional and `screenshots` can be empty. Third-party images retain their upstream license and trademark rights.
+
+An app's official icon may be used even when its logo is reserved as a trademark or carries a non-commercial or no-derivatives license: Maco is non-commercial and shows the icon only to identify the app it links to. Use the official file unmodified (resizing or format conversion only), name the rights holder in `credit`, and state the actual terms in `license`, for example "Trademark of Mozilla Foundation; not covered by the MPL-2.0 code license". Remove the icon if the rights holder asks. For screenshots and every other image, if reuse rights are unclear, omit the image and explain the gap in your pull request.
 
 Asset paths must begin with `./assets/`, remain inside the app folder, and point to existing files. Symlinks and path traversal are rejected. List provenance even for images not currently shown. Keep the applicable upstream license notices as `.txt` files in `assets/`; the build preserves and links each notice. The build copies these files into `public/catalog/`; do not edit generated copies.
 

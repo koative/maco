@@ -4,7 +4,7 @@
 
 `content/apps/<slug>/index.md` owns an application. Its YAML frontmatter carries facts and provenance; its body carries original editorial copy. Assets live in the same folder, never at a hotlinked third-party URL at runtime. Git history provides review and rollback.
 
-Astro builds an index and a shareable detail page for each app. Local search and filters run in the browser over the already-rendered catalog. App pages, source links, and the catalog remain available without JavaScript. There is no database, authentication, remote search service, or runtime GitHub API dependency.
+Astro builds a static store: Discover (`/`), Search (`/search/`), a page per category (`/categories/<slug>/`) and editorial collection (`/collections/<id>/`, defined in `src/lib/collections.ts`), and a product page per app (`/apps/<slug>/`). Search filters run in the browser over the already-rendered list of every app; its query, category, tag, license, and sort state live in the URL, and older `/?category=…` style links redirect there. Every page, source link, and the full app list remain available without JavaScript. There is no database, authentication, remote search service, or runtime GitHub API dependency.
 
 ## Why folders instead of a database or one JSON file?
 
@@ -21,7 +21,7 @@ A database would be justified later by authenticated editing or moderation queue
 1. Find the project's current official repository and its actual license file.
 2. Check that it ships a macOS application and has a reviewed source license and is classified accurately.
 3. Add an app folder following CONTRIBUTING.md, with original description text.
-4. Record each image's upstream URL, credit, and applicable license. Omit images where rights or provenance are unclear.
+4. Record each image's upstream URL, credit, and applicable license. Official app icons may be used under reserved trademark or non-commercial terms, recorded honestly (see CONTRIBUTING.md); omit other images where rights or provenance are unclear.
 5. Run validation and sync, inspect the site, and include the generated README diff in the pull request.
 6. CI validates content and builds. A merge to main publishes the static site.
 

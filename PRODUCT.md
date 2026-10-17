@@ -20,15 +20,15 @@ Make open-source macOS software easy to discover, inspect, and contribute to thr
 
 ## Operating Context
 
-Users browse and filter applications, inspect details and screenshots, then visit the official project or download page. Contributors edit one app folder and submit a pull request.
+Users browse Discover shelves, collections, categories, and search, inspect an app's product page with screenshots and license facts, then visit the official project or download page. Contributors edit one app folder and submit a pull request.
 
 ## Capabilities and Constraints
 
-App folders are the source of truth. Metadata is validated. README is generated. Every entry links upstream source and license evidence. Assets retain provenance and upstream rights. Do not equate freeware or source-available software with open source. The user explicitly approved source-available listings on 2026-10-17: mark them separately on cards, explain restrictions on detail pages, and provide a source filter. Research multiple directories rather than importing a single list. Public GitHub repository under koative, incremental commits, description and homepage.
+App folders are the source of truth. Metadata is validated. README is generated. Every entry links upstream source and license evidence. Assets retain provenance and upstream rights. Do not equate freeware or source-available software with open source. The user explicitly approved source-available listings on 2026-10-17: mark them separately on cards, explain restrictions on detail pages, and provide a source filter. The user also approved on 2026-10-17 showing every app's official icon, including reserved-trademark and non-commercial ones, because Maco is non-commercial; record the real terms and remove an icon on the rights holder's request. Research multiple directories rather than importing a single list. Public GitHub repository under koative, incremental commits, description and homepage.
 
 ## Brand Commitments
 
-Maco is the user-selected product name. English UI confirmed. Design execution delegated to Impeccable, directly in working code. The user rejected the initial pastel library design and explicitly chose a dark, sharp, premium showcase with large imagery.
+Maco is the user-selected product name. English UI confirmed. Design execution delegated to Impeccable, directly in working code. On 2026-10-17 the user asked for "a real App Store experience" and chose the Mac App Store canon: a sidebar shell (bottom tab bar on mobile), Discover shelves, product pages with a Get button, and light and dark appearance that follow the system. This supersedes the earlier dark showcase, which itself replaced a rejected pastel library design.
 
 ## Evidence on Hand
 

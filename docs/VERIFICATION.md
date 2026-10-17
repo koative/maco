@@ -1,8 +1,28 @@
 # Release verification
 
-## Catalog expansion and Bun migration — 2026-10-17
+## App store redesign and repository audit — 2026-10-17
 
-The current catalog contains **292 apps: 283 open source and 9 source available**, across 11 categories, with 230 genuine upstream icons and 32 screenshots. Loop, Cap and Pearcleaner are included; Pearcleaner is explicitly classified as source available.
+The catalog contains **292 apps: 283 open source and 9 source available**, across 11 categories, and every app now shows its official upstream icon (292 icons) alongside 32 screenshots. For 14 apps the icon is reserved by trademark or published under non-commercial or no-derivatives terms (for example Mozilla, Bitwarden, Blender, Joplin, SimpleX, CotEditor, DuckStation). The project owner approved showing these unmodified, only to identify the linked app in this non-commercial directory. Each record states the actual terms, and an icon is removed if its rights holder asks.
+
+The site was rebuilt as an app-store-style catalog: a sidebar shell (bottom tab bar on narrow screens), Discover shelves, Search, 11 category pages, 4 collection pages, and a product page per app. Light and dark appearance follow the system. Text uses system fonts, so the Manrope and DM Sans packages were removed.
+
+- `bun test`: 14 tests passed.
+- `bun run check`: zero errors, warnings or hints.
+- `bun run build`: 312 static pages.
+- `bun run check:links`: 21,022 internal links, assets, absolute self-links, and sitemap entries resolve. The stricter checker found that the 404 page declared a canonical URL `/404/` that does not exist; noindex pages no longer emit one.
+- `bun run check:generated`: README matches all 292 records.
+
+Chromium checks against the production build covered: legacy `/?category=` and `/?collection=` links redirecting to `/search/` and `/collections/<id>/`; search typing, URL sync, and mirroring between the sidebar and page fields; empty state and reset; Show More (24 → 48) with focus moving to the first new result; category filters creating history that Back restores; sidebar search submitted from other pages; the `/` shortcut; shelf paging; and naming only the clicked icon for the view transition into the product page. No page errors occurred. With JavaScript disabled, Search lists all 292 apps, filter controls stay hidden, and shelves keep a native scrollbar.
+
+Captures at 1440 and 390 px in light and dark appearance were reviewed against the design brief, and the review's findings were fixed. `DESIGN.md` and `.impeccable/design.json` describe the new system.
+
+The content audit requested every URL in every record, checked repository moves and license files through the GitHub API, and fixed broken or redirected links, moved repositories (ComfyUI Desktop, digiKam), license identifiers (Comfy Desktop, digiKam, Element), and record text (Medis, Mos, Monolingual). Pages that block automated requests but load in a browser, and upstream-only problems (GitButler's download page, jamovi's download redirect), are listed in the audit notes rather than changed. Tooling fixes: stricter duplicate-repository detection, case-insensitive `.TXT` notices, a link checker that also reads single-quoted and `srcset` URLs, absolute self-links and sitemap entries, and GitHub Actions moved to Node 24 releases.
+
+---
+
+## Catalog expansion and Bun migration (historical)
+
+At this point the catalog contained **292 apps: 283 open source and 9 source available**, across 11 categories, with 230 genuine upstream icons and 32 screenshots. Loop, Cap and Pearcleaner are included; Pearcleaner is explicitly classified as source available.
 
 - Bun 1.4.3 installs from `bun.lock`, executes all scripts and tests, and runs Astro. GitHub Actions uses the same pinned version; no npm lockfile or setup-node step remains.
 - `bun install --frozen-lockfile`: reproducible dependency install passed.
@@ -28,7 +48,7 @@ Primary-source research and exceptions are recorded in [RESEARCH.md](RESEARCH.md
 
 Reviewed on 2026-10-17 for the first public release.
 
-## Automated checks
+### Automated checks
 
 - `npm run validate`: 24 app records, required source evidence and local asset provenance.
 - `npm test`: 13 tests covering schema validation, unsafe paths, missing attribution, duplicate repositories, license notices, Markdown rendering, and executable-content removal.
@@ -40,7 +60,7 @@ Reviewed on 2026-10-17 for the first public release.
 
 These checks run in GitHub Actions before publication, except the dependency audit, which was run locally. Counts describe this release and will change with catalog growth.
 
-## Browser verification
+### Browser verification
 
 28 assertions passed in Chromium against the working site:
 
@@ -55,7 +75,7 @@ These checks run in GitHub Actions before publication, except the dependency aud
 
 Additional checks confirmed that reduced-motion preferences suppress the screenshot lift and that all 24 app links remain available with JavaScript disabled; inactive search controls are hidden in that fallback.
 
-## Design review
+### Design review
 
 An independent reviewer inspected desktop and mobile captures of the dark showcase, catalog, app details, and About page. Two findings were fixed: a spotlight headline/image collision and insufficient contrast around search/select fields. Confirmation included hover at desktop and tablet widths, mobile spotlights, keyboard focus, empty results, image evidence, and footer content.
 

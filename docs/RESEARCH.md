@@ -89,7 +89,8 @@ Do not apply Maco's repository license to upstream artwork.
 - Store the original source URL, attribution, and applicable license beside each asset.
 - Record an asset's purpose and useful alternative text.
 - Preserve required notices and distinguish official screenshots from our illustrations.
-- If reuse terms are unclear, use an original neutral visual and link to the official gallery.
+- If reuse terms for a screenshot or other image are unclear, omit it and link to the official gallery.
+- Official app icons are the exception: on 2026-10-17 the project owner approved showing them even under reserved trademark, non-commercial, or no-derivatives terms, unmodified and only to identify the linked app in this non-commercial directory. Each record states the real terms; an icon is removed if its rights holder asks.
 - Never invent a product screenshot or imply a mockup shows the real application's interface.
 
 ## Compatibility and maintenance claims
@@ -133,7 +134,7 @@ apps in parallel, with each accepted record retaining upstream license and macOS
 - **Clop**: public historical GPL source does not establish the license of later private work;
   held out of this expansion pending a version-specific source/distribution review.
 - **SimpleX**: published source does not grant blanket rights to its separately reserved
-  graphic assets; omit unapproved artwork.
+  graphic assets. Only the official app icon is shown, under the icon exception above.
 
 Catalog inclusion verifies evidence, not every feature through installation. Some historical
 utilities retain usable releases but have maintenance caveats stated in their descriptions.
