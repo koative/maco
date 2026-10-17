@@ -1,0 +1,36 @@
+name: Suggest an app
+description: Nominate an open-source macOS app for the collection.
+title: 'App suggestion: '
+body:
+  - type: input
+    id: name
+    attributes:
+      label: App name
+    validations:
+      required: true
+  - type: input
+    id: repository
+    attributes:
+      label: Upstream source repository
+      placeholder: https://github.com/owner/repo
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: License file URL
+    validations:
+      required: true
+  - type: input
+    id: download
+    attributes:
+      label: macOS download URL
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: What makes it useful?
+      description: Explain the app in your own words and mention any caveats.
+    validations:
+      required: true

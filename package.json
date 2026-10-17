@@ -1,0 +1,34 @@
+{
+  "name": "openstore",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A considered collection of open-source apps for macOS.",
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "scripts": {
+    "dev": "npm run sync && astro dev",
+    "validate": "tsx scripts/catalog.ts validate",
+    "sync": "tsx scripts/catalog.ts sync",
+    "check:generated": "tsx scripts/catalog.ts check",
+    "build": "npm run sync && astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "test": "tsx --test tests/*.test.ts"
+  },
+  "dependencies": {
+    "@fontsource-variable/dm-sans": "^5.3.0",
+    "@fontsource-variable/manrope": "^5.3.0",
+    "astro": "^7.4.0",
+    "zod": "^4.6.7",
+    "@lucide/astro": "^1.16.0",
+    "yaml": "^2.8.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3"
+  }
+}
