@@ -13,7 +13,8 @@ added: "2026-10-17"
 verified: "2026-10-17"
 screenshots: []
 sources: ["https://github.com/audacity/audacity", "https://github.com/audacity/audacity/blob/master/LICENSE.txt", "https://github.com/audacity/audacity/blob/master/README.md", "https://github.com/audacity/audacity/releases"]
-assets: []
+assets: [{"path": "./assets/icon.png", "source": "https://github.com/audacity/audacity/blob/master/share/icons/AppIcon/AU4_AppIcon_256x256.png", "credit": "Audacity contributors", "license": "GPL-3.0-only; project trademarks remain with their owners"}]
+icon: "./assets/icon.png"
 ---
 
 Audacity offers a timeline for recording voices or instruments, editing clips, and combining tracks. Effects and analysis tools help clean up or reshape a recording.

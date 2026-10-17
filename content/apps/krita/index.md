@@ -1,19 +1,28 @@
 ---
-name: "Krita"
-summary: "Paint illustrations, comics, and frame-by-frame animation with a flexible digital art workspace."
-category: "Media"
-tags: ["drawing", "painting", "animation"]
-repository: "https://github.com/KDE/krita"
-website: "https://krita.org/"
-license: "GPL-3.0"
-licenseUrl: "https://github.com/KDE/krita/blob/master/COPYING"
-download: "https://krita.org/en/download/"
+name: Krita
+summary: Paint illustrations, comics, and frame-by-frame animation with a
+  flexible digital art workspace.
+category: Design
+tags:
+  - drawing
+  - painting
+  - animation
+repository: https://github.com/KDE/krita
+website: https://krita.org/
+license: GPL-3.0
+licenseUrl: https://github.com/KDE/krita/blob/master/COPYING
+download: https://krita.org/en/download/
 featured: false
-added: "2026-10-17"
-verified: "2026-10-17"
+added: 2026-10-17
+verified: 2026-10-17
 screenshots: []
-sources: ["https://github.com/KDE/krita", "https://github.com/KDE/krita/blob/master/COPYING", "https://github.com/KDE/krita/blob/master/README.md", "https://krita.org/en/download/"]
-assets: []
+sources:
+  - https://github.com/KDE/krita
+  - https://github.com/KDE/krita/blob/master/COPYING
+  - https://github.com/KDE/krita/blob/master/README.md
+  - https://krita.org/en/download/
+assets: [{"path": "./assets/icon.png", "source": "https://github.com/KDE/krita/blob/master/krita/pics/branding/default/256-apps-krita.png", "credit": "krita contributors", "license": "GPL-3.0; project trademarks remain with their owners"}]
+icon: "./assets/icon.png"
 ---
 
 Krita provides brushes, layers, selections, and drawing assistants for digital painting. Its canvas-centered workspace also supports comics and hand-drawn animation.

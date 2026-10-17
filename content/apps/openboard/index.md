@@ -1,18 +1,26 @@
 ---
-name: "OpenBoard"
-summary: "Teach and present on a digital whiteboard with drawing tools, documents, and multimedia."
-category: "Productivity"
-tags: ["whiteboard", "teaching", "presentation"]
-repository: "https://github.com/OpenBoard-org/OpenBoard"
-website: "https://openboard.ch/"
-license: "GPL-3.0"
-licenseUrl: "https://github.com/OpenBoard-org/OpenBoard/blob/master/LICENSE"
-download: "https://github.com/OpenBoard-org/OpenBoard/releases"
+name: OpenBoard
+summary: Teach and present on a digital whiteboard with drawing tools,
+  documents, and multimedia.
+category: Education
+tags:
+  - whiteboard
+  - teaching
+  - presentation
+repository: https://github.com/OpenBoard-org/OpenBoard
+website: https://openboard.ch/
+license: GPL-3.0
+licenseUrl: https://github.com/OpenBoard-org/OpenBoard/blob/master/LICENSE
+download: https://github.com/OpenBoard-org/OpenBoard/releases
 featured: false
-added: "2026-10-17"
-verified: "2026-10-17"
+added: 2026-10-17
+verified: 2026-10-17
 screenshots: []
-sources: ["https://github.com/OpenBoard-org/OpenBoard", "https://github.com/OpenBoard-org/OpenBoard/blob/master/LICENSE", "https://github.com/OpenBoard-org/OpenBoard/blob/master/README.md", "https://github.com/OpenBoard-org/OpenBoard/releases"]
+sources:
+  - https://github.com/OpenBoard-org/OpenBoard
+  - https://github.com/OpenBoard-org/OpenBoard/blob/master/LICENSE
+  - https://github.com/OpenBoard-org/OpenBoard/blob/master/README.md
+  - https://github.com/OpenBoard-org/OpenBoard/releases
 assets: []
 ---
 

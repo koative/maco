@@ -4,7 +4,7 @@ summary: "Program drum patterns and arrange them into songs with a dedicated dru
 category: "Media"
 tags: ["music", "drums", "sequencer"]
 repository: "https://github.com/hydrogen-music/hydrogen"
-website: "https://hydrogen-music.org/"
+website: "https://github.com/hydrogen-music/hydrogen"
 license: "GPL-2.0"
 licenseUrl: "https://github.com/hydrogen-music/hydrogen/blob/main/COPYING"
 download: "https://github.com/hydrogen-music/hydrogen/releases"

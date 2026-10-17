@@ -1,18 +1,26 @@
 ---
-name: "RawTherapee"
-summary: "Develop RAW files with detailed exposure, color, sharpening, and batch export controls."
-category: "Media"
-tags: ["photography", "raw-editor", "batch-processing"]
-repository: "https://github.com/RawTherapee/RawTherapee"
-website: "https://rawtherapee.com/"
-license: "GPL-3.0"
-licenseUrl: "https://github.com/RawTherapee/RawTherapee/blob/dev/LICENSE"
-download: "https://rawtherapee.com/downloads/"
+name: RawTherapee
+summary: Develop RAW files with detailed exposure, color, sharpening, and batch
+  export controls.
+category: Design
+tags:
+  - photography
+  - raw-editor
+  - batch-processing
+repository: https://github.com/RawTherapee/RawTherapee
+website: https://rawtherapee.com/
+license: GPL-3.0
+licenseUrl: https://github.com/RawTherapee/RawTherapee/blob/dev/LICENSE
+download: https://rawtherapee.com/downloads/
 featured: false
-added: "2026-10-17"
-verified: "2026-10-17"
+added: 2026-10-17
+verified: 2026-10-17
 screenshots: []
-sources: ["https://github.com/RawTherapee/RawTherapee", "https://github.com/RawTherapee/RawTherapee/blob/dev/LICENSE", "https://github.com/RawTherapee/RawTherapee/blob/dev/README.md", "https://rawtherapee.com/downloads/"]
+sources:
+  - https://github.com/RawTherapee/RawTherapee
+  - https://github.com/RawTherapee/RawTherapee/blob/dev/LICENSE
+  - https://github.com/RawTherapee/RawTherapee/blob/dev/README.md
+  - https://rawtherapee.com/downloads/
 assets: []
 ---
 

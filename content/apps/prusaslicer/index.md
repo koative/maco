@@ -1,18 +1,26 @@
 ---
-name: "PrusaSlicer"
-summary: "Prepare 3D models for printing with supports, printer profiles, and detailed toolpath previews."
-category: "Utilities"
-tags: ["3d-printing", "slicer", "fabrication"]
-repository: "https://github.com/prusa3d/PrusaSlicer"
-website: "https://www.prusa3d.com/page/prusaslicer_424/"
-license: "AGPL-3.0"
-licenseUrl: "https://github.com/prusa3d/PrusaSlicer/blob/master/LICENSE"
-download: "https://github.com/prusa3d/PrusaSlicer/releases"
+name: PrusaSlicer
+summary: Prepare 3D models for printing with supports, printer profiles, and
+  detailed toolpath previews.
+category: Design
+tags:
+  - 3d-printing
+  - slicer
+  - fabrication
+repository: https://github.com/prusa3d/PrusaSlicer
+website: https://www.prusa3d.com/page/prusaslicer_424/
+license: AGPL-3.0
+licenseUrl: https://github.com/prusa3d/PrusaSlicer/blob/master/LICENSE
+download: https://github.com/prusa3d/PrusaSlicer/releases
 featured: false
-added: "2026-10-17"
-verified: "2026-10-17"
+added: 2026-10-17
+verified: 2026-10-17
 screenshots: []
-sources: ["https://github.com/prusa3d/PrusaSlicer", "https://github.com/prusa3d/PrusaSlicer/blob/master/LICENSE", "https://github.com/prusa3d/PrusaSlicer/blob/master/README.md", "https://github.com/prusa3d/PrusaSlicer/releases"]
+sources:
+  - https://github.com/prusa3d/PrusaSlicer
+  - https://github.com/prusa3d/PrusaSlicer/blob/master/LICENSE
+  - https://github.com/prusa3d/PrusaSlicer/blob/master/README.md
+  - https://github.com/prusa3d/PrusaSlicer/releases
 assets: []
 ---
 

@@ -1,18 +1,26 @@
 ---
-name: "Bambu Studio"
-summary: "Slice 3D models and manage print projects with multi-plate and material-aware workflows."
-category: "Utilities"
-tags: ["3d-printing", "slicer", "models"]
-repository: "https://github.com/bambulab/BambuStudio"
-website: "https://bambulab.com/en/download/studio"
-license: "AGPL-3.0"
-licenseUrl: "https://github.com/bambulab/BambuStudio/blob/master/LICENSE"
-download: "https://github.com/bambulab/BambuStudio/releases"
+name: Bambu Studio
+summary: Slice 3D models and manage print projects with multi-plate and
+  material-aware workflows.
+category: Design
+tags:
+  - 3d-printing
+  - slicer
+  - models
+repository: https://github.com/bambulab/BambuStudio
+website: https://bambulab.com/en/download/studio
+license: AGPL-3.0
+licenseUrl: https://github.com/bambulab/BambuStudio/blob/master/LICENSE
+download: https://github.com/bambulab/BambuStudio/releases
 featured: false
-added: "2026-10-17"
-verified: "2026-10-17"
+added: 2026-10-17
+verified: 2026-10-17
 screenshots: []
-sources: ["https://github.com/bambulab/BambuStudio", "https://github.com/bambulab/BambuStudio/blob/master/LICENSE", "https://github.com/bambulab/BambuStudio/blob/master/README.md", "https://github.com/bambulab/BambuStudio/releases"]
+sources:
+  - https://github.com/bambulab/BambuStudio
+  - https://github.com/bambulab/BambuStudio/blob/master/LICENSE
+  - https://github.com/bambulab/BambuStudio/blob/master/README.md
+  - https://github.com/bambulab/BambuStudio/releases
 assets: []
 ---
 

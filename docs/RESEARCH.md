@@ -137,3 +137,10 @@ apps in parallel, with each accepted record retaining upstream license and macOS
 
 Catalog inclusion verifies evidence, not every feature through installation. Some historical
 utilities retain usable releases but have maintenance caveats stated in their descriptions.
+
+The expansion publishes 292 applications (283 open source and 9 separately labeled source available).
+The repeatable [discovery queue](../research/README.md) contains 1,721 deduplicated repository
+leads from the ten directories; unreviewed leads are deliberately not published as apps.
+Additional restricted licenses include the custom PasteBar and NotchPrompter terms,
+PolyForm Shield for SaneClip, FSL for Switch, and CC BY-NC-ND for current DuckStation.
+Each record links the exact source terms and states its restrictions.

@@ -1,0 +1,42 @@
+[
+  {
+    "repository": "https://github.com/jeffreyjackson/mac-apps",
+    "readme": "https://raw.githubusercontent.com/jeffreyjackson/mac-apps/master/README.md"
+  },
+  {
+    "repository": "https://github.com/serhii-londar/open-source-mac-os-apps",
+    "readme": "https://raw.githubusercontent.com/serhii-londar/open-source-mac-os-apps/master/README.md"
+  },
+  {
+    "repository": "https://github.com/jaywcjlove/awesome-mac",
+    "readme": "https://raw.githubusercontent.com/jaywcjlove/awesome-mac/master/README.md"
+  },
+  {
+    "repository": "https://github.com/iCHAIT/awesome-macOS",
+    "readme": "https://raw.githubusercontent.com/iCHAIT/awesome-macOS/master/README.md"
+  },
+  {
+    "repository": "https://github.com/abordage/awesome-mac",
+    "readme": "https://raw.githubusercontent.com/abordage/awesome-mac/main/README.md"
+  },
+  {
+    "repository": "https://github.com/AndrewSB/awesome-macOS",
+    "readme": "https://raw.githubusercontent.com/AndrewSB/awesome-macOS/master/README.md"
+  },
+  {
+    "repository": "https://github.com/Awesome-llms-labs/awesome-oss-macos",
+    "readme": "https://raw.githubusercontent.com/Awesome-llms-labs/awesome-oss-macos/main/README.md"
+  },
+  {
+    "repository": "https://github.com/open-saas-directory/awesome-native-macosx-apps",
+    "readme": "https://raw.githubusercontent.com/open-saas-directory/awesome-native-macosx-apps/main/README.md"
+  },
+  {
+    "repository": "https://github.com/KiarashS/awesome-macOS-applications",
+    "readme": "https://raw.githubusercontent.com/KiarashS/awesome-macOS-applications/main/README.md"
+  },
+  {
+    "repository": "https://github.com/guyzyl/awesome-macos-apps",
+    "readme": "https://raw.githubusercontent.com/guyzyl/awesome-macos-apps/main/README.md"
+  }
+]
