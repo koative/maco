@@ -10,6 +10,11 @@ export const categories = [
   'Media',
   'Privacy & security',
   'Writing',
+  'Design',
+  'Internet',
+  'Education',
+  'Games',
+  'AI',
 ] as const;
 
 const approvedLicenses = new Set([
@@ -46,6 +51,10 @@ const sourceAvailableLicenses = new Set([
   'LicenseRef-Mac-Mouse-Fix',
   'FSL-1.1-MIT',
   'CC-BY-NC-4.0',
+  'CC-BY-NC-ND-4.0',
+  'LicenseRef-PasteBar',
+  'LicenseRef-NotchPrompter',
+  'PolyForm-Shield-1.0.0',
 ]);
 const httpsUrl = z.url().refine((value) => {
   try {

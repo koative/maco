@@ -100,7 +100,7 @@ try {
     const { current, expected } = expectedReadme(apps);
     if (current !== expected)
       throw new Error(
-        'README catalog is stale. Run npm run sync and commit README.md.',
+        'README catalog is stale. Run bun run sync and commit README.md.',
       );
   }
   console.log(

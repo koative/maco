@@ -10,5 +10,5 @@ Link the upstream repository, license, macOS download, and image sources where r
 
 - [ ] I verified the app's current open-source license and macOS availability.
 - [ ] Every included image has its source, credit, and license recorded.
-- [ ] I ran `npm run validate`, `npm test`, `npm run check`, and `npm run build`.
-- [ ] I committed the README changes produced by `npm run sync`.
+- [ ] I ran `bun run validate`, `bun test`, `bun run check`, and `bun run build`.
+- [ ] I committed the README changes produced by `bun run sync`.

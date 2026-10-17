@@ -40,3 +40,5 @@ Starting reference: https://github.com/jeffreyjackson/mac-apps. Further director
 - Link verifiable evidence beside discovery content.
 - Store genuine app imagery with attribution.
 - Keep browsing fast, accessible, and independent of a server.
+
+Toolchain: the user requested Bun throughout on 2026-10-17. Use Bun for installation, scripts, tests, Astro execution, and CI. Catalog size has no fixed cap; prioritize breadth with truthful license and macOS evidence.

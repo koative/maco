@@ -34,7 +34,7 @@ function inspect(directory: string) {
   }
 }
 if (!fs.existsSync(root))
-  throw new Error('Build the site before checking links: npm run build');
+  throw new Error('Build the site before checking links: bun run build');
 inspect(root);
 if (!pages) throw new Error('No HTML pages found in dist');
 if (errors.length) {

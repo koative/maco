@@ -1,4 +1,4 @@
-import { test, type TestContext } from 'node:test';
+import { test, afterEach } from 'bun:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
@@ -31,9 +31,14 @@ const valid = {
     },
   ],
 };
-function fixture(t: TestContext) {
+const temporaryDirectories: string[] = [];
+afterEach(() => {
+  for (const directory of temporaryDirectories.splice(0))
+    fs.rmSync(directory, { recursive: true, force: true });
+});
+function fixture() {
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'openstore-test-'));
-  t.after(() => fs.rmSync(directory, { recursive: true, force: true }));
+  temporaryDirectories.push(directory);
   const write = (slug: string, data: unknown = valid) => {
     const folder = path.join(directory, slug);
     fs.mkdirSync(path.join(folder, 'assets'), { recursive: true });
@@ -47,8 +52,8 @@ function fixture(t: TestContext) {
   return { directory, write };
 }
 
-test('loads a folder and resolves images under the configured deployment base', (t) => {
-  const { directory, write } = fixture(t);
+test('loads a folder and resolves images under the configured deployment base', () => {
+  const { directory, write } = fixture();
   write('example');
   const [app] = loadCatalog(directory, '/preview/');
   assert.equal(app.slug, 'example');
@@ -107,8 +112,8 @@ test('keeps restricted source licenses out of the open-source classification', (
   );
 });
 
-test('rejects external, missing and uncredited image files', (t) => {
-  const { directory, write } = fixture(t);
+test('rejects external, missing and uncredited image files', () => {
+  const { directory, write } = fixture();
   const folder = write('example', { ...valid, assets: [] });
   assert.throws(() => loadCatalog(directory), /Missing image provenance/);
   write('example');
@@ -121,8 +126,8 @@ test('rejects external, missing and uncredited image files', (t) => {
   assert.throws(() => loadCatalog(directory), /Symbolic links/);
 });
 
-test('requires provenance for image files even when not displayed', (t) => {
-  const { directory, write } = fixture(t);
+test('requires provenance for image files even when not displayed', () => {
+  const { directory, write } = fixture();
   const folder = write('example');
   fs.writeFileSync(path.join(folder, 'assets/unlisted.png'), 'test image');
   assert.throws(
@@ -131,8 +136,8 @@ test('requires provenance for image files even when not displayed', (t) => {
   );
 });
 
-test('rejects duplicate repositories regardless of case, .git or trailing slash', (t) => {
-  const { directory, write } = fixture(t);
+test('rejects duplicate repositories regardless of case, .git or trailing slash', () => {
+  const { directory, write } = fixture();
   write('first');
   write('second', {
     ...valid,
@@ -141,8 +146,8 @@ test('rejects duplicate repositories regardless of case, .git or trailing slash'
   assert.throws(() => loadCatalog(directory), /Duplicate repository/);
 });
 
-test('rejects unsafe folder names', (t) => {
-  const { directory, write } = fixture(t);
+test('rejects unsafe folder names', () => {
+  const { directory, write } = fixture();
   write('Bad_Name');
   assert.throws(() => loadCatalog(directory), /lowercase, hyphen-separated/);
 });
@@ -171,8 +176,8 @@ test('validates HTTPS, SPDX, unique normalized tags and real dates', () => {
   );
 });
 
-test('rejects malformed frontmatter, duplicate YAML keys and missing prose', (t) => {
-  const { directory, write } = fixture(t);
+test('rejects malformed frontmatter, duplicate YAML keys and missing prose', () => {
+  const { directory, write } = fixture();
   const folder = write('example');
   const index = path.join(folder, 'index.md');
   const original = fs.readFileSync(index, 'utf8');
@@ -190,8 +195,8 @@ test('rejects malformed frontmatter, duplicate YAML keys and missing prose', (t)
   assert.throws(() => loadCatalog(directory), /original description/);
 });
 
-test('exposes all actual license notices with deployment-aware links', (t) => {
-  const { directory, write } = fixture(t);
+test('exposes all actual license notices with deployment-aware links', () => {
+  const { directory, write } = fixture();
   const folder = write('example');
   assert.deepEqual(loadCatalog(directory)[0].notices, []);
   for (const name of [

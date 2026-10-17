@@ -67,9 +67,9 @@ Body Markdown supports headings, lists, emphasis, links, quotes, code, and table
 
 All links must use HTTPS. Keep summaries at most 130 characters. Tags must be unique lowercase words separated by hyphens, with one to ten tags per app. Dates must be quoted ISO dates; `verified` records the most recent manual check and cannot precede `added`. It is not a security audit or endorsement.
 
-Categories are `Productivity`, `Developer tools`, `Utilities`, `Media`, `Privacy & security`, and `Writing`. Choose one main category; use tags for overlap. The `featured` flag is an editorial choice, not a popularity metric. License values use reviewed SPDX identifiers, with `AND` or `OR` expressions when upstream requires them.
+Categories are `Productivity`, `Developer tools`, `Utilities`, `Media`, `Privacy & security`, `Writing`, `Design`, `Internet`, `Education`, `Games`, and `AI`. Choose one main category; use tags for overlap. The `featured` flag is an editorial choice, not a popularity metric. License values use reviewed SPDX identifiers, with `AND` or `OR` expressions when upstream requires them.
 
-`sourceAvailability` defaults to `open-source`. Restricted source licenses require `sourceAvailability: source-available` and an original `licenseNotes` paragraph explaining the material restrictions. The reviewed restricted identifiers live separately in `sourceAvailableLicenses`; they cannot pass validation as open source. The catalog currently recognizes `Apache-2.0 WITH Commons-Clause` (an editorial combined label, not a standard SPDX expression), `LicenseRef-Mac-Mouse-Fix`, `FSL-1.1-MIT`, and `CC-BY-NC-4.0`. Do not strip extra terms or classify missing licenses as source available. Closed-source apps remain out of scope.
+`sourceAvailability` defaults to `open-source`. Restricted source licenses require `sourceAvailability: source-available` and an original `licenseNotes` paragraph explaining the material restrictions. The reviewed restricted identifiers live separately in `sourceAvailableLicenses`; they cannot pass validation as open source. The catalog currently recognizes `Apache-2.0 WITH Commons-Clause` (an editorial combined label, not a standard SPDX expression), `LicenseRef-Mac-Mouse-Fix`, `FSL-1.1-MIT`, `CC-BY-NC-4.0`, `CC-BY-NC-ND-4.0`, `LicenseRef-PasteBar`, `LicenseRef-NotchPrompter`, and `PolyForm-Shield-1.0.0`. Do not strip extra terms or classify missing licenses as source available. Closed-source apps remain out of scope.
 
 ## Images and attribution
 
@@ -81,27 +81,27 @@ Asset paths must begin with `./assets/`, remain inside the app folder, and point
 
 ## Local workflow
 
-Use Node.js 22.22 or newer (Node.js 24 is used in CI):
+Use Bun 1.4.3 or newer (CI uses the version pinned in `package.json`):
 
 ```sh
-npm ci
-npm run dev
+bun install --frozen-lockfile
+bun run dev
 ```
 
 After editing records, run:
 
 ```sh
-npm run validate
-npm test
-npm run check
-npm run build
-npm run check:links
-npm run check:generated
+bun run validate
+bun test
+bun run check
+bun run build
+bun run check:links
+bun run check:generated
 ```
 
-`npm run sync` validates records, copies catalog assets, writes the public `catalog.json` feed, and updates the README between `<!-- catalog:start -->` and `<!-- catalog:end -->`. Both development and production builds run sync automatically. Commit the updated README alongside app records. Generated `public/catalog/`, `public/catalog.json`, and `dist/` stay out of Git.
+`bun run sync` validates records, copies catalog assets, writes the public `catalog.json` feed, and updates the README between `<!-- catalog:start -->` and `<!-- catalog:end -->`. Both development and production builds run sync automatically. Commit the updated README alongside app records. Generated `public/catalog/`, `public/catalog.json`, and `dist/` stay out of Git.
 
-The site is served beneath `/openstore/`. Keep internal links and image URLs aware of Astro's `BASE_URL`; the catalog loader already resolves image paths. Preview production output with `npm run preview` after building.
+The site is served beneath `/openstore/`. Keep internal links and image URLs aware of Astro's `BASE_URL`; the catalog loader already resolves image paths. Preview production output with `bun run preview` after building.
 
 ## Pull requests
 

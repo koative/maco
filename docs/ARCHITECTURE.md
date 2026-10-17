@@ -30,3 +30,9 @@ A database would be justified later by authenticated editing or moderation queue
 The verification date means a curator checked the listed evidence on that date; it is not a live health or security badge. Recheck licenses before changing that date. Repositories and licenses can change. Do not automatically rewrite editorial or licensing facts from API guesses.
 
 An app whose current license becomes restrictive needs an editorial re-review: classify it as source available with clear license notes, or remove it if its source is no longer published. The schema prevents restricted identifiers from being labeled open source. Missing screenshots do not disqualify a useful app. Expand coverage through independent review rather than weakening its evidence rules.
+
+## Bun toolchain
+
+`package.json` pins Bun through `packageManager`; CI reads that version with `oven-sh/setup-bun`. The text `bun.lock` is the only dependency lockfile, installed with `bun install --frozen-lockfile`. Catalog scripts run as TypeScript directly on Bun. Tests import `bun:test`. Astro and Prettier are explicitly launched through Bun; `bunfig.toml` also selects Bun for executable scripts. Standard `node:` module imports use Bun’s compatibility APIs and do not require a separate Node runtime.
+
+The deployed output is static HTML, CSS, JavaScript and assets, so GitHub Pages does not need a server runtime.

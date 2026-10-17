@@ -1,0 +1,6 @@
+[run]
+# Honor Bun as the runtime even for package executables with Node shebangs.
+bun = true
+
+[test]
+root = "./tests"

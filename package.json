@@ -3,21 +3,21 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "A considered collection of open-source apps for macOS.",
+  "description": "Discover open-source Mac apps and clearly labeled source-available alternatives.",
   "engines": {
-    "node": ">=22.22.0"
+    "bun": ">=1.4.3"
   },
   "scripts": {
-    "dev": "npm run sync && astro dev",
-    "validate": "tsx scripts/catalog.ts validate",
-    "sync": "tsx scripts/catalog.ts sync",
-    "check:generated": "tsx scripts/catalog.ts check",
-    "build": "npm run sync && astro build",
-    "preview": "astro preview",
-    "check": "astro check",
-    "test": "tsx --test tests/*.test.ts",
-    "format": "prettier --write src scripts tests astro.config.mjs",
-    "check:links": "tsx scripts/check-links.ts"
+    "dev": "bun run sync && bun --bun astro dev",
+    "validate": "bun scripts/catalog.ts validate",
+    "sync": "bun scripts/catalog.ts sync",
+    "check:generated": "bun scripts/catalog.ts check",
+    "build": "bun run sync && bun --bun astro build",
+    "preview": "bun --bun astro preview",
+    "check": "bun --bun astro check",
+    "test": "bun test",
+    "format": "bun --bun prettier --write src scripts tests astro.config.mjs",
+    "check:links": "bun scripts/check-links.ts"
   },
   "dependencies": {
     "@fontsource-variable/dm-sans": "^5.3.0",
@@ -35,7 +35,8 @@
     "@types/sanitize-html": "^2.16.2",
     "prettier": "^3.9.10",
     "prettier-plugin-astro": "^1.1.1",
-    "tsx": "^4.23.15",
-    "typescript": "^6.0.3"
-  }
+    "typescript": "^6.0.3",
+    "@types/bun": "^1.4.3"
+  },
+  "packageManager": "bun@1.4.3"
 }
