@@ -19,7 +19,12 @@ sources:
   - https://github.com/simplex-chat/simplex-chat
   - https://github.com/simplex-chat/simplex-chat/blob/stable/LICENSE
   - https://github.com/simplex-chat/simplex-chat/releases
-assets: []
+icon: ./assets/icon.png
+assets:
+  - path: ./assets/icon.png
+    source: https://raw.githubusercontent.com/simplex-chat/simplex-chat/stable/media-logos/simplex-app-icon-light.png
+    credit: SimpleX Chat Ltd.
+    license: "Trademark of SimpleX Chat Ltd., all rights reserved; not covered by the AGPL-3.0 code license (see docs/TRADEMARK.md and assets/ASSETS_LICENSE.md); official media logo, used unmodified (resized only) to identify the app in a non-commercial directory"
 ---
 
 SimpleX Chat provides private conversations using connection links instead of a global user directory. Its desktop application brings the interface to macOS.

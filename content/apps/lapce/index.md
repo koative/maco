@@ -4,7 +4,7 @@ summary: "A code editor built around responsive editing, language tools, and a m
 category: "Developer tools"
 tags: ["code-editor", "development", "cross-platform"]
 repository: "https://github.com/lapce/lapce"
-website: "https://lapce.dev"
+website: "https://lap.dev/lapce/"
 license: "Apache-2.0"
 licenseUrl: "https://github.com/lapce/lapce/blob/master/LICENSE"
 download: "https://github.com/lapce/lapce/releases"

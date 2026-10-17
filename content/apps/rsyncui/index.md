@@ -19,7 +19,12 @@ sources:
   - https://github.com/rsyncOSX/RsyncUI/blob/main/Licence.MD
   - https://github.com/rsyncOSX/RsyncUI/blob/main/README.md
   - https://github.com/rsyncOSX/RsyncUI/releases
+icon: ./assets/icon.png
 assets:
+  - path: ./assets/icon.png
+    source: https://github.com/rsyncOSX/RsyncUI/tree/ad7fff9dd50a0bf7370812c4f0f1e4e461d9453b/RsyncUIicon.icon
+    credit: RsyncUI contributors
+    license: MIT; upstream project asset, trademarks retained
   - path: ./assets/screenshot.png
     source: https://github.com/rsyncOSX/RsyncUI/blob/ad7fff9dd50a0bf7370812c4f0f1e4e461d9453b/images/rsyncui.png
     credit: RsyncUI contributors

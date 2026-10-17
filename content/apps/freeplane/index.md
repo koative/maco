@@ -13,7 +13,8 @@ added: "2026-10-17"
 verified: "2026-10-17"
 screenshots: []
 sources: ["https://github.com/freeplane/freeplane", "https://github.com/freeplane/freeplane/blob/1.13.x/license.txt", "https://github.com/freeplane/freeplane/blob/1.13.x/README.md", "https://github.com/freeplane/freeplane/releases"]
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/freeplane/freeplane/1.13.x/freeplane/src/editor/resources/images/Freeplane_frame_icon_256x256.png", "credit": "Freeplane contributors", "license": "GPL-2.0; upstream project asset, trademarks retained"}]
 ---
 
 Freeplane organizes ideas as connected nodes in a mind map. Add notes, links, and attributes to give each branch more detail without losing the overall structure.

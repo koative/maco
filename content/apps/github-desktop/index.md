@@ -4,7 +4,7 @@ summary: "A desktop Git workflow for reviewing diffs, committing changes, and wo
 category: "Developer tools"
 tags: ["git", "github", "version-control"]
 repository: "https://github.com/desktop/desktop"
-website: "https://desktop.github.com"
+website: "https://github.com/apps/desktop"
 license: "MIT"
 licenseUrl: "https://github.com/desktop/desktop/blob/development/LICENSE"
 download: "https://desktop.github.com/download"

@@ -13,7 +13,8 @@ added: "2026-10-17"
 verified: "2026-10-17"
 screenshots: []
 sources: ["https://github.com/KDE/kdenlive", "https://github.com/KDE/kdenlive/blob/master/COPYING", "https://github.com/KDE/kdenlive/blob/master/README.md", "https://kdenlive.org/download/"]
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/KDE/kdenlive/master/data/icons/256-apps-kdenlive.png", "credit": "Nara Oliveira and Farid Abdelnour", "license": "LGPL-3.0-or-later; upstream project asset, trademarks retained"}]
 ---
 
 Kdenlive provides a timeline-based editing environment for assembling footage and sound. Its effect controls and project tools support both simple cuts and more involved productions.

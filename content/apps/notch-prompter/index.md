@@ -21,7 +21,12 @@ sources:
   - https://github.com/jpomykala/NotchPrompter/releases
 sourceAvailability: source-available
 licenseNotes: The custom license permits personal, noncommercial use and modifications. Selling, revenue-generating use, and inclusion in commercial products or services are prohibited.
-assets: []
+icon: ./assets/icon.png
+assets:
+  - path: ./assets/icon.png
+    source: https://raw.githubusercontent.com/jpomykala/NotchPrompter/main/notch-prompter/Assets.xcassets/AppIcon.appiconset/NotchPrompterIcon-iOS-Default-256x256@1x.png
+    credit: Jakub Pomykała
+    license: "Copyright (c) 2025-present Jakub Pomykała; part of the repository under the custom NotchPrompter license (personal, noncommercial use; no explicit image or trademark grant); used unmodified only to identify the app in a non-commercial directory"
 screenshots: []
 ---
 

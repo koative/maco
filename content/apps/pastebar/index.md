@@ -21,7 +21,8 @@ sources:
   - https://github.com/PasteBar/PasteBarApp/releases
 sourceAvailability: source-available
 licenseNotes: Custom CC BY-NC terms allow limited commercial reuse of code portions but prohibit commercial distribution or sale of the complete software without permission.
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/PasteBar/PasteBarApp/main/src-tauri/icons/icon.icns", "credit": "PasteBar contributors", "license": "LicenseRef-PasteBar; upstream project asset, trademarks retained"}]
 screenshots: []
 ---
 

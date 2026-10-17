@@ -21,7 +21,8 @@ sources:
   - https://github.com/Sanyam-G/switch/releases
 sourceAvailability: source-available
 licenseNotes: FSL restricts competing commercial uses. Each version receives an additional MIT license two years after its publication; current FSL versions are source available.
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/Sanyam-G/switch/main/Sources/Switch/Resources/Assets.xcassets/AppIcon.appiconset/icon_256x256.png", "credit": "Switch contributors", "license": "FSL-1.1-MIT; upstream project asset, trademarks retained"}]
 screenshots: []
 ---
 

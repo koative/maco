@@ -13,7 +13,8 @@ added: "2026-10-17"
 verified: "2026-10-17"
 screenshots: []
 sources: ["https://github.com/scribusproject/scribus", "https://github.com/scribusproject/scribus/blob/master/COPYING", "https://github.com/scribusproject/scribus/blob/master/README.md", "https://sourceforge.net/projects/scribus/files/scribus/", "https://sourceforge.net/projects/scribus/files/scribus/1.6.6/"]
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/scribusproject/scribus/master/Scribus.app/Contents/Resources/Scribus.icns", "credit": "Scribus contributors", "license": "GPL-2.0-or-later; upstream project asset, trademarks retained"}]
 ---
 
 Scribus is a desktop publishing application for arranging text and images on pages. Its layout tools support publications where typography, spacing, and print output need close attention.

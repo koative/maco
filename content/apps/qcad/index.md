@@ -13,7 +13,8 @@ added: "2026-10-17"
 verified: "2026-10-17"
 screenshots: []
 sources: ["https://github.com/qcad/qcad", "https://github.com/qcad/qcad/blob/master/LICENSE.txt", "https://github.com/qcad/qcad/blob/master/README.md", "https://www.qcad.org/en/download/", "https://www.qcad.org/doc/qcad/latest/reference/en/qcad_reference_manual_en.html"]
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/qcad/qcad/master/src/run/qcad.icns", "credit": "QCAD Community Edition contributors", "license": "CC-BY-3.0; https://creativecommons.org/licenses/by/3.0/; upstream project asset, trademarks retained"}]
 ---
 
 QCAD Community Edition provides an open-source core for drafting plans and technical drawings. Precision tools help place geometry and annotate dimensions consistently.

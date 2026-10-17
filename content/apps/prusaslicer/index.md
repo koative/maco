@@ -21,7 +21,8 @@ sources:
   - https://github.com/prusa3d/PrusaSlicer/blob/master/LICENSE
   - https://github.com/prusa3d/PrusaSlicer/blob/master/README.md
   - https://github.com/prusa3d/PrusaSlicer/releases
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/prusa3d/PrusaSlicer/master/resources/icons/PrusaSlicer.icns", "credit": "PrusaSlicer contributors", "license": "AGPL-3.0; upstream project asset, trademarks retained"}]
 ---
 
 PrusaSlicer converts 3D models into instructions for supported printers. Arrange parts, choose material and quality settings, and inspect the resulting layers before printing.

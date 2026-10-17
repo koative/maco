@@ -12,7 +12,8 @@ featured: false
 added: "2026-10-17"
 verified: "2026-10-17"
 sources: ["https://github.com/bitwarden/clients", "https://github.com/bitwarden/clients/blob/main/LICENSE.txt", "https://github.com/bitwarden/clients/releases"]
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/bitwarden/clients/main/apps/desktop/resources/icon.iconset/icon_256x256.png", "credit": "Bitwarden, Inc.", "license": "Trademark/logo of Bitwarden, Inc.; not covered by the GPL-3.0 code license (no grant of logo rights per the repository LICENSE.txt; Bitwarden Trademark Guidelines apply: https://github.com/bitwarden/server/blob/main/TRADEMARK_GUIDELINES.md); used unmodified only to identify the app in a non-commercial directory"}]
 ---
 
 Bitwarden's desktop application provides access to a password vault and tools for managing saved credentials. It can be used with the Bitwarden service or a compatible self-hosted setup.

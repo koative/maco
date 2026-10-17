@@ -21,7 +21,8 @@ sources:
   - https://github.com/sane-apps/SaneClip/releases
 sourceAvailability: source-available
 licenseNotes: PolyForm Shield prohibits using the software to provide a competing product or service, including free competitors.
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/sane-apps/SaneClip/main/Resources/Assets.xcassets/AppIcon.appiconset/icon_256x256.png", "credit": "SaneClip contributors", "license": "PolyForm-Shield-1.0.0; upstream project asset, trademarks retained"}]
 screenshots: []
 ---
 

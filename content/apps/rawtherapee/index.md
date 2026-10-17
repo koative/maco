@@ -21,7 +21,8 @@ sources:
   - https://github.com/RawTherapee/RawTherapee/blob/dev/LICENSE
   - https://github.com/RawTherapee/RawTherapee/blob/dev/README.md
   - https://rawtherapee.com/downloads/
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/RawTherapee/RawTherapee/dev/rtdata/icons/hicolor/256x256/apps/rawtherapee.png", "credit": "RawTherapee contributors", "license": "GPL-3.0; upstream project asset, trademarks retained"}]
 ---
 
 RawTherapee combines a file browser with a deep RAW processing workspace. Queue several photographs for export after adjusting their exposure, color, and detail.

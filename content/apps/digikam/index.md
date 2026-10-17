@@ -7,21 +7,26 @@ tags:
   - photography
   - photo-library
   - metadata
-repository: https://github.com/KDE/digikam
+repository: https://invent.kde.org/graphics/digikam
 website: https://www.digikam.org/
-license: GPL-2.0
-licenseUrl: https://github.com/KDE/digikam/blob/master/COPYING
+license: GPL-2.0-or-later
+licenseUrl: https://invent.kde.org/graphics/digikam/-/blob/master/LICENSES/GPL-2.0-or-later.txt
 download: https://www.digikam.org/download/
 featured: false
 added: 2026-10-17
 verified: 2026-10-17
 screenshots: []
 sources:
-  - https://github.com/KDE/digikam
-  - https://github.com/KDE/digikam/blob/master/COPYING
-  - https://github.com/KDE/digikam/blob/master/README.md
+  - https://invent.kde.org/graphics/digikam
+  - https://invent.kde.org/graphics/digikam/-/blob/master/LICENSES/GPL-2.0-or-later.txt
+  - https://invent.kde.org/graphics/digikam/-/blob/master/README.md
   - https://www.digikam.org/download/
-assets: []
+icon: ./assets/icon.png
+assets:
+  - path: ./assets/icon.png
+    source: https://invent.kde.org/graphics/digikam/-/raw/master/core/data/icons/apps/256-apps-digikam.png
+    credit: digiKam developers
+    license: GPL-2.0-or-later; upstream project asset, trademarks retained
 ---
 
 digiKam helps manage a growing collection of photographs across folders and albums. Tags, ratings, metadata tools, and search provide several ways to find an image later.

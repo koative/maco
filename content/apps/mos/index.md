@@ -1,6 +1,6 @@
 ---
 name: Mos
-summary: Smooth mouse-wheel scrolling and set its direction independently.
+summary: Smooth out mouse-wheel scrolling and set its direction independently of the trackpad.
 category: Utilities
 tags:
   - mouse
@@ -21,7 +21,8 @@ sources:
   - https://github.com/Caldis/Mos/releases
 sourceAvailability: source-available
 licenseNotes: CC BY-NC 4.0 allows sharing and adaptation with attribution but restricts commercial use. It is not an open-source software license.
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/Caldis/Mos/master/Mos/Assets.xcassets/AppIcon.appiconset/Base-256.png", "credit": "Mos contributors", "license": "CC-BY-NC-4.0; upstream project asset, trademarks retained"}]
 screenshots: []
 ---
 

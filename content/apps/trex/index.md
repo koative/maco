@@ -7,7 +7,7 @@ tags:
   - text-extraction
   - screen-capture
 repository: https://github.com/amebalabs/TRex
-website: https://trex.ameba.co
+website: https://github.com/amebalabs/TRex
 license: MIT
 licenseUrl: https://github.com/amebalabs/TRex/blob/main/LICENSE
 download: https://github.com/amebalabs/TRex/releases

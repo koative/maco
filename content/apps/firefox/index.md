@@ -12,7 +12,8 @@ featured: false
 added: "2026-10-17"
 verified: "2026-10-17"
 sources: ["https://github.com/mozilla-firefox/firefox", "https://github.com/mozilla-firefox/firefox/blob/main/toolkit/content/licenses/mpl.html", "https://www.firefox.com/en-US/download/all/"]
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/mozilla-firefox/firefox/main/browser/branding/official/default256.png", "credit": "Mozilla Foundation", "license": "Trademark of Mozilla Foundation; not covered by the MPL-2.0 code license (Mozilla Trademark Policy: https://www.mozilla.org/foundation/trademarks/policy/); used unmodified only to identify the app in a non-commercial directory"}]
 ---
 
 Firefox is a general-purpose browser built around Mozilla's browser engine. It combines web navigation with extensions, developer tools, and controls for how websites store and access data.

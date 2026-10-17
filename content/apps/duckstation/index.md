@@ -12,7 +12,8 @@ featured: false
 added: "2026-10-17"
 verified: "2026-10-17"
 sources: ["https://github.com/stenzek/duckstation", "https://github.com/stenzek/duckstation/blob/master/LICENSE", "https://github.com/stenzek/duckstation/releases/tag/latest"]
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/stenzek/duckstation/master/src/duckstation-qt/DuckStation.icns", "credit": "Duck icon by Icons8 (https://icons8.com/icon/74847/duck), as credited by DuckStation; DuckStation by Stenzek", "license": "Icons8 duck icon (Icons8 terms, attribution required) shipped in the DuckStation repository under CC BY-NC-ND 4.0; unmodified (converted from .icns and resized only); used only to identify the app in a non-commercial directory"}]
 sourceAvailability: "source-available"
 licenseNotes: "CC-BY-NC-ND-4.0 permits sharing with attribution for noncommercial purposes, but does not permit distributing adapted material. This is not an open-source software license."
 ---

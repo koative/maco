@@ -7,11 +7,11 @@ repository: "https://github.com/Mintplex-Labs/anything-llm"
 website: "https://anythingllm.com"
 license: "MIT"
 licenseUrl: "https://github.com/Mintplex-Labs/anything-llm/blob/master/LICENSE"
-download: "https://anythingllm.com/desktop"
+download: "https://anythingllm.com/download"
 featured: false
 added: "2026-10-17"
 verified: "2026-10-17"
-sources: ["https://github.com/Mintplex-Labs/anything-llm", "https://github.com/Mintplex-Labs/anything-llm/blob/master/LICENSE", "https://anythingllm.com/desktop"]
+sources: ["https://github.com/Mintplex-Labs/anything-llm", "https://github.com/Mintplex-Labs/anything-llm/blob/master/LICENSE", "https://anythingllm.com/download"]
 assets: [{"path": "./assets/icon.png", "source": "https://github.com/Mintplex-Labs/anything-llm/blob/master/frontend/src/media/logo/anything-llm-icon.png", "credit": "AnythingLLM contributors", "license": "MIT; project trademarks retained"}]
 icon: "./assets/icon.png"
 ---

@@ -19,7 +19,12 @@ sources:
   - https://github.com/Ebullioscopic/Atoll/blob/dev/LICENSE
   - https://github.com/Ebullioscopic/Atoll/blob/dev/ReadMe.md
   - https://github.com/Ebullioscopic/Atoll/releases
-assets: []
+icon: ./assets/icon.png
+assets:
+  - path: ./assets/icon.png
+    source: https://raw.githubusercontent.com/Ebullioscopic/Atoll/dev/DynamicIsland/Assets.xcassets/AppIcon.appiconset/Atoll_1024%20(2).png
+    credit: Atoll contributors
+    license: GPL-3.0; upstream project asset, trademarks retained
 screenshots: []
 ---
 

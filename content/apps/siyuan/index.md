@@ -13,7 +13,8 @@ added: "2026-10-17"
 verified: "2026-10-17"
 screenshots: []
 sources: ["https://github.com/siyuan-note/siyuan", "https://github.com/siyuan-note/siyuan/blob/master/LICENSE", "https://github.com/siyuan-note/siyuan/blob/master/README.md", "https://github.com/siyuan-note/siyuan/releases"]
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/siyuan-note/siyuan/master/app/src/assets/icon-mac.png", "credit": "SiYuan contributors", "license": "AGPL-3.0; upstream project asset, trademarks retained"}]
 ---
 
 SiYuan combines document-style editing with links between individual content blocks. This makes it possible to connect a specific idea without duplicating the surrounding note.

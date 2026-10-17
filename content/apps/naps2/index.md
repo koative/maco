@@ -13,7 +13,8 @@ added: "2026-10-17"
 verified: "2026-10-17"
 screenshots: []
 sources: ["https://github.com/cyanfish/naps2", "https://github.com/cyanfish/naps2/blob/master/LICENSE", "https://github.com/cyanfish/naps2/blob/master/README.md", "https://github.com/cyanfish/naps2/releases"]
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/cyanfish/naps2/master/NAPS2.App.Mac/Icon.icns", "credit": "NAPS2 contributors", "license": "GPL-2.0-or-later; upstream project asset, trademarks retained"}]
 ---
 
 NAPS2 combines scanner access with page organization and document export. Rotate or reorder pages, then save the result as a PDF or image collection.

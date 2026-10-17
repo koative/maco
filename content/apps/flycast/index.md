@@ -12,7 +12,8 @@ featured: false
 added: "2026-10-17"
 verified: "2026-10-17"
 sources: ["https://github.com/flyinghead/flycast", "https://github.com/flyinghead/flycast/blob/master/LICENSE", "https://github.com/flyinghead/flycast/releases"]
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/flyinghead/flycast/master/shell/apple/emulator-osx/emulator-osx/Images.xcassets/AppIcon.appiconset/Icon-256.png", "credit": "Flycast contributors", "license": "GPL-2.0; upstream project asset, trademarks retained"}]
 ---
 
 Flycast emulates Dreamcast and supported arcade systems. Its desktop interface provides controls for loading content and configuring input and rendering.

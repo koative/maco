@@ -13,7 +13,8 @@ added: "2026-10-17"
 verified: "2026-10-17"
 screenshots: []
 sources: ["https://github.com/opentoonz/opentoonz", "https://github.com/opentoonz/opentoonz/blob/master/LICENSE.txt", "https://github.com/opentoonz/opentoonz/blob/master/README.md", "https://github.com/opentoonz/opentoonz/releases"]
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/opentoonz/opentoonz/master/toonz/sources/toonz/OpenToonz.icns", "credit": "OpenToonz contributors", "license": "BSD-3-Clause; upstream project asset, trademarks retained"}]
 ---
 
 OpenToonz provides a production-oriented workspace for drawn animation. Arrange drawings over time, manage levels, and combine elements through its effects and compositing tools.

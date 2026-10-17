@@ -13,7 +13,8 @@ added: "2026-10-17"
 verified: "2026-10-17"
 screenshots: []
 sources: ["https://github.com/martinrotter/rssguard", "https://github.com/martinrotter/rssguard/blob/master/LICENSE.md", "https://github.com/martinrotter/rssguard/blob/master/README.md", "https://github.com/martinrotter/rssguard/releases"]
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/martinrotter/rssguard/master/resources/graphics/rssguard.png", "credit": "RSS Guard contributors", "license": "GPL-3.0; upstream project asset, trademarks retained"}]
 ---
 
 RSS Guard gathers articles from feeds into a dedicated reading application. Group subscriptions into folders, track unread items, and apply filters to manage a busy reading list.

@@ -19,7 +19,12 @@ sources:
   - https://github.com/Clipy/Clipy/blob/develop/LICENSE
   - https://github.com/Clipy/Clipy/blob/develop/README.md
   - https://github.com/Clipy/Clipy/releases
-assets: []
+icon: ./assets/icon.png
+assets:
+  - path: ./assets/icon.png
+    source: https://raw.githubusercontent.com/Clipy/Clipy/develop/Clipy/Resources/Assets.xcassets/AppIcon.appiconset/256.png
+    credit: Clipy contributors
+    license: MIT; upstream project asset, trademarks retained
 screenshots: []
 ---
 

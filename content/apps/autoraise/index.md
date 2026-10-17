@@ -19,7 +19,12 @@ sources:
   - https://github.com/sbmpost/AutoRaise/blob/master/LICENSE.md
   - https://github.com/sbmpost/AutoRaise/blob/master/README.md
   - https://github.com/sbmpost/AutoRaise/releases
-assets: []
+icon: ./assets/icon.png
+assets:
+  - path: ./assets/icon.png
+    source: https://raw.githubusercontent.com/sbmpost/AutoRaise/master/AutoRaise.dmg
+    credit: AutoRaise contributors; 256px PNG extracted from AutoRaise.app/Contents/Resources/AppIcon.icns in the upstream DMG
+    license: GPL-3.0; upstream project asset, trademarks retained
 screenshots: []
 ---
 

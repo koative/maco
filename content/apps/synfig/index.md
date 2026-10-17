@@ -13,7 +13,8 @@ added: "2026-10-17"
 verified: "2026-10-17"
 screenshots: []
 sources: ["https://github.com/synfig/synfig", "https://github.com/synfig/synfig/blob/master/LICENSE", "https://github.com/synfig/synfig/blob/master/README.md", "https://github.com/synfig/synfig/releases"]
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/synfig/synfig/master/autobuild/osx/app-template/Contents/Resources/SynfigStudio.icns", "credit": "Synfig Studio contributors", "license": "GPL-3.0; upstream project asset, trademarks retained"}]
 ---
 
 Synfig Studio builds animation from layered vector and bitmap artwork. Its controls interpolate changes between keyframes to reduce the need to draw every frame individually.

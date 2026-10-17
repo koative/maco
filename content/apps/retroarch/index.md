@@ -12,7 +12,8 @@ featured: false
 added: "2026-10-17"
 verified: "2026-10-17"
 sources: ["https://github.com/libretro/RetroArch", "https://github.com/libretro/RetroArch/blob/master/COPYING", "https://www.retroarch.com/?page=platforms"]
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/libretro/RetroArch/master/pkg/apple/OSX/Media.xcassets/AppIcon.appiconset/mac256.png", "credit": "RetroArch contributors", "license": "GPL-3.0; upstream project asset, trademarks retained"}]
 ---
 
 RetroArch provides a shared interface for configuring and running libretro cores. It brings input mapping, display settings, and content organization into one application.

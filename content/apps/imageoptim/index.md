@@ -19,7 +19,12 @@ sources:
   - https://github.com/ImageOptim/ImageOptim/blob/main/LICENSE
   - https://github.com/ImageOptim/ImageOptim/blob/main/README.md
   - https://imageoptim.com/mac
-assets: []
+icon: ./assets/icon.png
+assets:
+  - path: ./assets/icon.png
+    source: https://raw.githubusercontent.com/ImageOptim/ImageOptim/main/imageoptim/ImageOptim.icns
+    credit: Kornel Lesiński and ImageOptim contributors; 512px icns image downscaled to 256px PNG
+    license: GPL-2.0-or-later; upstream project asset, trademarks retained
 screenshots: []
 ---
 

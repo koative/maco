@@ -13,7 +13,8 @@ added: "2026-10-17"
 verified: "2026-10-17"
 screenshots: []
 sources: ["https://github.com/NatronGitHub/Natron", "https://github.com/NatronGitHub/Natron/blob/RB-2.6/LICENSE.txt", "https://github.com/NatronGitHub/Natron/blob/RB-2.6/README.md", "https://github.com/NatronGitHub/Natron/releases"]
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/NatronGitHub/Natron/RB-2.6/Gui/Resources/Images/natronIcon256_linux.png", "credit": "Natron contributors", "license": "GPL-2.0; upstream project asset, trademarks retained"}]
 ---
 
 Natron uses a node graph to combine images, apply effects, and control how a composite is assembled. The graph makes intermediate processing steps visible and reusable.

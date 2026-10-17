@@ -13,7 +13,8 @@ added: "2026-10-17"
 verified: "2026-10-17"
 screenshots: []
 sources: ["https://github.com/GoldenCheetah/GoldenCheetah", "https://github.com/GoldenCheetah/GoldenCheetah/blob/master/COPYING", "https://github.com/GoldenCheetah/GoldenCheetah/blob/master/README.md", "https://github.com/GoldenCheetah/GoldenCheetah/releases"]
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/GoldenCheetah/GoldenCheetah/master/src/Resources/images/gc.icns", "credit": "GoldenCheetah contributors; 256px PNG extracted from the upstream icns", "license": "GPL-2.0; upstream project asset, trademarks retained"}]
 ---
 
 GoldenCheetah imports activity data into a desktop workspace for reviewing rides, runs, and other endurance sessions. Charts and comparisons help inspect trends across recorded workouts.

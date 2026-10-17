@@ -13,7 +13,8 @@ added: "2026-10-17"
 verified: "2026-10-17"
 screenshots: []
 sources: ["https://github.com/kovidgoyal/calibre", "https://github.com/kovidgoyal/calibre/blob/master/LICENSE", "https://github.com/kovidgoyal/calibre/blob/master/README.md", "https://github.com/kovidgoyal/calibre/releases"]
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/kovidgoyal/calibre/master/icons/calibre.png", "credit": "Kovid Goyal and calibre contributors", "license": "GPL-3.0; upstream project asset, trademarks retained"}]
 ---
 
 Calibre keeps an ebook library searchable by title, author, tags, and other metadata. Its viewer, format conversion tools, and device support cover several parts of a reading workflow.

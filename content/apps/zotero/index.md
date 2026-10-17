@@ -21,7 +21,8 @@ sources:
   - https://github.com/zotero/zotero/blob/main/COPYING
   - https://github.com/zotero/zotero/blob/main/README.md
   - https://www.zotero.org/download/
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://www.zotero.org/support/_media/logo/zotero_256x256x32.png", "credit": "Corporation for Digital Scholarship", "license": "AGPL-3.0-only; Zotero brand artwork offered for promotion at https://www.zotero.org/support/brand; trademarks retained"}]
 ---
 
 Zotero stores references and supporting documents in an organized research library. Tags, collections, and document annotations help keep source material connected to your writing.

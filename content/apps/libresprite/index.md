@@ -13,7 +13,8 @@ added: "2026-10-17"
 verified: "2026-10-17"
 screenshots: []
 sources: ["https://github.com/LibreSprite/LibreSprite", "https://github.com/LibreSprite/LibreSprite/blob/master/LICENSE.txt", "https://github.com/LibreSprite/LibreSprite/blob/master/README.md", "https://github.com/LibreSprite/LibreSprite/releases"]
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/LibreSprite/LibreSprite/master/desktop/icons/hicolor/256x256/apps/libresprite.png", "credit": "LibreSprite contributors", "license": "GPL-2.0; upstream project asset, trademarks retained"}]
 ---
 
 LibreSprite offers a pixel art workspace with layers, a timeline, and palette controls. It can prepare animated sprites and export the frames needed by a game or other project.

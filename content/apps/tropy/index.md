@@ -13,7 +13,8 @@ added: "2026-10-17"
 verified: "2026-10-17"
 screenshots: []
 sources: ["https://github.com/tropy/tropy", "https://github.com/tropy/tropy/blob/main/LICENSE", "https://github.com/tropy/tropy/blob/main/README.md", "https://github.com/tropy/tropy/releases"]
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/tropy/tropy/main/res/icons/latest/tropy/256x256.png", "credit": "Tropy contributors", "license": "AGPL-3.0-only; upstream project asset, trademarks retained"}]
 ---
 
 Tropy helps turn photographs of archival material into a structured research collection. Add descriptions, group related images, and attach notes so the source context remains easy to find.

@@ -4,7 +4,7 @@ summary: "A database manager for querying SQL systems and exploring supported No
 category: "Developer tools"
 tags: ["database", "sql", "nosql"]
 repository: "https://github.com/dbgate/dbgate"
-website: "https://dbgate.org"
+website: "https://www.dbgate.io"
 license: "GPL-3.0"
 licenseUrl: "https://github.com/dbgate/dbgate/blob/master/LICENSE"
 download: "https://github.com/dbgate/dbgate/releases"

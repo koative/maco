@@ -12,7 +12,8 @@ featured: false
 added: "2026-10-17"
 verified: "2026-10-17"
 sources: ["https://github.com/Floorp-Projects/Floorp", "https://github.com/Floorp-Projects/Floorp/blob/main/LICENSE", "https://github.com/Floorp-Projects/Floorp/releases"]
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/Floorp-Projects/Floorp-Runtime/nora-0.2.0/.github/assets/branding/floorp-official/default256.png", "credit": "Ablaze and Floorp contributors", "license": "MPL-2.0; upstream project asset, trademarks retained"}]
 ---
 
 Floorp adds its own interface and productivity features to the Mozilla browser platform. It is designed for users who want more control over their browsing workspace.

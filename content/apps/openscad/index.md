@@ -20,7 +20,8 @@ sources:
   - https://github.com/openscad/openscad/blob/master/COPYING
   - https://github.com/openscad/openscad/blob/master/README.md
   - https://openscad.org/downloads.html
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/openscad/openscad/master/resources/icons/openscad-macos.png", "credit": "OpenSCAD contributors", "license": "GPL-2.0; upstream project asset, trademarks retained"}]
 ---
 
 OpenSCAD turns a text description of shapes and operations into a 3D model. Parameters make it straightforward to vary dimensions and regenerate related designs.

@@ -21,7 +21,8 @@ sources:
   - https://github.com/OrcaSlicer/OrcaSlicer/blob/main/LICENSE.txt
   - https://github.com/OrcaSlicer/OrcaSlicer/blob/main/README.md
   - https://github.com/OrcaSlicer/OrcaSlicer/releases
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/OrcaSlicer/OrcaSlicer/main/resources/Icon.icns", "credit": "OrcaSlicer contributors", "license": "AGPL-3.0; upstream project asset, trademarks retained"}]
 ---
 
 OrcaSlicer provides tools for arranging models, generating supports, and reviewing the paths a printer will follow. Calibration features help tune profiles for a particular setup.

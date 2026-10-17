@@ -21,7 +21,12 @@ sources:
   - https://github.com/KiCad/kicad-source-mirror/blob/master/LICENSE
   - https://github.com/KiCad/kicad-source-mirror/blob/master/README.md
   - https://www.kicad.org/download/macos/
-assets: []
+icon: ./assets/icon.png
+assets:
+  - path: ./assets/icon.png
+    source: https://raw.githubusercontent.com/KiCad/kicad-source-mirror/master/resources/bitmaps_png/png/icon_kicad_256.png
+    credit: KiCad developers
+    license: GPL-3.0; upstream project asset, trademarks retained
 ---
 
 KiCad connects schematic capture with printed circuit board layout. Its project tools help move from circuit design through component placement and routing.

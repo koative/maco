@@ -4,14 +4,14 @@ summary: "Run supported language models locally and work with documents through 
 category: "AI"
 tags: ["local-ai", "chat", "documents"]
 repository: "https://github.com/nomic-ai/gpt4all"
-website: "https://gpt4all.io"
+website: "https://www.nomic.ai/gpt4all"
 license: "MIT"
 licenseUrl: "https://github.com/nomic-ai/gpt4all/blob/main/LICENSE.txt"
-download: "https://gpt4all.io"
+download: "https://www.nomic.ai/gpt4all"
 featured: false
 added: "2026-10-17"
 verified: "2026-10-17"
-sources: ["https://github.com/nomic-ai/gpt4all", "https://github.com/nomic-ai/gpt4all/blob/main/LICENSE.txt", "https://gpt4all.io"]
+sources: ["https://github.com/nomic-ai/gpt4all", "https://github.com/nomic-ai/gpt4all/blob/main/LICENSE.txt", "https://www.nomic.ai/gpt4all"]
 assets: [{"path": "./assets/icon.png", "source": "https://github.com/nomic-ai/gpt4all/blob/main/gpt4all-chat/resources/gpt4all.icns", "credit": "GPT4All contributors", "license": "MIT; project trademarks retained"}]
 icon: "./assets/icon.png"
 ---

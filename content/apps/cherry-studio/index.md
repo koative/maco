@@ -4,7 +4,7 @@ summary: "A desktop AI client for organizing conversations across multiple model
 category: "AI"
 tags: ["ai-client", "chat", "model-providers"]
 repository: "https://github.com/CherryHQ/cherry-studio"
-website: "https://cherry-ai.com"
+website: "https://cherryai.com"
 license: "AGPL-3.0"
 licenseUrl: "https://github.com/CherryHQ/cherry-studio/blob/main/LICENSE"
 download: "https://github.com/CherryHQ/cherry-studio/releases"

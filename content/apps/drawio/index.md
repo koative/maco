@@ -8,7 +8,7 @@ tags:
   - flowcharts
   - offline
 repository: https://github.com/jgraph/drawio-desktop
-website: https://www.diagrams.net/
+website: https://www.drawio.com/
 license: GPL-3.0
 licenseUrl: https://github.com/jgraph/drawio-desktop/blob/dev/LICENSE
 download: https://github.com/jgraph/drawio-desktop/releases

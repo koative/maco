@@ -21,7 +21,8 @@ sources:
   - https://github.com/OpenBoard-org/OpenBoard/blob/master/LICENSE
   - https://github.com/OpenBoard-org/OpenBoard/blob/master/README.md
   - https://github.com/OpenBoard-org/OpenBoard/releases
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/OpenBoard-org/OpenBoard/master/resources/macx/OpenBoard.icns", "credit": "OpenBoard contributors", "license": "GPL-3.0; upstream project asset, trademarks retained"}]
 ---
 
 OpenBoard provides a whiteboard workspace for explaining ideas visually. Combine handwriting, shapes, documents, and media while presenting a lesson or discussion.

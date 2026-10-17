@@ -4,7 +4,7 @@ summary: "Arrange documents, tasks, and structured information in a customizable
 category: "Productivity"
 tags: ["notes", "workspace", "databases"]
 repository: "https://github.com/AppFlowy-IO/AppFlowy"
-website: "https://appflowy.io/"
+website: "https://appflowy.com/"
 license: "AGPL-3.0"
 licenseUrl: "https://github.com/AppFlowy-IO/AppFlowy/blob/main/LICENSE"
 download: "https://github.com/AppFlowy-IO/AppFlowy/releases"

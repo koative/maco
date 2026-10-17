@@ -21,7 +21,12 @@ sources:
   - https://github.com/bambulab/BambuStudio/blob/master/LICENSE
   - https://github.com/bambulab/BambuStudio/blob/master/README.md
   - https://github.com/bambulab/BambuStudio/releases
-assets: []
+icon: ./assets/icon.png
+assets:
+  - path: ./assets/icon.png
+    source: https://raw.githubusercontent.com/bambulab/BambuStudio/master/resources/images/BambuStudio.icns
+    credit: Bambu Lab; 256px PNG extracted from the upstream icns
+    license: AGPL-3.0; upstream project asset, trademarks retained
 ---
 
 Bambu Studio organizes models into print projects and prepares them for supported printers. Plate layout, material settings, and layer previews help plan a job before sending it to hardware.

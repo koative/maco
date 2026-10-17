@@ -13,7 +13,8 @@ added: "2026-10-17"
 verified: "2026-10-17"
 screenshots: []
 sources: ["https://github.com/fritzing/fritzing-app", "https://github.com/fritzing/fritzing-app/blob/develop/LICENSE.GPL3", "https://github.com/fritzing/fritzing-app/blob/develop/README.md", "https://fritzing.org/download/"]
-assets: []
+icon: "./assets/icon.png"
+assets: [{"path": "./assets/icon.png", "source": "https://raw.githubusercontent.com/fritzing/fritzing-app/develop/resources/system_icons/macosx/fritzing_icon.icns", "credit": "Fritzing contributors; 256px PNG extracted from the upstream icns", "license": "GPL-3.0; upstream project asset, trademarks retained"}]
 ---
 
 Fritzing gives electronics projects a visual representation that resembles the physical components. You can connect a breadboard view with a schematic and PCB layout.
