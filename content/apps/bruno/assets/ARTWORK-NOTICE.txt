@@ -1,0 +1,4 @@
+Bruno dog icon: OpenMoji contributors. Source: https://openmoji.org/library/emoji-1F436/
+Licensed under CC BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/
+No changes to the upstream Bruno icon file. Trademarks retained.
+See https://github.com/usebruno/bruno#license for source code license and logo attribution.
