@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://koative.github.io/openstore/sitemap.xml

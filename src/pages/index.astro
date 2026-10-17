@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AppIcon from '../components/AppIcon.astro';
+import AppCard from '../components/AppCard.astro';
+import { getApps, categories } from '../lib/catalog';
+import { ArrowRight, ArrowUpRight, Search, X, SlidersHorizontal, PackageOpen, GitBranch as Github } from '@lucide/astro';
+const apps = getApps();
+const base = import.meta.env.BASE_URL;
+const picks = ['iina', 'rectangle', 'maccy'].map(slug => apps.find(app => app.slug === slug)).filter((app): app is typeof apps[number] => !!app);
+const dock = ['localsend', 'iina', 'maccy', 'rectangle', 'stats'].map(slug => apps.find(app => app.slug === slug)).filter((app): app is typeof apps[number] => !!app);
+const tagCounts = new Map<string, number>();
+apps.flatMap(app => app.tags).forEach(tag => tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1));
+const tags = [...tagCounts.keys()].sort((a, b) => a.localeCompare(b));
+---
+<Layout>
+  <section class="intro" aria-labelledby="intro-title">
+    <div class="intro-copy"><h1 id="intro-title">Good software.<br/><span>Open by nature.</span></h1><p>A considered collection of open-source Mac apps.<br class="desktop-break"/> Find your next everyday essential.</p><a class="text-link" href="#catalog">Find your next favorite <ArrowRight size={17}/></a></div>
+    <div class="intro-art"><div class="icon-shelf" aria-label="A few favorites">{dock.map((app, i) => <a href={`${base}apps/${app.slug}/`} class={`shelf-icon shelf-${i}`} aria-label={`Explore ${app.name}`} title={app.name}><AppIcon app={app} size={88} eager/></a>)}</div><p><span class="status-dot"></span>Independent apps. Endless possibilities.</p></div>
+  </section>
+  <section class="featured" aria-labelledby="featured-title">
+    <div class="section-heading"><h2 id="featured-title">Well worth a spot on your Mac.</h2><span>A few favorites to get you started</span></div>
+    <div class="feature-grid">{picks.map((app, i) => <a href={`${base}apps/${app.slug}/`} class={`feature feature-${i}`}>
+      <div class="feature-copy"><div class="feature-title"><AppIcon app={app} size={38} eager/><h3>{app.name}</h3><ArrowUpRight size={19}/></div><p>{i === 0 ? 'Your media. Beautifully played.' : i === 1 ? 'A place for every window.' : 'Copy. Keep. Carry on.'}</p></div>
+      {i === 0 && app.screenshots.length ? <div class="feature-screenshot"><img src={app.screenshots[0].url} alt={app.screenshots[0].alt} loading="eager" width="580" height="325"/></div> : <div class={`feature-icon-stage stage-${i}`}><AppIcon app={app} size={124} eager/>{i === 1 && <span class="feature-caption">A little more room to think.</span>}{i === 2 && <span class="feature-caption">Your clipboard, with a memory.</span>}</div>}
+      <div class="feature-bottom"><span>{app.category}</span><span>Meet {app.name} <ArrowRight size={15}/></span></div>
+    </a>)}</div>
+  </section>
+  <section class="catalog" id="catalog" aria-labelledby="catalog-title">
+    <div class="catalog-heading"><div><h2 id="catalog-title">The open collection<span class="inline-count">{apps.length}</span></h2><p>Small utilities. Big possibilities. All open source.</p></div><a class="suggest-link" href="https://github.com/koative/openstore/issues/new?template=app.yml">Suggest an app <ArrowUpRight size={16}/></a></div>
+    <form class="catalog-controls" id="catalog-controls" role="search" hidden>
+      <div class="search-field"><Search size={20}/><label class="sr-only" for="search">Search apps, categories, or tags</label><input id="search" name="q" type="search" placeholder="Search apps, categories, or tags…" autocomplete="off"/><kbd aria-hidden="true">/</kbd></div>
+      <div class="select-field"><label class="sr-only" for="category-filter">Category</label><select id="category-filter" name="category"><option value="">All categories</option>{categories.map(category => <option>{category}</option>)}</select></div>
+      <div class="select-field sort-field"><label class="sr-only" for="sort">Sort apps</label><select id="sort" name="sort"><option value="name">Name: A–Z</option><option value="featured">Featured first</option><option value="newest">Recently added</option></select></div>
+    </form>
+    <div class="filter-line" id="filter-line" hidden><div class="tag-filter"><SlidersHorizontal size={15}/><label for="tag-filter">Explore by tag</label><select id="tag-filter"><option value="">All tags</option>{tags.map(tag => <option value={tag}>{tag.replaceAll('-', ' ')} ({tagCounts.get(tag)})</option>)}</select></div><p id="result-count" role="status" aria-live="polite" aria-atomic="true">Showing all {apps.length} apps</p><button class="clear-filters" id="clear-filters" type="button" hidden>Clear filters <X size={14}/></button></div>
+    <noscript><p class="no-js-note">Browse all apps below. Turn on JavaScript to search and filter the collection.</p></noscript>
+    <div class="app-grid" id="app-grid">{apps.map(app => <AppCard app={app}/>)}</div>
+    <div class="empty-state" id="empty-state" hidden><PackageOpen size={38}/><h3>No apps found. Yet.</h3><p>Try another name, category, or tag. Your next favorite might be one filter away.</p><button type="button" class="button" id="reset-search">Show all apps <ArrowRight size={16}/></button></div>
+  </section>
+  <section class="open-note"><div class="note-mark"><Github size={29}/></div><div><h2>A little more open. A lot more possible.</h2><p>This collection grows with people like you. Add an app, share a screenshot,<br class="desktop-break"/> or help keep the details right. Every contribution makes a difference.</p></div><a class="button button-dark" href="https://github.com/koative/openstore/blob/main/CONTRIBUTING.md">Make it better <ArrowUpRight size={17}/></a></section>
+</Layout>
+<script>
+  const controls = document.querySelector<HTMLFormElement>('#catalog-controls')!;
+  const filterLine = document.querySelector<HTMLElement>('#filter-line')!;
+  controls.hidden = false; filterLine.hidden = false;
+  const search = document.querySelector<HTMLInputElement>('#search')!;
+  const category = document.querySelector<HTMLSelectElement>('#category-filter')!;
+  const tag = document.querySelector<HTMLSelectElement>('#tag-filter')!;
+  const sort = document.querySelector<HTMLSelectElement>('#sort')!;
+  const grid = document.querySelector<HTMLElement>('#app-grid')!;
+  const cards = [...document.querySelectorAll<HTMLElement>('[data-app]')];
+  const count = document.querySelector<HTMLElement>('#result-count')!;
+  const clear = document.querySelector<HTMLButtonElement>('#clear-filters')!;
+  const empty = document.querySelector<HTMLElement>('#empty-state')!;
+  function readUrl() {
+    const params = new URLSearchParams(location.search);
+    search.value = params.get('q') || '';
+    category.value = params.get('category') || '';
+    tag.value = params.get('tag') || '';
+    sort.value = params.get('sort') || 'name';
+    if (!sort.value) sort.value = 'name';
+  }
+  function update(writeUrl = true) {
+    const query = search.value.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+    let visible = 0;
+    const sorted = [...cards].sort((a,b) => {
+      if (sort.value === 'featured' && a.dataset.featured !== b.dataset.featured) return a.dataset.featured === 'true' ? -1 : 1;
+      if (sort.value === 'newest' && a.dataset.added !== b.dataset.added) return b.dataset.added!.localeCompare(a.dataset.added!);
+      return a.dataset.name!.localeCompare(b.dataset.name!);
+    });
+    sorted.forEach(card => {
+      const matches = query.every(term => card.dataset.search!.includes(term)) && (!category.value || card.dataset.category === category.value) && (!tag.value || card.dataset.tags!.split(',').includes(tag.value));
+      card.hidden = !matches; if (matches) visible++;
+      grid.append(card);
+    });
+    const filtered = !!(search.value || category.value || tag.value);
+    count.textContent = `${visible === cards.length ? 'Showing all' : 'Showing'} ${visible} ${visible === 1 ? 'app' : 'apps'}${visible !== cards.length ? ` of ${cards.length}` : ''}`;
+    empty.hidden = visible > 0; clear.hidden = !filtered;
+    document.querySelectorAll<HTMLAnchorElement>('.sidebar [data-category]').forEach(link => {
+      const selected = link.dataset.category === category.value;
+      link.classList.toggle('selected', selected);
+      if (selected) link.setAttribute('aria-current', 'true'); else link.removeAttribute('aria-current');
+    });
+    if (writeUrl) {
+      const url = new URL(location.href);
+      for (const [key,value] of [['q',search.value.trim()],['category',category.value],['tag',tag.value],['sort',sort.value === 'name' ? '' : sort.value]]) {
+        if (value) url.searchParams.set(key,value); else url.searchParams.delete(key);
+      }
+      history.replaceState(null, '', url);
+    }
+  }
+  controls.addEventListener('submit', event => event.preventDefault());
+  search.addEventListener('input', () => update());
+  [category,tag,sort].forEach(element => element.addEventListener('change', () => update()));
+  function reset() { search.value=''; category.value=''; tag.value=''; sort.value='name'; update(); search.focus(); }
+  clear.addEventListener('click',reset);
+  document.querySelector('#reset-search')!.addEventListener('click',reset);
+  document.querySelectorAll<HTMLAnchorElement>('.sidebar [data-category]').forEach(link => link.addEventListener('click', event => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault(); category.value=link.dataset.category || ''; update();
+    document.querySelector('#catalog')!.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
+  }));
+  document.querySelectorAll<HTMLAnchorElement>('[data-tag-link]').forEach(link => link.addEventListener('click', event => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault(); tag.value=link.dataset.tagLink || ''; update(); search.focus();
+  }));
+  document.addEventListener('keydown', event => {
+    const target = event.target as HTMLElement;
+    if (event.key === '/' && !['INPUT','TEXTAREA','SELECT'].includes(target.tagName) && !target.isContentEditable && !event.ctrlKey && !event.metaKey && !event.altKey) { event.preventDefault(); search.focus(); }
+  });
+  window.addEventListener('popstate', () => { readUrl(); update(false); });
+  readUrl(); update(false);
+</script>

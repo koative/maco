@@ -1,0 +1,5 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { ArrowLeft, PackageOpen } from '@lucide/astro';
+---
+<Layout title="Page not found — OpenStore" active="404"><section class="not-found"><PackageOpen size={45}/><h1>This shelf is empty.</h1><p>We couldn’t find that page. Let’s get you back to the collection.</p><a class="button button-dark" href={import.meta.env.BASE_URL}><ArrowLeft size={16}/>Back to all apps</a></section></Layout>

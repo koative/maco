@@ -1,0 +1,12 @@
+---
+import { ArrowUpRight } from '@lucide/astro';
+import AppIcon from './AppIcon.astro';
+import type { CatalogApp } from '../lib/catalog';
+interface Props { app: CatalogApp; }
+const {app} = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+<article class="app-card" data-app data-name={app.name} data-search={`${app.name} ${app.summary} ${app.category} ${app.tags.join(' ')}`.toLowerCase()} data-category={app.category} data-tags={app.tags.join(',')} data-added={app.added} data-featured={app.featured}>
+  <a class="app-card-main" href={`${base}apps/${app.slug}/`}><AppIcon app={app}/><div class="app-card-name"><h3>{app.name}</h3><span>{app.category}</span></div><ArrowUpRight class="card-arrow" size={18}/><p>{app.summary}</p></a>
+  <div class="app-card-meta"><a class="tag" data-tag-link={app.tags[0]} href={`${base}?tag=${encodeURIComponent(app.tags[0])}#catalog`}>{app.tags[0].replaceAll('-', ' ')}</a><span class="license-label">{app.license.replaceAll('-only', '').replaceAll('-or-later', '+')}</span></div>
+</article>
