@@ -1,6 +1,18 @@
 # Release verification
 
-## Catalog expansion to 519 apps — 2026-10-17
+## Catalog expansion to 877 apps — 2026-10-17
+
+The catalog contains **877 apps: 863 open source and 14 source available**, across 11 categories, with 870 official icons and 33 screenshots. Seven apps ship no usable icon of their own and show a letter tile. The 358 new records came from reviewing every remaining discovery lead; decisions are in [RESEARCH.md](RESEARCH.md#third-expansion-2026-10-17).
+
+Oversized catalog images were downscaled (icons to 256 px, screenshots to 1600 px; 113 files), so an icon on Discover no longer downloads up to 2.3 MB. Upscaled icons for Widelands and Teleport were replaced with their native 128 px files, and Lan Mouse's icon was re-rendered with its transparent background.
+
+- `bun run validate` and `bun run check:generated`: all 877 records pass.
+- `bun test`: 14 tests passed. `bun run check`: zero errors, warnings or hints.
+- `bun run build`: 897 static pages in about 2 seconds.
+- `bun run check:links`: 61,972 internal links, assets, self-links, and sitemap entries resolve.
+- `bun run discover`: 1,724 leads from ten directories; 766 match published apps.
+
+## Catalog expansion to 519 apps (historical)
 
 The catalog contains **519 apps: 508 open source and 11 source available**, across 11 categories, with 517 official icons and 32 screenshots. SketchyBar and ungoogled-chromium ship no usable icon of their own and show a letter tile. The 227 new records came from reviewing every discovery lead listed by at least two directories; decisions and exclusions are in [RESEARCH.md](RESEARCH.md#second-expansion-2026-10-17).
 

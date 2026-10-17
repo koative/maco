@@ -171,6 +171,35 @@ provenance. Decisions worth keeping:
   listed under its GPL-3.0 LICENSE file although its README says MIT. Old but working apps
   (for example Adium, MacDown, Knuff) state their last release in the description.
 
-The repeatable [discovery queue](../research/README.md) now contains 1,724 deduplicated repository
-leads from the ten directories, 429 of which match published apps; the remaining leads (mostly
-listed by a single directory) are deliberately not published until reviewed.
+## Third expansion (2026-10-17)
+
+The remaining 1,146 unreviewed leads (1,144 listed by a single directory, plus Berthly and Warp,
+newly listed twice) were reviewed under the same policy with a stricter quality bar: skip apps
+whose last macOS release predates 2020 unless they demonstrably still work, toy or unproven
+projects (a single pre-release, days-old repositories with almost no adoption), and apps built
+around a discontinued service. 356 became apps, and two projects that surfaced during review were
+added directly: The Battle for Wesnoth (official DMGs and Mac App Store) and CCMenu2. That brings
+the catalog to 877 (863 open source, 14 source available).
+
+- **Removed after cross-checking**: Saber's Mac listing is its iPad app ("Designed for iPad"), not
+  a macOS build; skhd is a configuration-only command-line daemon with no binary download.
+- **Held out, binaries differ from the open code or ship closed parts**: AlDente (proprietary
+  EULA), palmier-pro, Copilot for Xcode, WhatCable, OneClip, Stirling-PDF's desktop app,
+  Duplicati (unconfirmed proprietary folder), Rhea, Safe Exam Browser, OGAD, Franz 6.
+- **Held out, license**: VeraCrypt (TrueCrypt License 3.0), Aseprite (EULA), PolyForm
+  Noncommercial, BSL, FSL-1.1-ALv2 (supacode, ReqRes, Burrow's engine, tart), O'Saasy, BSD with
+  an advertising clause (OpenCore Legacy Patcher), CC BY-NC-SA, CC BY-ND, GPL plus Commons Clause
+  or branding terms (MacOSCleaner, m-courtyard, Blink Eye), EPL-2.0, and every repository without
+  a license file or with README-versus-LICENSE conflicts (for example uPic, VutronMusic).
+- **Held out, editorial**: Kumone (plays tracks from third-party services that block or limit
+  them) and hongguo-drama (unauthorised scraping client).
+- **Included with judgement**: MioIsland (CC BY-NC 4.0, labeled source available), Sentinel
+  (Apache-2.0 with Commons Clause, source available), WireGuard (canonical repository on
+  git.zx2c4.com, Mac App Store build), and Warp (AGPL-3.0 client with MIT UI crates; the hosted AI
+  and Drive services are proprietary and say so). Several apps sell optional paid tiers built from
+  the same open code (Rclone UI, FlyEnv, Starcat, Dayflow); each description says so.
+
+The repeatable [discovery queue](../research/README.md) contains 1,724 deduplicated repository
+leads from the ten directories, 766 of which match published apps. Every lead has now been
+reviewed once; the rest were held out for the reasons above and remain `needs-review` only
+because the queue does not record rejections.
