@@ -102,3 +102,20 @@ test('rejects malformed frontmatter, duplicate YAML keys and missing prose', (t)
   fs.writeFileSync(index, original.replace('An original description of this app.', ''));
   assert.throws(() => loadCatalog(directory), /original description/);
 });
+
+test('exposes all actual license notices with deployment-aware links', (t) => {
+  const { directory, write } = fixture(t);
+  const folder = write('example');
+  assert.deepEqual(loadCatalog(directory)[0].notices, []);
+  for (const name of ['UPSTREAM-LICENSE.txt', 'ARTWORK-NOTICE.txt', 'CC-BY-SA-4.0.txt']) {
+    fs.writeFileSync(path.join(folder, 'assets', name), 'License and attribution notice');
+  }
+  const notices = loadCatalog(directory, '/preview/')[0].notices;
+  assert.deepEqual(notices.map(notice => notice.name), ['ARTWORK-NOTICE.txt', 'CC-BY-SA-4.0.txt', 'UPSTREAM-LICENSE.txt']);
+  for (const notice of notices) {
+    assert.equal(notice.url, `/preview/catalog/example/assets/${notice.name}`);
+    assert.equal(notice.path, `./assets/${notice.name}`);
+  }
+  fs.mkdirSync(path.join(folder, 'assets/invalid.txt'));
+  assert.throws(() => loadCatalog(directory), /must be a file/);
+});

@@ -67,6 +67,7 @@ export type CatalogApp = Omit<AppData, 'screenshots'> & {
   slug: string;
   body: string;
   iconUrl: string | null;
+  notices: { name: string; path: string; url: string }[];
   screenshots: (AppData['screenshots'][number] & { url: string })[];
 };
 export type App = CatalogApp;
@@ -130,11 +131,22 @@ export function loadCatalog(directory = catalogDirectory, base = defaultBase): C
           if (!assetPaths.includes(file)) throw new Error(`Missing image provenance: ${file}`);
         }
         for (const asset of data.assets) ensureContainedFile(folder, asset.path);
+        const assetFolder = path.join(folder, 'assets');
+        const notices = (fs.existsSync(assetFolder) ? fs.readdirSync(assetFolder) : [])
+          .filter((name) => name.endsWith('.txt')).sort().map((name) => {
+            if (!/^[a-zA-Z0-9][a-zA-Z0-9._-]*\.txt$/.test(name)) {
+              throw new Error(`Use a simple filename for license notices: ${name}`);
+            }
+            const file = `./assets/${name}`;
+            ensureContainedFile(folder, file);
+            return { name, path: file, url: assetUrl(slug, file, base) };
+          });
         return {
           ...data,
           id: slug,
           slug,
           body,
+          notices,
           iconUrl: data.icon ? assetUrl(slug, data.icon, base) : null,
           screenshots: data.screenshots.map((shot) => ({ ...shot, url: assetUrl(slug, shot.src, base) })),
         };

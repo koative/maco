@@ -38,18 +38,10 @@ try {
     fs.rmSync(output, { recursive: true, force: true });
     fs.mkdirSync(output, { recursive: true });
     for (const app of apps) {
-      const assetFolder = path.join(catalogDirectory, app.slug, 'assets');
-      if (fs.existsSync(assetFolder)) {
-        for (const notice of fs.readdirSync(assetFolder).filter((file) => file.endsWith('.txt'))) {
-          const source = path.join(assetFolder, notice);
-          const appFolder = fs.realpathSync(path.join(catalogDirectory, app.slug));
-          if (!fs.realpathSync(source).startsWith(`${appFolder}${path.sep}`) || !fs.statSync(source).isFile()) {
-            throw new Error(`[${app.slug}] Invalid license notice: ${notice}`);
-          }
-          const destination = path.join(output, app.slug, 'assets', notice);
-          fs.mkdirSync(path.dirname(destination), { recursive: true });
-          fs.copyFileSync(source, destination);
-        }
+      for (const notice of app.notices) {
+        const target = path.join(output, app.slug, notice.path);
+        fs.mkdirSync(path.dirname(target), { recursive: true });
+        fs.copyFileSync(path.join(catalogDirectory, app.slug, notice.path), target);
       }
       for (const asset of app.assets) {
         const target = path.join(output, app.slug, asset.path);
