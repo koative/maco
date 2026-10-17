@@ -1,5 +1,9 @@
 # Release verification
 
+## OpenBucket added — 2026-10-18
+
+Koative's own OpenBucket (MIT, native S3 browser) joined the catalog with its icon and three real screenshots: **878 apps, 864 open source and 14 source available**. `bun run validate`, `bun run check:generated` and `bun run check:links` (62,054 links across 898 pages) pass.
+
 ## Catalog expansion to 877 apps — 2026-10-17
 
 The catalog contains **877 apps: 863 open source and 14 source available**, across 11 categories, with 870 official icons and 33 screenshots. Seven apps ship no usable icon of their own and show a letter tile. The 358 new records came from reviewing every remaining discovery lead; decisions are in [RESEARCH.md](RESEARCH.md#third-expansion-2026-10-17).

@@ -55,7 +55,7 @@ See [publishing and SEO](docs/PUBLISHING.md) for the shared site configuration, 
 
 <!-- catalog:start -->
 
-877 macOS apps: **863 open source** and **14 source available**. Source-available apps have additional restrictions and are labeled separately. Generated from [content/apps](content/apps); edit the app folders to contribute.
+878 macOS apps: **864 open source** and **14 source available**. Source-available apps have additional restrictions and are labeled separately. Generated from [content/apps](content/apps); edit the app folders to contribute.
 
 ### Productivity
 
@@ -814,6 +814,7 @@ See [publishing and SEO](docs/PUBLISHING.md) for the shared site configuration, 
 | [MoonProxy](https://maco.koative.com/apps/moonproxy/) · [Source](https://github.com/MoonProxyHQ/moonproxy-desktop) | A desktop client for frp tunnels that manages frpc, proxy rules, health checks and traffic stats. | [MIT](https://github.com/MoonProxyHQ/moonproxy-desktop/blob/main/LICENSE) |
 | [Motrix](https://maco.koative.com/apps/motrix/) · [Source](https://github.com/agalwood/Motrix) | A graphical download manager for HTTP, FTP, BitTorrent, and magnet links. | [MIT](https://github.com/agalwood/Motrix/blob/main/LICENSE) |
 | [NetNewsWire](https://maco.koative.com/apps/netnewswire/) · [Source](https://github.com/Ranchero-Software/NetNewsWire) | Follow the websites you care about in a calm RSS reader. | [MIT](https://github.com/Ranchero-Software/NetNewsWire/blob/main/LICENSE) |
+| [OpenBucket](https://maco.koative.com/apps/openbucket/) · [Source](https://github.com/koative/openbucket) | Browse, preview, share and manage files in Amazon S3 and S3-compatible storage from a native Mac app. | [MIT](https://github.com/koative/openbucket/blob/main/LICENSE) |
 | [OpenSurge for Mac](https://maco.koative.com/apps/opensurge-for-mac/) · [Source](https://github.com/YTwsy/OpenSurge-for-Mac) | Turns a Mac into a rule-based proxy gateway for other devices on the network, with per-device routing policies. | [GPL-3.0-only](https://github.com/YTwsy/OpenSurge-for-Mac/blob/master/LICENSE) |
 | [Ora Browser](https://maco.koative.com/apps/ora-browser/) · [Source](https://github.com/the-ora/browser) | A WebKit web browser for macOS built with SwiftUI and AppKit, with built-in content blocking. | [GPL-3.0](https://github.com/the-ora/browser/blob/main/LICENSE) |
 | [Papr](https://maco.koative.com/apps/papr/) · [Source](https://github.com/l0ng-ai/papr) | A local-first RSS reader with tags and rules, full-text fetching and FreshRSS sync, plus a CLI that AI agents can use. | [MIT](https://github.com/l0ng-ai/papr/blob/main/LICENSE) |
