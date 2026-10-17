@@ -9,6 +9,7 @@ import {
   ArrowRight,
   ArrowUpRight,
   ShieldCheck,
+  CodeXml,
   ChevronRight,
 } from '@lucide/astro';
 export function getStaticPaths() {
@@ -56,8 +57,14 @@ const verified = new Date(app.verified + 'T00:00:00Z').toLocaleDateString(
           {app.category}
         </a>
         <span>
-          <ShieldCheck size={13} />
-          Open source
+          {app.sourceAvailability === 'source-available' ? (
+            <CodeXml size={13} />
+          ) : (
+            <ShieldCheck size={13} />
+          )}
+          {app.sourceAvailability === 'source-available'
+            ? 'Source available'
+            : 'Open source'}
         </span>
       </div>
     </div>
@@ -73,6 +80,15 @@ const verified = new Date(app.verified + 'T00:00:00Z').toLocaleDateString(
   </header>
   <div class="detail-columns">
     <div class="detail-content">
+      {app.sourceAvailability === 'source-available' && (
+        <section class="license-note" aria-labelledby="license-note-title">
+          <h2 id="license-note-title">Source available, with restrictions.</h2>
+          <p>{app.licenseNotes}</p>
+          <a href={app.licenseUrl}>
+            Read the source license <ArrowUpRight size={14} />
+          </a>
+        </section>
+      )}
       <section class="detail-description">
         <h2>A closer look.</h2>
         <div class="markdown-body" set:html={descriptionHtml} />

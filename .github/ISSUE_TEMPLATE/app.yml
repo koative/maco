@@ -1,5 +1,5 @@
 name: Suggest an app
-description: Nominate an open-source macOS app for the collection.
+description: Nominate a macOS app with published source code for the collection.
 title: 'App suggestion: '
 body:
   - type: input

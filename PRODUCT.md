@@ -24,7 +24,7 @@ Users browse and filter applications, inspect details and screenshots, then visi
 
 ## Capabilities and Constraints
 
-App folders are the source of truth. Metadata is validated. README is generated. Every entry links upstream source and license evidence. Assets retain provenance and upstream rights. Do not equate freeware or source-available software with open source. Research multiple directories rather than importing a single list. Public GitHub repository under koative, incremental commits, description and homepage.
+App folders are the source of truth. Metadata is validated. README is generated. Every entry links upstream source and license evidence. Assets retain provenance and upstream rights. Do not equate freeware or source-available software with open source. The user explicitly approved source-available listings on 2026-10-17: mark them separately on cards, explain restrictions on detail pages, and provide a source filter. Research multiple directories rather than importing a single list. Public GitHub repository under koative, incremental commits, description and homepage.
 
 ## Brand Commitments
 

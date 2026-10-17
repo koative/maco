@@ -68,6 +68,45 @@ test('rejects traversal and malformed local asset paths', () => {
   }
 });
 
+test('keeps restricted source licenses out of the open-source classification', () => {
+  assert.equal(appSchema.parse(valid).sourceAvailability, 'open-source');
+  for (const license of [
+    'Apache-2.0 WITH Commons-Clause',
+    'LicenseRef-Mac-Mouse-Fix',
+    'FSL-1.1-MIT',
+    'CC-BY-NC-4.0',
+  ]) {
+    assert.equal(appSchema.safeParse({ ...valid, license }).success, false);
+    assert.equal(
+      appSchema.safeParse({
+        ...valid,
+        license,
+        sourceAvailability: 'source-available',
+      }).success,
+      false,
+    );
+    assert.equal(
+      appSchema.safeParse({
+        ...valid,
+        license,
+        sourceAvailability: 'source-available',
+        licenseNotes:
+          'The published source has additional restrictions on redistribution.',
+      }).success,
+      true,
+    );
+  }
+  assert.equal(
+    appSchema.safeParse({
+      ...valid,
+      sourceAvailability: 'source-available',
+      licenseNotes:
+        'This classification would incorrectly restrict an MIT application.',
+    }).success,
+    false,
+  );
+});
+
 test('rejects external, missing and uncredited image files', (t) => {
   const { directory, write } = fixture(t);
   const folder = write('example', { ...valid, assets: [] });

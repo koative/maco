@@ -13,6 +13,10 @@ import {
   PackageOpen,
 } from '@lucide/astro';
 const apps = getApps();
+const openSourceCount = apps.filter(
+  (app) => app.sourceAvailability === 'open-source',
+).length;
+const sourceAvailableCount = apps.length - openSourceCount;
 const base = import.meta.env.BASE_URL;
 const picks = ['iina', 'rectangle']
   .map((slug) => apps.find((app) => app.slug === slug))
@@ -33,7 +37,7 @@ const tags = [...tagCounts.keys()].sort((a, b) => a.localeCompare(b));
     </h1>
     <div class="intro-copy">
       <p>
-        Remarkable apps. Open source code.
+        Remarkable apps. Code you can explore.
         <br />
         Discover independent software that makes
         <br class="desktop-break" /> your everyday a little better.
@@ -104,7 +108,11 @@ const tags = [...tagCounts.keys()].sort((a, b) => a.localeCompare(b));
           Find your next favorite.
           <span class="inline-count">{apps.length}</span>
         </h2>
-        <p>A little utility or a whole new workflow. It’s all here.</p>
+        <p>
+          {openSourceCount} open-source apps
+          {sourceAvailableCount > 0 &&
+            ` + ${sourceAvailableCount} source-available apps, clearly labeled.`}
+        </p>
       </div>
       <a
         class="suggest-link"
@@ -177,6 +185,14 @@ const tags = [...tagCounts.keys()].sort((a, b) => a.localeCompare(b));
           ))}
         </select>
       </div>
+      <div class="tag-filter source-filter">
+        <label for="source-filter">Source</label>
+        <select id="source-filter" name="source">
+          <option value="">All licenses</option>
+          <option value="open-source">Open source only</option>
+          <option value="source-available">Source available</option>
+        </select>
+      </div>
       <p id="result-count" role="status" aria-live="polite" aria-atomic="true">
         Showing all {apps.length} apps
       </p>
@@ -241,6 +257,7 @@ const tags = [...tagCounts.keys()].sort((a, b) => a.localeCompare(b));
   const category =
     document.querySelector<HTMLSelectElement>('#category-filter')!;
   const tag = document.querySelector<HTMLSelectElement>('#tag-filter')!;
+  const source = document.querySelector<HTMLSelectElement>('#source-filter')!;
   const sort = document.querySelector<HTMLSelectElement>('#sort')!;
   const grid = document.querySelector<HTMLElement>('#app-grid')!;
   const cards = [...document.querySelectorAll<HTMLElement>('[data-app]')];
@@ -252,6 +269,7 @@ const tags = [...tagCounts.keys()].sort((a, b) => a.localeCompare(b));
     search.value = params.get('q') || '';
     category.value = params.get('category') || '';
     tag.value = params.get('tag') || '';
+    source.value = params.get('source') || '';
     sort.value = params.get('sort') || 'name';
     if (!sort.value) sort.value = 'name';
   }
@@ -276,12 +294,18 @@ const tags = [...tagCounts.keys()].sort((a, b) => a.localeCompare(b));
       const matches =
         query.every((term) => card.dataset.search!.includes(term)) &&
         (!category.value || card.dataset.category === category.value) &&
-        (!tag.value || card.dataset.tags!.split(',').includes(tag.value));
+        (!tag.value || card.dataset.tags!.split(',').includes(tag.value)) &&
+        (!source.value || card.dataset.source === source.value);
       card.hidden = !matches;
       if (matches) visible++;
       grid.append(card);
     });
-    const filtered = !!(search.value || category.value || tag.value);
+    const filtered = !!(
+      search.value ||
+      category.value ||
+      tag.value ||
+      source.value
+    );
     count.textContent = `${visible === cards.length ? 'Showing all' : 'Showing'} ${visible} ${visible === 1 ? 'app' : 'apps'}${visible !== cards.length ? ` of ${cards.length}` : ''}`;
     empty.hidden = visible > 0;
     clear.hidden = !filtered;
@@ -299,6 +323,7 @@ const tags = [...tagCounts.keys()].sort((a, b) => a.localeCompare(b));
         ['q', search.value.trim()],
         ['category', category.value],
         ['tag', tag.value],
+        ['source', source.value],
         ['sort', sort.value === 'name' ? '' : sort.value],
       ]) {
         if (value) url.searchParams.set(key, value);
@@ -312,13 +337,14 @@ const tags = [...tagCounts.keys()].sort((a, b) => a.localeCompare(b));
   }
   controls.addEventListener('submit', (event) => event.preventDefault());
   search.addEventListener('input', () => update());
-  [category, tag, sort].forEach((element) =>
+  [category, tag, source, sort].forEach((element) =>
     element.addEventListener('change', () => update('push')),
   );
   function reset() {
     search.value = '';
     category.value = '';
     tag.value = '';
+    source.value = '';
     sort.value = 'name';
     update('push');
     search.focus();

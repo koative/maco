@@ -1,10 +1,10 @@
 # Contributing to OpenStore
 
-OpenStore is a curated collection of open-source macOS apps. App records are the source of truth: both the website and the README catalog are generated from `content/apps/`.
+OpenStore is a curated collection of open-source macOS apps and separately labeled source-available apps. App records are the source of truth: both the website and the README catalog are generated from `content/apps/`.
 
 ## Before adding an app
 
-Check that the project ships a macOS app and publishes source code under an open-source license. Read the upstream license file; a repository being public or an app being free is not enough. Prefer maintained projects, useful descriptions, and working download links. A paid download is fine if the code is genuinely open source.
+Check that the project ships a macOS app and publishes source code under a reviewed license. Read the upstream license file; a repository being public or an app being free is not enough. Prefer maintained projects, useful descriptions, and working download links. A paid download is fine if the code is genuinely open source.
 
 Discovery lists help find candidates, but are not proof of a current license or macOS support. Link primary sources in the record. Do not infer Apple Silicon support or native implementation from a project's programming language.
 
@@ -68,6 +68,8 @@ Body Markdown supports headings, lists, emphasis, links, quotes, code, and table
 All links must use HTTPS. Keep summaries at most 130 characters. Tags must be unique lowercase words separated by hyphens, with one to ten tags per app. Dates must be quoted ISO dates; `verified` records the most recent manual check and cannot precede `added`. It is not a security audit or endorsement.
 
 Categories are `Productivity`, `Developer tools`, `Utilities`, `Media`, `Privacy & security`, and `Writing`. Choose one main category; use tags for overlap. The `featured` flag is an editorial choice, not a popularity metric. License values use reviewed SPDX identifiers, with `AND` or `OR` expressions when upstream requires them.
+
+`sourceAvailability` defaults to `open-source`. Restricted source licenses require `sourceAvailability: source-available` and an original `licenseNotes` paragraph explaining the material restrictions. The reviewed restricted identifiers live separately in `sourceAvailableLicenses`; they cannot pass validation as open source. The catalog currently recognizes `Apache-2.0 WITH Commons-Clause` (an editorial combined label, not a standard SPDX expression), `LicenseRef-Mac-Mouse-Fix`, `FSL-1.1-MIT`, and `CC-BY-NC-4.0`. Do not strip extra terms or classify missing licenses as source available. Closed-source apps remain out of scope.
 
 ## Images and attribution
 

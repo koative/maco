@@ -544,6 +544,7 @@ a svg {
 }
 .filter-line {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 16px;
   min-height: 65px;
@@ -664,6 +665,32 @@ a svg {
   text-align: right;
   line-height: 1.4;
   max-width: 50%;
+}
+.source-available {
+  color: #e6c98e;
+}
+.license-note {
+  margin-bottom: 32px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+.license-note h2 {
+  font-size: 18px;
+  color: #e6c98e;
+}
+.license-note p {
+  margin: 12px 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.license-note a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 .empty-state {
   text-align: center;

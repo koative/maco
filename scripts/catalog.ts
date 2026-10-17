@@ -19,6 +19,10 @@ function escapeCell(value: string): string {
     .replaceAll('\n', ' ');
 }
 function catalogMarkdown(apps: CatalogApp[]): string {
+  const openSourceCount = apps.filter(
+    (app) => app.sourceAvailability === 'open-source',
+  ).length;
+  const restrictedCount = apps.length - openSourceCount;
   const groups = categories
     .map((category) => {
       const entries = apps.filter((app) => app.category === category);
@@ -26,13 +30,13 @@ function catalogMarkdown(apps: CatalogApp[]): string {
       return `### ${category}\n\n| App | What it does | License |\n| --- | --- | --- |\n${entries
         .map(
           (app) =>
-            `| [${escapeCell(app.name)}](https://koative.github.io/openstore/apps/${app.slug}/) · [Source](${app.repository}) | ${escapeCell(app.summary)} | [${app.license}](${app.licenseUrl}) |`,
+            `| [${escapeCell(app.name)}](https://koative.github.io/openstore/apps/${app.slug}/) · [Source](${app.repository}) | ${escapeCell(app.summary)} | [${app.license}](${app.licenseUrl})${app.sourceAvailability === 'source-available' ? ' · **Source available**' : ''} |`,
         )
         .join('\n')}`;
     })
     .filter(Boolean)
     .join('\n\n');
-  return `${START}\n\n${apps.length} open-source macOS apps. Generated from [content/apps](content/apps); edit the app folders to contribute.\n\n${groups}\n\n${END}`;
+  return `${START}\n\n${apps.length} macOS apps: **${openSourceCount} open source** and **${restrictedCount} source available**. Source-available apps have additional restrictions and are labeled separately. Generated from [content/apps](content/apps); edit the app folders to contribute.\n\n${groups}\n\n${END}`;
 }
 function expectedReadme(apps: CatalogApp[]): {
   current: string;

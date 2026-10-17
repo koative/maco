@@ -19,7 +19,7 @@ A database would be justified later by authenticated editing or moderation queue
 ## Editing flow
 
 1. Find the project's current official repository and its actual license file.
-2. Check that it ships a macOS application and is open source under an accepted license.
+2. Check that it ships a macOS application and has a reviewed source license and is classified accurately.
 3. Add an app folder following CONTRIBUTING.md, with original description text.
 4. Record each image's upstream URL, credit, and applicable license. Omit images where rights or provenance are unclear.
 5. Run validation and sync, inspect the site, and include the generated README diff in the pull request.
@@ -29,4 +29,4 @@ A database would be justified later by authenticated editing or moderation queue
 
 The verification date means a curator checked the listed evidence on that date; it is not a live health or security badge. Recheck licenses before changing that date. Repositories and licenses can change. Do not automatically rewrite editorial or licensing facts from API guesses.
 
-An app whose current license becomes restrictive should be removed or explicitly held out of the public catalog until resolved. Missing screenshots do not disqualify a useful app. Keep the catalog smaller rather than weakening its evidence rules.
+An app whose current license becomes restrictive needs an editorial re-review: classify it as source available with clear license notes, or remove it if its source is no longer published. The schema prevents restricted identifiers from being labeled open source. Missing screenshots do not disqualify a useful app. Expand coverage through independent review rather than weakening its evidence rules.

@@ -1,6 +1,6 @@
 # OpenStore
 
-**Good software. Open by nature.** A considered collection of open-source apps for macOS, maintained by [Koative](https://github.com/koative).
+**Good software. Open by nature.** A considered collection of open-source macOS apps and clearly labeled source-available alternatives, maintained by [Koative](https://github.com/koative).
 
 [Explore the catalog](https://koative.github.io/openstore/) · [Contribute an app](CONTRIBUTING.md) · [Research & inclusion policy](docs/RESEARCH.md)
 
@@ -19,7 +19,7 @@ content/apps/
       screenshot.png
 ```
 
-YAML frontmatter describes the app: name, summary, category, tags, repository, official website, download page, SPDX license, license evidence, verification date, and asset attribution. The Markdown body explains what it does. Screenshots are optional; invented screenshots and unverified compatibility claims are not accepted.
+YAML frontmatter describes the app: name, summary, category, tags, repository, official website, download page, source classification, reviewed license, license evidence, verification date, and asset attribution. The Markdown body explains what it does. Screenshots are optional; invented screenshots and unverified compatibility claims are not accepted.
 
 This structure keeps assets beside the app, makes pull requests understandable, and avoids one giant JSON file becoming a merge-conflict bottleneck. Generated output is never the editing surface.
 
@@ -41,7 +41,7 @@ Open the `/openstore/` address printed by the dev server (normally `http://local
 
 ## Catalog principles
 
-- **Open source is a license, not a price.** Paid distributions of open-source software can qualify; freeware and source-available apps with additional use restrictions do not.
+- **Licenses are explicit.** Paid open-source distributions can qualify. Apps with published source and additional restrictions are separately labeled **Source available**, explained on their detail pages, and filterable. Closed-source freeware is excluded.
 - **Evidence travels with every entry.** Source repository, license file, official download, and a dated verification record are required.
 - **Original projects get the credit.** Logos, screenshots, and trademarks belong to their respective owners; each included asset records its source and applicable rights.
 - **A directory is a lead, not proof.** We research multiple lists and verify individual projects. See the [research notes](docs/RESEARCH.md).
@@ -51,7 +51,7 @@ Open the `/openstore/` address printed by the dev server (normally `http://local
 
 <!-- catalog:start -->
 
-24 open-source macOS apps. Generated from [content/apps](content/apps); edit the app folders to contribute.
+27 macOS apps: **25 open source** and **2 source available**. Source-available apps have additional restrictions and are labeled separately. Generated from [content/apps](content/apps); edit the app folders to contribute.
 
 ### Productivity
 
@@ -78,7 +78,9 @@ Open the `/openstore/` address printed by the dev server (normally `http://local
 | [Hidden Bar](https://koative.github.io/openstore/apps/hidden-bar/) · [Source](https://github.com/dwarvesf/hidden) | Hide the menu bar items you rarely need, with a single divider. | [MIT](https://github.com/dwarvesf/hidden/blob/develop/LICENSE) |
 | [Ice](https://koative.github.io/openstore/apps/ice/) · [Source](https://github.com/jordanbaird/Ice) | Give your menu bar a little breathing room. | [GPL-3.0](https://github.com/jordanbaird/Ice/blob/main/LICENSE) |
 | [LocalSend](https://koative.github.io/openstore/apps/localsend/) · [Source](https://github.com/localsend/localsend) | Send files between nearby devices without setting up a cloud account. | [Apache-2.0](https://github.com/localsend/localsend/blob/main/LICENSE) |
+| [Mac Mouse Fix](https://koative.github.io/openstore/apps/mac-mouse-fix/) · [Source](https://github.com/noah-nuebling/mac-mouse-fix) | Customize mouse buttons, scrolling, and gestures for everyday navigation on macOS. | [LicenseRef-Mac-Mouse-Fix](https://github.com/noah-nuebling/mac-mouse-fix/blob/master/License) · **Source available** |
 | [MonitorControl](https://koative.github.io/openstore/apps/monitorcontrol/) · [Source](https://github.com/MonitorControl/MonitorControl) | Adjust supported external displays using familiar Mac controls. | [MIT](https://github.com/MonitorControl/MonitorControl/blob/main/License.txt) |
+| [Pearcleaner](https://koative.github.io/openstore/apps/pearcleaner/) · [Source](https://github.com/alienator88/Pearcleaner) | Inspect installed apps and their leftover files before removing them from your Mac. | [Apache-2.0 WITH Commons-Clause](https://github.com/alienator88/Pearcleaner/blob/main/LICENSE.md) · **Source available** |
 | [Stats](https://koative.github.io/openstore/apps/stats/) · [Source](https://github.com/exelban/stats) | Keep an eye on CPU, memory, network activity and more from your menu bar. | [MIT](https://github.com/exelban/stats/blob/master/LICENSE) |
 | [Transmission](https://koative.github.io/openstore/apps/transmission/) · [Source](https://github.com/transmission/transmission) | A focused BitTorrent client with a native Mac interface. | [GPL-2.0-only OR GPL-3.0-only](https://github.com/transmission/transmission/blob/main/COPYING) |
 
@@ -86,6 +88,7 @@ Open the `/openstore/` address printed by the dev server (normally `http://local
 
 | App | What it does | License |
 | --- | --- | --- |
+| [Cap](https://koative.github.io/openstore/apps/cap/) · [Source](https://github.com/CapSoftware/Cap) | Record your screen and camera, edit a polished video, and share it from your own workflow. | [AGPL-3.0](https://github.com/CapSoftware/Cap/blob/main/LICENSE) |
 | [HandBrake](https://koative.github.io/openstore/apps/handbrake/) · [Source](https://github.com/HandBrake/HandBrake) | Convert video files with useful presets and detailed encoding controls. | [GPL-2.0-only](https://github.com/HandBrake/HandBrake/blob/master/LICENSE) |
 | [IINA](https://koative.github.io/openstore/apps/iina/) · [Source](https://github.com/iina/iina) | A considered video player with the controls and shortcuts Mac users expect. | [GPL-3.0](https://github.com/iina/iina/blob/develop/LICENSE) |
 | [Kap](https://koative.github.io/openstore/apps/kap/) · [Source](https://github.com/wulkano/Kap) | Capture a small moment on your screen and share it as a clip. | [MIT](https://github.com/wulkano/Kap/blob/main/LICENSE.md) |

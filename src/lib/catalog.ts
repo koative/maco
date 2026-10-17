@@ -37,6 +37,15 @@ const approvedLicenses = new Set([
   'Unlicense',
   'CC0-1.0',
   'Zlib',
+  'Vim',
+  'PostgreSQL',
+]);
+// Reviewed restrictions are kept separate from open-source SPDX licenses.
+const sourceAvailableLicenses = new Set([
+  'Apache-2.0 WITH Commons-Clause',
+  'LicenseRef-Mac-Mouse-Fix',
+  'FSL-1.1-MIT',
+  'CC-BY-NC-4.0',
 ]);
 const httpsUrl = z.url().refine((value) => {
   try {
@@ -62,6 +71,7 @@ const imagePath = z
     'Use a local ./assets/ image path without traversal',
   );
 const license = z.string().refine((value) => {
+  if (sourceAvailableLicenses.has(value)) return true;
   const tokens = value.split(/ (?:AND|OR) /);
   return tokens.every((token) => approvedLicenses.has(token));
 }, 'Use an approved SPDX identifier or AND / OR expression; review new licenses before adding them');
@@ -89,6 +99,10 @@ export const appSchema = z
     repository: httpsUrl,
     website: httpsUrl,
     license,
+    sourceAvailability: z
+      .enum(['open-source', 'source-available'])
+      .default('open-source'),
+    licenseNotes: z.string().trim().min(20).optional(),
     licenseUrl: httpsUrl,
     download: httpsUrl,
     featured: z.boolean().default(false),
@@ -111,6 +125,24 @@ export const appSchema = z
       .default([]),
   })
   .strict()
+  .superRefine((data, ctx) => {
+    const restricted = sourceAvailableLicenses.has(data.license);
+    if (restricted !== (data.sourceAvailability === 'source-available')) {
+      ctx.addIssue({
+        code: 'custom',
+        path: ['sourceAvailability'],
+        message:
+          'Restricted licenses must be labeled source-available; open-source licenses must be labeled open-source',
+      });
+    }
+    if (restricted && !data.licenseNotes) {
+      ctx.addIssue({
+        code: 'custom',
+        path: ['licenseNotes'],
+        message: 'Explain the restrictions for source-available apps',
+      });
+    }
+  })
   .refine((data) => data.verified >= data.added, {
     message: 'verified must be on or after added',
     path: ['verified'],
