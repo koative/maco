@@ -22,3 +22,5 @@ FIRST VIEWPORT: Centered 1440px shell with 64px desktop gutters, 100px horizonta
 FORM: Dark-first premium software showcase, explicitly pinned by the user; reroll seed reference unavailable. The pinned direction overrides the roll. The dark-console challenger contributes seam precision, and the streaming-wall challenger contributes authentic imagery scale, while navigation remains a familiar web catalog.
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+
+Expansion (2026-10-17): preserve the dark design while supporting a larger catalog. Add four editorial collection links, 11 categories, explicit source-availability filtering, and progressive 24-item batches with a visible result total. All records remain present without JavaScript.

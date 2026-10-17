@@ -21,7 +21,16 @@ export function getStaticPaths() {
 const { app } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const related = getApps()
-  .filter((other) => other.category === app.category && other.slug !== app.slug)
+  .filter((other) => other.slug !== app.slug)
+  .map((other) => ({
+    app: other,
+    score:
+      (other.category === app.category ? 1 : 0) +
+      other.tags.filter((tag) => app.tags.includes(tag)).length * 3,
+  }))
+  .filter((other) => other.score > 0)
+  .sort((a, b) => b.score - a.score || a.app.name.localeCompare(b.app.name))
+  .map((other) => other.app)
   .slice(0, 3);
 const descriptionHtml = renderMarkdown(app.body);
 const verified = new Date(app.verified + 'T00:00:00Z').toLocaleDateString(

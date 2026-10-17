@@ -4,6 +4,7 @@ import AppIcon from '../components/AppIcon.astro';
 import AppCard from '../components/AppCard.astro';
 import Github from '../components/GithubIcon.astro';
 import { getApps, categories } from '../lib/catalog';
+import { collections } from '../lib/collections';
 import {
   ArrowRight,
   ArrowUpRight,
@@ -101,6 +102,32 @@ const tags = [...tagCounts.keys()].sort((a, b) => a.localeCompare(b));
       ))}
     </div>
   </section>
+  <section class="collections" aria-labelledby="collections-title">
+    <div class="section-heading">
+      <h2 id="collections-title">A good place to start.</h2>
+      <span>Handpicked for the way you work.</span>
+    </div>
+    <div class="collection-grid">
+      {collections.map((collection) => (
+        <a
+          class="collection-link"
+          data-collection-link={collection.id}
+          href={`${base}?collection=${collection.id}#catalog`}
+        >
+          <div class="collection-icons" aria-hidden="true">
+            {collection.apps.slice(0, 3).map((slug) => {
+              const app = apps.find((app) => app.slug === slug);
+              return app && <AppIcon app={app} size={38} />;
+            })}
+          </div>
+          <h3>
+            {collection.name} <ArrowUpRight size={16} />
+          </h3>
+          <p>{collection.description}</p>
+        </a>
+      ))}
+    </div>
+  </section>
   <section class="catalog" id="catalog" aria-labelledby="catalog-title">
     <div class="catalog-heading">
       <div>
@@ -193,6 +220,17 @@ const tags = [...tagCounts.keys()].sort((a, b) => a.localeCompare(b));
           <option value="source-available">Source available</option>
         </select>
       </div>
+      <div class="tag-filter collection-filter">
+        <label class="sr-only" for="collection-filter">
+          Collection
+        </label>
+        <select id="collection-filter" name="collection">
+          <option value="">All collections</option>
+          {collections.map((collection) => (
+            <option value={collection.id}>{collection.name}</option>
+          ))}
+        </select>
+      </div>
       <p id="result-count" role="status" aria-live="polite" aria-atomic="true">
         Showing all {apps.length} apps
       </p>
@@ -210,6 +248,11 @@ const tags = [...tagCounts.keys()].sort((a, b) => a.localeCompare(b));
       {apps.map((app) => (
         <AppCard app={app} />
       ))}
+    </div>
+    <div class="load-more" id="load-more-container" hidden>
+      <button type="button" class="button button-outline" id="load-more">
+        Show more apps <ArrowRight size={16} />
+      </button>
     </div>
     <div class="empty-state" id="empty-state" hidden>
       <PackageOpen size={38} />
@@ -258,6 +301,14 @@ const tags = [...tagCounts.keys()].sort((a, b) => a.localeCompare(b));
     document.querySelector<HTMLSelectElement>('#category-filter')!;
   const tag = document.querySelector<HTMLSelectElement>('#tag-filter')!;
   const source = document.querySelector<HTMLSelectElement>('#source-filter')!;
+  const collection =
+    document.querySelector<HTMLSelectElement>('#collection-filter')!;
+  const moreContainer = document.querySelector<HTMLElement>(
+    '#load-more-container',
+  )!;
+  const more = document.querySelector<HTMLButtonElement>('#load-more')!;
+  const pageSize = 24;
+  let visibleLimit = pageSize;
   const sort = document.querySelector<HTMLSelectElement>('#sort')!;
   const grid = document.querySelector<HTMLElement>('#app-grid')!;
   const cards = [...document.querySelectorAll<HTMLElement>('[data-app]')];
@@ -265,15 +316,24 @@ const tags = [...tagCounts.keys()].sort((a, b) => a.localeCompare(b));
   const clear = document.querySelector<HTMLButtonElement>('#clear-filters')!;
   const empty = document.querySelector<HTMLElement>('#empty-state')!;
   function readUrl() {
+    const previousLimit = Number(history.state?.catalogLimit);
+    visibleLimit = Number.isFinite(previousLimit)
+      ? Math.max(pageSize, Math.min(cards.length, previousLimit))
+      : pageSize;
     const params = new URLSearchParams(location.search);
     search.value = params.get('q') || '';
     category.value = params.get('category') || '';
     tag.value = params.get('tag') || '';
     source.value = params.get('source') || '';
+    collection.value = params.get('collection') || '';
     sort.value = params.get('sort') || 'name';
     if (!sort.value) sort.value = 'name';
   }
-  function update(writeUrl: false | 'replace' | 'push' = 'replace') {
+  function update(
+    writeUrl: false | 'replace' | 'push' = 'replace',
+    keepLimit = false,
+  ) {
+    if (!keepLimit) visibleLimit = pageSize;
     const query = search.value
       .trim()
       .toLowerCase()
@@ -295,18 +355,27 @@ const tags = [...tagCounts.keys()].sort((a, b) => a.localeCompare(b));
         query.every((term) => card.dataset.search!.includes(term)) &&
         (!category.value || card.dataset.category === category.value) &&
         (!tag.value || card.dataset.tags!.split(',').includes(tag.value)) &&
-        (!source.value || card.dataset.source === source.value);
-      card.hidden = !matches;
+        (!source.value || card.dataset.source === source.value) &&
+        (!collection.value ||
+          card.dataset.collections!.split(',').includes(collection.value));
       if (matches) visible++;
+      card.hidden = !matches || visible > visibleLimit;
       grid.append(card);
     });
     const filtered = !!(
       search.value ||
       category.value ||
       tag.value ||
-      source.value
+      source.value ||
+      collection.value
     );
-    count.textContent = `${visible === cards.length ? 'Showing all' : 'Showing'} ${visible} ${visible === 1 ? 'app' : 'apps'}${visible !== cards.length ? ` of ${cards.length}` : ''}`;
+    const shown = Math.min(visible, visibleLimit);
+    count.textContent =
+      visible > shown
+        ? `Showing ${shown} of ${visible} apps`
+        : `${visible === cards.length ? 'Showing all' : 'Showing'} ${visible} ${visible === 1 ? 'app' : 'apps'}${visible !== cards.length ? ` of ${cards.length}` : ''}`;
+    moreContainer.hidden = visible <= visibleLimit;
+    more.textContent = `Show ${Math.min(pageSize, visible - shown)} more apps`;
     empty.hidden = visible > 0;
     clear.hidden = !filtered;
     document
@@ -324,20 +393,32 @@ const tags = [...tagCounts.keys()].sort((a, b) => a.localeCompare(b));
         ['category', category.value],
         ['tag', tag.value],
         ['source', source.value],
+        ['collection', collection.value],
         ['sort', sort.value === 'name' ? '' : sort.value],
       ]) {
         if (value) url.searchParams.set(key, value);
         else url.searchParams.delete(key);
       }
       if (url.href !== location.href) {
-        if (writeUrl === 'push') history.pushState(null, '', url);
-        else history.replaceState(null, '', url);
+        if (writeUrl === 'push')
+          history.pushState({ catalogLimit: visibleLimit }, '', url);
+        else
+          history.replaceState(
+            { ...history.state, catalogLimit: visibleLimit },
+            '',
+            url,
+          );
       }
     }
+    history.replaceState(
+      { ...history.state, catalogLimit: visibleLimit },
+      '',
+      location.href,
+    );
   }
   controls.addEventListener('submit', (event) => event.preventDefault());
   search.addEventListener('input', () => update());
-  [category, tag, source, sort].forEach((element) =>
+  [category, tag, source, collection, sort].forEach((element) =>
     element.addEventListener('change', () => update('push')),
   );
   function reset() {
@@ -345,12 +426,44 @@ const tags = [...tagCounts.keys()].sort((a, b) => a.localeCompare(b));
     category.value = '';
     tag.value = '';
     source.value = '';
+    collection.value = '';
     sort.value = 'name';
     update('push');
     search.focus();
   }
   clear.addEventListener('click', reset);
   document.querySelector('#reset-search')!.addEventListener('click', reset);
+  more.addEventListener('click', () => {
+    const previouslyVisible = new Set(cards.filter((card) => !card.hidden));
+    visibleLimit += pageSize;
+    update(false, true);
+    const firstNew = [...grid.querySelectorAll<HTMLElement>('[data-app]')].find(
+      (card) => !card.hidden && !previouslyVisible.has(card),
+    );
+    firstNew
+      ?.querySelector<HTMLAnchorElement>('.app-card-main')
+      ?.focus({ preventScroll: true });
+  });
+  document
+    .querySelectorAll<HTMLAnchorElement>('[data-collection-link]')
+    .forEach((link) => {
+      link.addEventListener('click', (event) => {
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)
+          return;
+        event.preventDefault();
+        search.value = '';
+        category.value = '';
+        tag.value = '';
+        source.value = '';
+        sort.value = 'name';
+        collection.value = link.dataset.collectionLink || '';
+        update('push');
+        document
+          .querySelector('#catalog')!
+          .scrollIntoView({ behavior: 'instant' });
+        collection.focus({ preventScroll: true });
+      });
+    });
   document
     .querySelectorAll<HTMLAnchorElement>('.category-nav [data-category]')
     .forEach((link) =>
@@ -395,8 +508,8 @@ const tags = [...tagCounts.keys()].sort((a, b) => a.localeCompare(b));
   });
   window.addEventListener('popstate', () => {
     readUrl();
-    update(false);
+    update(false, true);
   });
   readUrl();
-  update(false);
+  update(false, true);
 </script>

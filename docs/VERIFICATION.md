@@ -1,5 +1,31 @@
 # Release verification
 
+## Catalog expansion and Bun migration — 2026-10-17
+
+The current catalog contains **292 apps: 283 open source and 9 source available**, across 11 categories, with 230 genuine upstream icons and 32 screenshots. Loop, Cap and Pearcleaner are included; Pearcleaner is explicitly classified as source available.
+
+- Bun 1.4.3 installs from `bun.lock`, executes all scripts and tests, and runs Astro. GitHub Actions uses the same pinned version; no npm lockfile or setup-node step remains.
+- `bun install --frozen-lockfile`: reproducible dependency install passed.
+- `bun test`: 14 tests passed, including prevention of restricted licenses being labeled open source.
+- `bun run check`: zero errors, warnings or hints.
+- `bun run build`: 295 static pages.
+- `bun run check:links`: 8,022 generated internal links and asset references resolve.
+- `bun run check:generated`: README matches all 292 records.
+- `bun audit`: no reported vulnerabilities in the checked dependency set.
+- `bun run discover`: 1,721 repository leads from ten directories; 204 matched published entries at this snapshot. Other leads are explicitly unreviewed, not claimed to be compatible apps.
+
+Chromium checks against the production preview verified initial 24-item batches, loading 48 items, keyboard focus on newly revealed content, restoration of the expanded count through browser history, full-catalog search, all source classifications, category/tag/collection intersections, shareable URLs, reload persistence, and empty/reset states. Collection links reset incompatible prior filters. With JavaScript disabled all 292 app links remain available.
+
+Layout checks covered widths 360, 390, 768 and 1440. Desktop/mobile collection, catalog and license-detail captures were inspected. Loop, Cap, Blender, LibreOffice, Firefox, Jan and DuckStation detail routes and official download links were checked. The final production-preview browser run reported no JavaScript exceptions or failed local resources.
+
+An independent code review identified two navigation issues (retained source filters on collection links and lost expanded counts on Back). Both were fixed and confirmed by the reviewer and browser checks. Related apps are ranked by shared tags and category rather than alphabetic category membership alone.
+
+Primary-source research and exceptions are recorded in [RESEARCH.md](RESEARCH.md), the individual app records, and [the discovery queue](../research/README.md). This review does not claim every app was installed or security audited.
+
+---
+
+## First public release (historical)
+
 Reviewed on 2026-10-17 for the first public release.
 
 ## Automated checks

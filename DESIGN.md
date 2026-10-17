@@ -246,3 +246,9 @@ Search, category, tag, and sort choices are reflected in the URL and restored wi
 - **Don't** replace actual application imagery with invented interfaces or decorative artwork.
 - **Don't** add shadows, gradients, or glowing surfaces as a default card treatment.
 - **Don't** infer new type scales, component variants, or token ramps as shipping implementation rules.
+
+## Catalog expansion
+
+The collection shelf uses four editorial links with real app icons, thin separators, and short descriptions. They filter the catalog through shareable `collection` URLs. The catalog now exposes source classification alongside category and tag filters. Source-available cards carry an amber text label; their detail pages explain restrictions before the description.
+
+JavaScript progressively reveals 24 matches at a time with an explicit Show more button. Search and filters still evaluate the entire collection. Without JavaScript, every app stays visible. Category, tag, source, collection and sort changes are URL-backed; loading more preserves the selected filters and moves keyboard focus to the first newly revealed app.
