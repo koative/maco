@@ -170,9 +170,10 @@ export type CatalogApp = Omit<AppData, 'screenshots'> & {
 export type App = CatalogApp;
 
 export const catalogDirectory = path.resolve(process.cwd(), 'content/apps');
-const defaultBase =
-  (import.meta as ImportMeta & { env?: { BASE_URL?: string } }).env?.BASE_URL ??
-  basePath;
+const env = (
+  import.meta as ImportMeta & { env?: { BASE_URL?: string; PROD?: boolean } }
+).env;
+const defaultBase = env?.BASE_URL ?? basePath;
 
 export function assetUrl(
   slug: string,
@@ -305,9 +306,10 @@ export function loadCatalog(
     .sort((a, b) => a.name.localeCompare(b.name, 'en'));
 }
 
+// Every page reads the catalog; a production build loads it once instead of once per page.
+// Development and the Bun scripts always reread the folders so edits show up immediately.
+let buildCache: CatalogApp[] | undefined;
 export function getApps(): CatalogApp[] {
-  return loadCatalog();
-}
-export function getApp(slug: string): CatalogApp | undefined {
-  return getApps().find((app) => app.slug === slug);
+  if (!env?.PROD) return loadCatalog();
+  return (buildCache ??= loadCatalog());
 }
