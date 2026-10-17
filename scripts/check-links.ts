@@ -1,8 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { basePath } from '../src/lib/site.ts';
 
 const root = path.resolve('dist');
-const base = '/openstore/';
+const base = basePath;
 let pages = 0;
 let links = 0;
 const errors: string[] = [];
@@ -16,7 +17,13 @@ function inspect(directory: string) {
       const html = fs.readFileSync(file, 'utf8');
       for (const match of html.matchAll(/(?:href|src)="([^"\s]+)"/g)) {
         const value = match[1];
-        if (!value.startsWith(base)) continue;
+        if (!value.startsWith(base)) {
+          if (value.startsWith('/') && !value.startsWith('//'))
+            errors.push(
+              `${file}: root-relative URL is outside site base: ${value}`,
+            );
+          continue;
+        }
         const relative = decodeURIComponent(
           value.slice(base.length).split(/[?#]/)[0],
         );
@@ -37,6 +44,8 @@ if (!fs.existsSync(root))
   throw new Error('Build the site before checking links: bun run build');
 inspect(root);
 if (!pages) throw new Error('No HTML pages found in dist');
+if (!links)
+  throw new Error('No internal links checked; verify the configured site base');
 if (errors.length) {
   console.error(errors.join('\n'));
   process.exitCode = 1;

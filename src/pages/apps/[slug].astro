@@ -5,6 +5,7 @@ import AppCard from '../../components/AppCard.astro';
 import Github from '../../components/GithubIcon.astro';
 import { getApps } from '../../lib/catalog';
 import { renderMarkdown } from '../../lib/markdown';
+import { absoluteUrl } from '../../lib/site';
 import {
   ArrowRight,
   ArrowUpRight,
@@ -40,10 +41,49 @@ const verified = new Date(app.verified + 'T00:00:00Z').toLocaleDateString(
 ---
 
 <Layout
-  title={`${app.name} — OpenStore`}
+  title={`${app.name} for Mac — Maco`}
   description={app.summary}
   active="app"
-  image={app.screenshots[0]?.url || app.iconUrl || undefined}
+  image={app.screenshots[0]?.url}
+  imageAlt={app.screenshots[0]?.alt}
+  structuredData={[
+    {
+      '@type': 'SoftwareApplication',
+      '@id': `${absoluteUrl(`apps/${app.slug}/`)}#app`,
+      name: app.name,
+      description: app.summary,
+      url: absoluteUrl(`apps/${app.slug}/`),
+      operatingSystem: 'macOS',
+      applicationCategory: app.category,
+      license: app.licenseUrl,
+      downloadUrl: app.download,
+      sameAs: [app.website, app.repository],
+      ...(app.iconUrl ? { image: absoluteUrl(app.iconUrl) } : {}),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Discover',
+          item: absoluteUrl(),
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: app.category,
+          item: absoluteUrl(`?category=${encodeURIComponent(app.category)}`),
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: app.name,
+          item: absoluteUrl(`apps/${app.slug}/`),
+        },
+      ],
+    },
+  ]}
 >
   <nav class="breadcrumb" aria-label="Breadcrumb">
     <a href={base}>Discover</a>
@@ -209,7 +249,7 @@ const verified = new Date(app.verified + 'T00:00:00Z').toLocaleDateString(
       </p>
       <a
         class="text-link"
-        href={`https://github.com/koative/openstore/blob/main/content/apps/${app.slug}/index.md`}
+        href={`https://github.com/koative/maco/blob/main/content/apps/${app.slug}/index.md`}
       >
         Improve this listing <ArrowUpRight size={14} />
       </a>

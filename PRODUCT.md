@@ -1,4 +1,4 @@
-# OpenStore
+# Maco
 
 <!-- impeccable:product-schema 1 -->
 
@@ -28,7 +28,7 @@ App folders are the source of truth. Metadata is validated. README is generated.
 
 ## Brand Commitments
 
-Working name OpenStore, derived from the existing workspace. English UI confirmed. Design execution delegated to Impeccable, directly in working code. The user rejected the initial pastel library design and explicitly chose a dark, sharp, premium showcase with large imagery.
+Maco is the user-selected product name. English UI confirmed. Design execution delegated to Impeccable, directly in working code. The user rejected the initial pastel library design and explicitly chose a dark, sharp, premium showcase with large imagery.
 
 ## Evidence on Hand
 

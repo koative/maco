@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "generatedAt": "2026-10-17T15:51:18.581421+00:00",
-  "title": "Design System: OpenStore",
+  "title": "Design System: Maco",
   "extensions": {
     "colorMeta": {
       "accent": {
@@ -354,13 +354,13 @@
       "name": "Header navigation",
       "kind": "nav",
       "description": "Desktop text navigation; the shipping layout selectively hides links as space narrows.",
-      "html": "<nav class=\"ds-top-links\" aria-label=\"Main navigation\"><a href=\"#catalog\" aria-current=\"page\">Explore</a><a href=\"about/\">Our story</a><a href=\"https://github.com/koative/openstore/blob/main/CONTRIBUTING.md\">Contribute <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></a></nav>",
+      "html": "<nav class=\"ds-top-links\" aria-label=\"Main navigation\"><a href=\"#catalog\" aria-current=\"page\">Explore</a><a href=\"about/\">Our story</a><a href=\"https://github.com/koative/maco/blob/main/CONTRIBUTING.md\">Contribute <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></a></nav>",
       "css": ".ds-top-links {\n  display: flex;\n  gap: 32px;\n  font-size: 13px;\n  align-items: center;\n  margin-left: 50px;\n}\n.ds-top-links a {\n  color: var(--muted, #a7aaae);\n  display: flex;\n  align-items: center;\n  gap: 5px;\n}\n.ds-top-links a[aria-current='page'] {\n  color: var(--ink, #f2f2ef);\n}\n.ds-top-links a:hover {\n  color: var(--ink, #f2f2ef);\n}\n.ds-top-links{font-family:var(--font, \"DM Sans Variable\", sans-serif);line-height:1.6;}.ds-top-links a{text-decoration:none;color:var(--muted, #a7aaae)}.ds-top-links a:hover,.ds-top-links a[aria-current=\"page\"]{color:var(--ink, #f2f2ef)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent, #d9e6a3);outline-offset:5px;}"
     }
   ],
   "narrative": {
     "northStar": "The Independent Software Showcase",
-    "overview": "OpenStore presents useful Mac software with a dark, sharp, premium character. Large authentic application screenshots supply the strongest color and visual interest; confident headings and restrained controls frame the software. This is the user-selected direction captured from the implemented site.\n\nBroad compositions and generous section spacing give way to compact, seam-separated catalog entries. Surfaces stay quiet and readable, with a pale golden-olive accent reserved for actions, focus, and small identity details. The earlier pastel library direction was rejected and is not a source of visual authority.",
+    "overview": "Maco presents useful Mac software with a dark, sharp, premium character. Large authentic application screenshots supply the strongest color and visual interest; confident headings and restrained controls frame the software. This is the user-selected direction captured from the implemented site.\n\nBroad compositions and generous section spacing give way to compact, seam-separated catalog entries. Surfaces stay quiet and readable, with a pale golden-olive accent reserved for actions, focus, and small identity details. The earlier pastel library direction was rejected and is not a source of visual authority.",
     "keyCharacteristics": [
       "Graphite canvas, warm-white type, and muted silver supporting text.",
       "Large genuine application imagery with clear source attribution.",

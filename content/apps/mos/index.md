@@ -27,4 +27,4 @@ screenshots: []
 
 Mos changes mouse-wheel scrolling to feel smoother and lets you separate its direction from the trackpad. It provides preferences for adjusting the scrolling response on macOS.
 
-The source is published under CC BY-NC 4.0, which restricts commercial use. OpenStore lists Mos as source available rather than open source.
+The source is published under CC BY-NC 4.0, which restricts commercial use. Maco lists Mos as source available rather than open source.

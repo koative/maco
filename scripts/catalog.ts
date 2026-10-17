@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { site } from '../src/lib/site.ts';
 import {
   categories,
   getApps,
@@ -30,7 +31,7 @@ function catalogMarkdown(apps: CatalogApp[]): string {
       return `### ${category}\n\n| App | What it does | License |\n| --- | --- | --- |\n${entries
         .map(
           (app) =>
-            `| [${escapeCell(app.name)}](https://koative.github.io/openstore/apps/${app.slug}/) · [Source](${app.repository}) | ${escapeCell(app.summary)} | [${app.license}](${app.licenseUrl})${app.sourceAvailability === 'source-available' ? ' · **Source available**' : ''} |`,
+            `| [${escapeCell(app.name)}](${site.url}apps/${app.slug}/) · [Source](${app.repository}) | ${escapeCell(app.summary)} | [${app.license}](${app.licenseUrl})${app.sourceAvailability === 'source-available' ? ' · **Source available**' : ''} |`,
         )
         .join('\n')}`;
     })

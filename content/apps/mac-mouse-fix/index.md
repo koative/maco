@@ -35,4 +35,4 @@ verified: 2026-10-17
 
 Mac Mouse Fix gives conventional mice extra navigation controls, including button actions, smooth scrolling, and gesture-like shortcuts. It is useful when you want familiar macOS navigation without switching to a trackpad.
 
-The current app is distributed commercially. Its published source uses a custom license with conditions on redistributing derived executables, so OpenStore labels it source available. Follow the official website for trial, purchase, and compatibility details.
+The current app is distributed commercially. Its published source uses a custom license with conditions on redistributing derived executables, so Maco labels it source available. Follow the official website for trial, purchase, and compatibility details.

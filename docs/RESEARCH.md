@@ -1,4 +1,4 @@
-# OpenStore research and inclusion policy
+# Maco research and inclusion policy
 
 Research date: **2026-10-17**. This is a dated editorial assessment, not a live status feed.
 
@@ -83,7 +83,7 @@ for example, [syncthing-macos](https://github.com/syncthing/syncthing-macos) is 
 
 Code, documentation, icons, screenshots, and trademarks can have different terms.
 CotEditor's separate image license and HandBrake's graphics notice are concrete examples.
-Do not apply OpenStore's repository license to upstream artwork.
+Do not apply Maco's repository license to upstream artwork.
 
 - Prefer official upstream assets whose usage terms have been checked.
 - Store the original source URL, attribution, and applicable license beside each asset.

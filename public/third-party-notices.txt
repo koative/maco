@@ -1,4 +1,4 @@
-OpenStore — third-party interface assets
+Maco — third-party interface assets
 
 Application logos and screenshots have separate notices in each catalog entry.
 The following fonts and icon library are distributed with the site.

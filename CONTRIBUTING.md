@@ -1,6 +1,6 @@
-# Contributing to OpenStore
+# Contributing to Maco
 
-OpenStore is a curated collection of open-source macOS apps and separately labeled source-available apps. App records are the source of truth: both the website and the README catalog are generated from `content/apps/`.
+Maco is a curated collection of open-source macOS apps and separately labeled source-available apps. App records are the source of truth: both the website and the README catalog are generated from `content/apps/`.
 
 ## Before adding an app
 
@@ -101,7 +101,7 @@ bun run check:generated
 
 `bun run sync` validates records, copies catalog assets, writes the public `catalog.json` feed, and updates the README between `<!-- catalog:start -->` and `<!-- catalog:end -->`. Both development and production builds run sync automatically. Commit the updated README alongside app records. Generated `public/catalog/`, `public/catalog.json`, and `dist/` stay out of Git.
 
-The site is served beneath `/openstore/`. Keep internal links and image URLs aware of Astro's `BASE_URL`; the catalog loader already resolves image paths. Preview production output with `bun run preview` after building.
+The site is served beneath `/maco/`. Keep internal links and image URLs aware of Astro's `BASE_URL`; the catalog loader already resolves image paths. Preview production output with `bun run preview` after building.
 
 ## Pull requests
 

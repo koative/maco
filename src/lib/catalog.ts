@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parse as parseYaml } from 'yaml';
 import { z } from 'zod';
+import { basePath } from './site';
 
 export const categories = [
   'Productivity',
@@ -171,7 +172,7 @@ export type App = CatalogApp;
 export const catalogDirectory = path.resolve(process.cwd(), 'content/apps');
 const defaultBase =
   (import.meta as ImportMeta & { env?: { BASE_URL?: string } }).env?.BASE_URL ??
-  '/openstore/';
+  basePath;
 
 export function assetUrl(
   slug: string,

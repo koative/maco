@@ -1,5 +1,5 @@
 ---
-name: OpenStore
+name: Maco
 description: A sharp, dark showcase for independent open-source Mac software.
 colors:
   accent: "#d9e6a3"
@@ -111,13 +111,13 @@ components:
     padding: "29px 0 24px"
 ---
 
-# Design System: OpenStore
+# Design System: Maco
 
 ## Overview
 
 **Creative North Star: "The Independent Software Showcase"**
 
-OpenStore presents useful Mac software with a dark, sharp, premium character. Large authentic application screenshots supply the strongest color and visual interest; confident headings and restrained controls frame the software. This is the user-selected direction captured from the implemented site.
+Maco presents useful Mac software with a dark, sharp, premium character. Large authentic application screenshots supply the strongest color and visual interest; confident headings and restrained controls frame the software. This is the user-selected direction captured from the implemented site.
 
 Broad compositions and generous section spacing give way to compact, seam-separated catalog entries. Surfaces stay quiet and readable, with a pale golden-olive accent reserved for actions, focus, and small identity details. The earlier pastel library direction was rejected and is not a source of visual authority.
 

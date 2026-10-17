@@ -37,7 +37,7 @@ afterEach(() => {
     fs.rmSync(directory, { recursive: true, force: true });
 });
 function fixture() {
-  const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'openstore-test-'));
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'maco-test-'));
   temporaryDirectories.push(directory);
   const write = (slug: string, data: unknown = valid) => {
     const folder = path.join(directory, slug);

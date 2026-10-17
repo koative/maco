@@ -1,4 +1,4 @@
-# How OpenStore is maintained
+# How Maco is maintained
 
 ## Source of truth
 
