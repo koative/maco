@@ -7,4 +7,3 @@ artifacts
 public/catalog
 public/catalog.json
 content/apps
-package-lock.json

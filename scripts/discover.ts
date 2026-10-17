@@ -1,13 +1,8 @@
-import { getApps } from '../src/lib/catalog';
+import { getApps, normalizeRepository as normalize } from '../src/lib/catalog';
 import sources from '../research/sources.json';
 
 // Discovery is deliberately separate from publication: a public repository may
 // be a library, a closed-source distribution wrapper, or a stale application.
-const normalize = (url: string) =>
-  url
-    .toLowerCase()
-    .replace(/\.git\/?$/, '')
-    .replace(/\/$/, '');
 const published = new Set(getApps().map((app) => normalize(app.repository)));
 const directories = new Set(
   sources.map((source) => normalize(source.repository)),
@@ -33,7 +28,7 @@ const outcomes = await Promise.allSettled(
       throw new Error(`${source.repository}: HTTP ${response.status}`);
     const readme = await response.text();
     for (const match of readme.matchAll(
-      /https:\/\/github\.com\/([\w.-]+)\/([\w.-]+)/g,
+      /https?:\/\/(?:www\.)?github\.com\/([\w.-]+)\/([\w.-]+)/g,
     )) {
       if (skipOwners.has(match[1].toLowerCase())) continue;
       const repository = normalize(

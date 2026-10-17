@@ -136,14 +136,20 @@ test('requires provenance for image files even when not displayed', () => {
   );
 });
 
-test('rejects duplicate repositories regardless of case, .git or trailing slash', () => {
-  const { directory, write } = fixture();
-  write('first');
-  write('second', {
-    ...valid,
-    repository: 'https://github.com/Example/App.git/',
-  });
-  assert.throws(() => loadCatalog(directory), /Duplicate repository/);
+test('rejects duplicate repositories regardless of case, www, .git, trailing slash or fragment', () => {
+  for (const repository of [
+    'https://github.com/Example/App.git/',
+    'https://www.github.com/example/app#readme',
+  ]) {
+    const { directory, write } = fixture();
+    write('first');
+    write('second', { ...valid, repository });
+    assert.throws(
+      () => loadCatalog(directory),
+      /Duplicate repository/,
+      repository,
+    );
+  }
 });
 
 test('rejects unsafe folder names', () => {
@@ -203,6 +209,7 @@ test('exposes all actual license notices with deployment-aware links', () => {
     'UPSTREAM-LICENSE.txt',
     'ARTWORK-NOTICE.txt',
     'CC-BY-SA-4.0.txt',
+    'NOTICE.TXT',
   ]) {
     fs.writeFileSync(
       path.join(folder, 'assets', name),
@@ -212,7 +219,12 @@ test('exposes all actual license notices with deployment-aware links', () => {
   const notices = loadCatalog(directory, '/preview/')[0].notices;
   assert.deepEqual(
     notices.map((notice) => notice.name),
-    ['ARTWORK-NOTICE.txt', 'CC-BY-SA-4.0.txt', 'UPSTREAM-LICENSE.txt'],
+    [
+      'ARTWORK-NOTICE.txt',
+      'CC-BY-SA-4.0.txt',
+      'NOTICE.TXT',
+      'UPSTREAM-LICENSE.txt',
+    ],
   );
   for (const notice of notices) {
     assert.equal(notice.url, `/preview/catalog/example/assets/${notice.name}`);

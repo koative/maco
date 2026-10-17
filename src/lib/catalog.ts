@@ -182,6 +182,12 @@ export function assetUrl(
   return `${base.replace(/\/$/, '')}/catalog/${slug}/${file.replace(/^\.\//, '')}`;
 }
 
+/** Duplicate-check key: ignores case, `www.`, `.git`, trailing slashes, query and hash. */
+export function normalizeRepository(url: string): string {
+  const { hostname, pathname } = new URL(url.toLowerCase());
+  return `https://${hostname.replace(/^www\./, '')}${pathname.replace(/\/+$/, '').replace(/\.git$/, '')}`;
+}
+
 function ensureContainedFile(folder: string, relative: string): void {
   const root = fs.realpathSync(folder);
   const resolved = path.resolve(root, relative);
@@ -241,10 +247,7 @@ export function loadCatalog(
           throw new Error(
             'Write an original description below the frontmatter',
           );
-        const repository = data.repository
-          .toLowerCase()
-          .replace(/\.git\/?$/, '')
-          .replace(/\/$/, '');
+        const repository = normalizeRepository(data.repository);
         if (repositories.has(repository))
           throw new Error(`Duplicate repository: ${data.repository}`);
         repositories.add(repository);
@@ -268,10 +271,10 @@ export function loadCatalog(
         const notices = (
           fs.existsSync(assetFolder) ? fs.readdirSync(assetFolder) : []
         )
-          .filter((name) => name.endsWith('.txt'))
+          .filter((name) => /\.txt$/i.test(name))
           .sort()
           .map((name) => {
-            if (!/^[a-zA-Z0-9][a-zA-Z0-9._-]*\.txt$/.test(name)) {
+            if (!/^[a-zA-Z0-9][a-zA-Z0-9._-]*\.txt$/i.test(name)) {
               throw new Error(
                 `Use a simple filename for license notices: ${name}`,
               );
