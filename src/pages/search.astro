@@ -61,7 +61,7 @@ const tags = [...tagCounts.keys()].sort((a, b) => a.localeCompare(b));
         <select id="tag-filter" name="tag">
           <option value="">All Tags</option>
           {tags.map((tag) => (
-            <option value={tag}>
+            <option value={tag} data-label={tag.replaceAll('-', ' ')}>
               {tag.replaceAll('-', ' ')} ({tagCounts.get(tag)})
             </option>
           ))}
@@ -168,6 +168,8 @@ const tags = [...tagCounts.keys()].sort((a, b) => a.localeCompare(b));
       .filter(Boolean);
     const source = sources.find((input) => input.checked)!.value;
     let matched = 0;
+    // Tag counts follow the other filters, so every tag offered leads to at least one result.
+    const tagMatches = new Map<string, number>();
     const sorted = [...cards].sort((a, b) => {
       if (
         sort.value === 'featured' &&
@@ -179,14 +181,27 @@ const tags = [...tagCounts.keys()].sort((a, b) => a.localeCompare(b));
       return a.dataset.name!.localeCompare(b.dataset.name!);
     });
     for (const card of sorted) {
-      const matches =
+      const cardTags = card.dataset.tags!.split(',');
+      const othersMatch =
         query.every((term) => card.dataset.search!.includes(term)) &&
         (!category.value || card.dataset.category === category.value) &&
-        (!tag.value || card.dataset.tags!.split(',').includes(tag.value)) &&
         (!source || card.dataset.source === source);
+      if (othersMatch)
+        for (const cardTag of cardTags)
+          tagMatches.set(cardTag, (tagMatches.get(cardTag) ?? 0) + 1);
+      const matches =
+        othersMatch && (!tag.value || cardTags.includes(tag.value));
       if (matches) matched++;
       card.hidden = !matches || matched > visibleLimit;
       grid.append(card);
+    }
+    for (const option of tag.options) {
+      if (!option.value) continue;
+      const available = tagMatches.get(option.value) ?? 0;
+      option.textContent = `${option.dataset.label} (${available})`;
+      // Safari ignores hidden options, so empty tags are also disabled.
+      option.hidden = option.disabled =
+        !available && option.value !== tag.value;
     }
     const shown = Math.min(matched, visibleLimit);
     const noun =
